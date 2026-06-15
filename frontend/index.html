@@ -634,6 +634,51 @@
     </div>
   </section>
 
+  <!-- HELP SCREEN (Emergency cards + dictionary + police stations + bookmarks) -->
+  <section id="screen-help" class="screen" aria-label="Help &amp; Reference">
+    <div class="laws-tabs">
+      <button class="help-tab active" data-help-tab="emergency">🚨 Emergency</button>
+      <button class="help-tab" data-help-tab="dict">📖 Dictionary</button>
+      <button class="help-tab" data-help-tab="stations">🚓 Police</button>
+      <button class="help-tab" data-help-tab="bookmarks">⭐ Saved</button>
+    </div>
+
+    <div id="help-pane-emergency" class="help-pane active">
+      <h3 style="margin:6px 0 12px;font-family:var(--font-display)">🚨 What to do if...</h3>
+      <p class="muted small">Tap a card for step-by-step action. Works offline.</p>
+      <div id="emergency-list" class="emergency-list"></div>
+    </div>
+
+    <div id="help-pane-dict" class="help-pane">
+      <h3 style="margin:6px 0 6px;font-family:var(--font-display)">📖 Legal Dictionary</h3>
+      <p class="muted small">English + தமிழ் + हिन्दी meanings of 60+ terms.</p>
+      <div class="laws-search-row">
+        <input type="text" id="dict-query" placeholder="e.g. bail, FIR, affidavit..." />
+        <button id="dict-search-btn" class="primary-btn">Search</button>
+      </div>
+      <div id="dict-results" class="law-results"></div>
+    </div>
+
+    <div id="help-pane-stations" class="help-pane">
+      <h3 style="margin:6px 0 6px;font-family:var(--font-display)">🚓 Police Stations</h3>
+      <p class="muted small">Direct call + address. Always also dial 112 for emergency.</p>
+      <div class="laws-search-row">
+        <input type="text" id="ps-query" placeholder="Search by name / area" />
+        <select id="ps-state" style="max-width:130px"></select>
+        <button id="ps-search-btn" class="primary-btn">Find</button>
+      </div>
+      <div id="ps-results" class="law-results"></div>
+    </div>
+
+    <div id="help-pane-bookmarks" class="help-pane">
+      <h3 style="margin:6px 0 6px;font-family:var(--font-display)">⭐ Your Saved Items</h3>
+      <p class="muted small">Sections, cases, lawyers — saved on this device.</p>
+      <div id="bookmark-list" class="law-results">
+        <p class="muted center small">Nothing saved yet. Tap ⭐ on any section or case to bookmark.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- HISTORY SCREEN -->
   <section id="screen-history" class="screen" aria-label="History">
     <h2>Your Chat History</h2>
@@ -696,7 +741,7 @@
   <button class="nav-btn active" data-screen="home"><span>🏠</span><small data-i18n="nav.home">Home</small></button>
   <button class="nav-btn" data-screen="chat"><span>💬</span><small data-i18n="nav.chat">Chat</small></button>
   <button class="nav-btn" data-screen="laws"><span>⚖️</span><small data-i18n="nav.laws">Laws</small></button>
-  <button class="nav-btn" data-screen="templates"><span>📄</span><small data-i18n="nav.docs">Docs</small></button>
+  <button class="nav-btn" data-screen="help"><span>🆘</span><small>Help</small></button>
   <button class="nav-btn" data-screen="settings"><span>⚙️</span><small data-i18n="nav.more">More</small></button>
 </nav>
 

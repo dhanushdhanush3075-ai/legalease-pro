@@ -8,6 +8,7 @@ import { initSettingsScreen } from "./screens/settings.js";
 import { initLawsScreen } from "./screens/laws.js";
 import { initAuthScreen, checkAuthAndBoot, logout } from "./screens/auth.js";
 import { initHomeScreen } from "./screens/home.js";
+import { initHelpScreen } from "./screens/help.js";
 import { startFlow } from "./screens/onboarding.js";
 import { applyI18n } from "./i18n.js";
 
@@ -53,6 +54,7 @@ async function init() {
   initHistoryScreen();
   initSettingsScreen();
   initLawsScreen();
+  initHelpScreen();
   bindAuthEvents();
   registerServiceWorker();
 

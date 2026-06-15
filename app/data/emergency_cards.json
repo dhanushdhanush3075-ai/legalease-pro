@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "description": "Emergency legal action cards — what to do in critical situations. No AI needed.",
+    "total": 12
+  },
+  "cards": [
+    {
+      "id": "if-arrested",
+      "title": "If you are arrested",
+      "icon": "🚔",
+      "color": "danger",
+      "urgency": "immediate",
+      "steps": [
+        "Stay CALM. Do not resist physically — it is a separate offence.",
+        "ASK for the arrest memo with the officer's signature + witness signature (DK Basu 1997 mandatory).",
+        "ASK the officer to inform your family/friend. This is your right under Article 22.",
+        "DEMAND to call a lawyer (or NALSA 15100 for free legal aid).",
+        "INSIST on medical examination at time of arrest (also your right).",
+        "DO NOT sign any blank paper or confession without your lawyer present.",
+        "You MUST be produced before a Magistrate within 24 hours (excluding journey time).",
+        "Note: arresting officer's name, ID number, time + place of arrest, witnesses."
+      ],
+      "calls": [
+        {"label": "NALSA Free Legal Aid", "number": "15100"},
+        {"label": "Police Emergency", "number": "112"}
+      ],
+      "key_laws": ["Article 22 Constitution", "DK Basu guidelines 1997", "Sec 41-43 BNSS / 41-46 CrPC", "Arnesh Kumar 2014"]
+    },
+    {
+      "id": "road-accident",
+      "title": "Road accident — you or a victim",
+      "icon": "🚗",
+      "color": "warning",
+      "urgency": "immediate",
+      "steps": [
+        "CALL 112 (Emergency) and 108 (Ambulance) immediately.",
+        "Try to MOVE victim to side ONLY if there is fire/traffic risk. Else don't move spine-injured.",
+        "Take PHOTOS of vehicles, license plates, road position, victim before moving anything.",
+        "Note witness names + phone numbers.",
+        "DO NOT admit fault on the spot — let police investigate.",
+        "Stay at the scene until police arrive (leaving is hit-and-run u/s 134 MV Act).",
+        "Hit-and-run victim's family gets ₹2 lakh; injured ₹50,000 (Compensation Scheme 2022).",
+        "File MACT claim within 6 months for full insurance compensation (no upper limit since 2019)."
+      ],
+      "calls": [
+        {"label": "Emergency", "number": "112"},
+        {"label": "Ambulance", "number": "108"},
+        {"label": "Police", "number": "100"}
+      ],
+      "key_laws": ["Motor Vehicles Act Sec 134 (duty to stop)", "MV Act Sec 166 (MACT claim)", "Pranay Sethi 2017 SC"]
+    },
+    {
+      "id": "domestic-violence",
+      "title": "Domestic violence (DV)",
+      "icon": "🛡️",
+      "color": "danger",
+      "urgency": "immediate",
+      "steps": [
+        "If immediate danger: call 112 or Women Helpline 7827170170.",
+        "Go to nearest ONE STOP CENTRE (Sakhi) — they give shelter, legal aid, counselling FREE.",
+        "Document evidence: photos of injuries, screenshots of abusive messages, voice recordings.",
+        "File DV Act application u/s 12 before Magistrate — civil reliefs (protection order, residence, monetary).",
+        "Parallel FIR under IPC 498A / BNS 85 (cruelty) + Sec 506 (intimidation).",
+        "Approach Protection Officer for Domestic Incident Report (DIR).",
+        "You have RIGHT TO RESIDE in shared household — cannot be evicted.",
+        "Get medical examination + MLC (medico-legal certificate) from govt hospital — FREE."
+      ],
+      "calls": [
+        {"label": "Women in Distress", "number": "7827170170"},
+        {"label": "Women Helpline", "number": "1091"},
+        {"label": "Sakhi (One Stop Centre)", "number": "181"},
+        {"label": "NALSA", "number": "15100"}
+      ],
+      "key_laws": ["DV Act 2005 Sec 12", "IPC 498A / BNS 85", "IPC 506 / BNS 351"]
+    },
+    {
+      "id": "online-fraud",
+      "title": "Lost money to online fraud / UPI scam",
+      "icon": "💸",
+      "color": "danger",
+      "urgency": "within 1 hour",
+      "steps": [
+        "⚠️ CALL 1930 (Cybercrime Helpline) WITHIN 1 HOUR — RBI 'zero liability' framework allows recovery if reported quickly.",
+        "Also file complaint at https://cybercrime.gov.in",
+        "Call your bank IMMEDIATELY — ask to freeze beneficiary account.",
+        "Screenshot ALL evidence: SMS, transaction ID, beneficiary UPI, phone numbers, emails.",
+        "File FIR at nearest police station (cyber cell preferred) under IT Act 66C + 66D + IPC 420.",
+        "Block your card/UPI temporarily via bank app.",
+        "Change ALL passwords + enable 2FA on bank/UPI apps.",
+        "Don't share OTP/CVV with anyone, not even 'bank officials' — banks never ask."
+      ],
+      "calls": [
+        {"label": "Cybercrime Helpline (CRITICAL)", "number": "1930"},
+        {"label": "Bank fraud helpline", "number": "Your bank's customer care"}
+      ],
+      "key_laws": ["IT Act Sec 66C (identity theft)", "IT Act Sec 66D (impersonation)", "IPC 420 / BNS 318(4)"]
+    },
+    {
+      "id": "child-abuse",
+      "title": "Child in danger (abuse / labour / missing)",
+      "icon": "👶",
+      "color": "danger",
+      "urgency": "immediate",
+      "steps": [
+        "Call CHILDLINE 1098 — operates 24/7 across India.",
+        "If sexual abuse: FIR mandatory under POCSO Act. Refusal by police is a separate offence.",
+        "POCSO complaint: child statement recorded by woman officer in child-friendly setting.",
+        "Medical examination of child within 24 hours of reporting (free).",
+        "POCSO Special Court must complete trial in 1 year.",
+        "Failing to report POCSO offence is itself an offence u/s 21 POCSO Act."
+      ],
+      "calls": [
+        {"label": "CHILDLINE", "number": "1098"},
+        {"label": "Women & Child Helpline", "number": "181"},
+        {"label": "Police", "number": "112"}
+      ],
+      "key_laws": ["POCSO Act 2012", "JJ Act 2015", "Child Labour Prohibition Act 1986"]
+    },
+    {
+      "id": "police-refuses-fir",
+      "title": "Police refusing to file FIR",
+      "icon": "⛔",
+      "color": "warning",
+      "urgency": "soon",
+      "steps": [
+        "Submit WRITTEN complaint at SHO desk — insist on acknowledgement with diary number.",
+        "If refused: send written complaint to SP (Superintendent of Police) u/s 154(3) CrPC / 173(3) BNSS.",
+        "Keep copy of SP letter with postal/speed-post receipt.",
+        "If still no action: approach Judicial Magistrate u/s 156(3) CrPC / 175(3) BNSS — Magistrate can ORDER police to register FIR.",
+        "Or file private complaint before Magistrate u/s 200 CrPC / 223 BNSS.",
+        "Refusal to register FIR for cognizable offence is itself misconduct (Lalita Kumari 2013) + penal under Sec 166A IPC."
+      ],
+      "calls": [
+        {"label": "NALSA", "number": "15100"},
+        {"label": "State Human Rights Commission", "number": "Check state portal"}
+      ],
+      "key_laws": ["Sec 154 CrPC / 173 BNSS", "Lalita Kumari v UP 2013", "Sec 166A IPC"]
+    },
+    {
+      "id": "eve-teasing-harassment",
+      "title": "Eve-teasing / sexual harassment",
+      "icon": "🚫",
+      "color": "danger",
+      "urgency": "immediate",
+      "steps": [
+        "If immediate danger: SHOUT loudly to attract attention — Section 357C CrPC mandates bystanders to assist.",
+        "Dial 112 or Women Helpline 1091.",
+        "Photograph/record the offender if safe to do so.",
+        "Note vehicle number, time, location, witnesses.",
+        "File FIR — sections vary: IPC 354A (harassment) / 354 (modesty) / 509 (insult) / 354D (stalking).",
+        "Workplace harassment: complaint to Internal Committee (IC) within 3 months — POSH Act 2013.",
+        "Women police stations exist in many cities — go directly there.",
+        "Free legal aid via NALSA 15100."
+      ],
+      "calls": [
+        {"label": "Women Helpline", "number": "1091"},
+        {"label": "Emergency", "number": "112"},
+        {"label": "Women in Distress (NCW)", "number": "7827170170"}
+      ],
+      "key_laws": ["IPC 354/354A/354D/509 = BNS 74/75/78/79", "POSH Act 2013", "Vishaka Guidelines"]
+    },
+    {
+      "id": "lost-aadhaar-pan",
+      "title": "Lost Aadhaar / PAN / Voter ID / Driving Licence",
+      "icon": "🪪",
+      "color": "info",
+      "urgency": "soon",
+      "steps": [
+        "AADHAAR: Reprint at https://uidai.gov.in — ₹50. No FIR needed.",
+        "PAN: Reapply at https://tin-nsdl.com — ₹107. Use 'reprint PAN' option.",
+        "VOTER ID: Apply at https://nvsp.in for duplicate EPIC. ₹25.",
+        "DRIVING LICENCE: First file LOST/STOLEN report at police station, get acknowledgement. Then apply duplicate at sarathi.parivahan.gov.in — ₹200.",
+        "PASSPORT: FIR mandatory. Then reapply at passportindia.gov.in. ₹1,500-3,500.",
+        "BANK PASSBOOK / CHEQUE BOOK: Inform bank IMMEDIATELY to freeze cheques + issue duplicate. Some banks need FIR for cheques.",
+        "Keep diary entry from police station for ALL lost documents — useful if misused."
+      ],
+      "calls": [
+        {"label": "UIDAI Aadhaar helpline", "number": "1947"},
+        {"label": "Income Tax helpline", "number": "1800-180-1961"}
+      ],
+      "key_laws": ["Aadhaar Act 2016", "Passports Act 1967", "Motor Vehicles Act 1988"]
+    },
+    {
+      "id": "consumer-deficient-service",
+      "title": "Defective product / bad service / fake delivery",
+      "icon": "🛍️",
+      "color": "info",
+      "urgency": "within 2 years",
+      "steps": [
+        "Contact seller customer care — note ticket ID, recording, screenshots.",
+        "Send written complaint via registered post / email.",
+        "File complaint on https://edaakhil.nic.in (free, fully online).",
+        "Or file at District Consumer Disputes Redressal Commission within 2 YEARS of cause.",
+        "Fee: ₹100 (claim <₹5L), ₹200 (₹5-10L), ₹400 (₹10-20L) etc.",
+        "District handles up to ₹50L · State up to ₹2Cr · National >₹2Cr.",
+        "You can claim: refund / replacement / compensation / punitive damages / litigation costs.",
+        "Decision usually within 3 months. Appeal allowed."
+      ],
+      "calls": [
+        {"label": "Consumer Helpline", "number": "1915"},
+        {"label": "FSSAI (food)", "number": "1800-112-100"}
+      ],
+      "key_laws": ["Consumer Protection Act 2019", "Sale of Goods Act 1930"]
+    },
+    {
+      "id": "death-in-family",
+      "title": "Death in family — what to do legally",
+      "icon": "🕊️",
+      "color": "info",
+      "urgency": "within days",
+      "steps": [
+        "Get DEATH CERTIFICATE from hospital / municipal corporation within 21 days (free if same day, fee after).",
+        "Cancel Aadhaar / PAN / voter ID — visit respective offices with death certificate.",
+        "Inform bank — close / nominate accounts. If joint account, survivor continues.",
+        "Apply for LEGAL HEIR CERTIFICATE at Tahsildar (movables, govt dues) — ₹2-3 weeks.",
+        "Apply for SUCCESSION CERTIFICATE at District Judge (securities, debts) — 1-3 months, ₹3-5K fee.",
+        "Mutation of immovable property at Revenue Office (1-6 months).",
+        "If will exists: probate may be needed (Mumbai, Chennai, Kolkata jurisdictions).",
+        "Hindu: spouse + children + mother get equal share. Daughters have EQUAL coparcenary right since 2005 (Vineeta Sharma 2020)."
+      ],
+      "calls": [
+        {"label": "NALSA (free legal aid)", "number": "15100"}
+      ],
+      "key_laws": ["Hindu Succession Act 1956 (Amended 2005)", "Indian Succession Act 1925", "Registration of Births and Deaths Act 1969"]
+    },
+    {
+      "id": "tenant-eviction-threat",
+      "title": "Landlord threatening to evict / cutting water/electricity",
+      "icon": "🏠",
+      "color": "warning",
+      "urgency": "within days",
+      "steps": [
+        "Cutting essential services (water, electricity, gas) by landlord = ILLEGAL — even if rent unpaid.",
+        "File complaint at local police station — IPC 506 (intimidation) + relevant Rent Control Act provisions.",
+        "Approach Rent Controller / Civil Court for stay on eviction.",
+        "Landlord MUST give written notice (typically 1-3 months) per agreement / Rent Act.",
+        "Eviction grounds: rent default, sub-letting, personal need, change of user, etc. — only by court order.",
+        "Do not pay rent in cash without receipt — always bank transfer for paper trail."
+      ],
+      "calls": [
+        {"label": "Police", "number": "112"},
+        {"label": "NALSA", "number": "15100"}
+      ],
+      "key_laws": ["State Rent Control Acts (TN 2017, MH 1999, Delhi 1958)", "Transfer of Property Act", "IPC 506 / BNS 351"]
+    },
+    {
+      "id": "consumer-cheque-bounce",
+      "title": "Cheque you received bounced",
+      "icon": "💰",
+      "color": "warning",
+      "urgency": "strict 30 days",
+      "steps": [
+        "Collect BANK RETURN MEMO from your bank — keep original safe.",
+        "Send STATUTORY NOTICE to drawer within 30 DAYS via registered post.",
+        "Notice must demand payment within 15 DAYS.",
+        "If unpaid after 15 days: file complaint within 30 DAYS at JM First Class court of payee's location.",
+        "⏰ Missing ANY deadline = complaint dismissed. Strict timelines.",
+        "Court can award: cheque amount + interest + up to 2 years imprisonment OR fine up to 2× cheque amount.",
+        "Use template in our Docs tab → Cheque Bounce Notice (Sec 138 NI Act)."
+      ],
+      "calls": [
+        {"label": "Banking Ombudsman", "number": "14448 (RBI)"}
+      ],
+      "key_laws": ["Sec 138 + 142 Negotiable Instruments Act 1881"]
+    }
+  ]
+}

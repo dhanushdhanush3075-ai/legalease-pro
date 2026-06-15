@@ -41,6 +41,7 @@ const titles = {
   complaint: "Draft FIR",
   templates: "Documents",
   laws: "Laws & Cases",
+  help: "Help & Reference",
   history: "History",
   settings: "Settings",
 };

@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "description": "Curated police stations across major Indian cities. Always also call 112 (Emergency) and 100 (Police).",
+    "total": 70,
+    "note": "For complete list of every PS, use https://citizen.mahapolice.gov.in or your state portal."
+  },
+  "stations": [
+    {"id": "ps-tn-chennai-anna", "state": "Tamil Nadu", "district": "Chennai", "name": "Anna Nagar Police Station", "address": "L Block, Anna Nagar, Chennai - 600040", "phone": "044-26210100"},
+    {"id": "ps-tn-chennai-mylapore", "state": "Tamil Nadu", "district": "Chennai", "name": "Mylapore Police Station", "address": "Luz, Mylapore, Chennai - 600004", "phone": "044-24642100"},
+    {"id": "ps-tn-chennai-tnagar", "state": "Tamil Nadu", "district": "Chennai", "name": "T Nagar Police Station", "address": "Cathedral Road, T Nagar, Chennai - 600017", "phone": "044-24310100"},
+    {"id": "ps-tn-chennai-velachery", "state": "Tamil Nadu", "district": "Chennai", "name": "Velachery Police Station", "address": "100 ft Road, Velachery, Chennai - 600042", "phone": "044-22550100"},
+    {"id": "ps-tn-chennai-tambaram", "state": "Tamil Nadu", "district": "Chengalpattu", "name": "Tambaram Police Station", "address": "GST Road, Tambaram, Chennai - 600045", "phone": "044-22260100"},
+    {"id": "ps-tn-chennai-women", "state": "Tamil Nadu", "district": "Chennai", "name": "All-Women Police Station, Chennai", "address": "Egmore, Chennai - 600008", "phone": "044-28194100"},
+    {"id": "ps-tn-coimbatore-rs", "state": "Tamil Nadu", "district": "Coimbatore", "name": "RS Puram Police Station", "address": "DB Road, RS Puram, Coimbatore - 641002", "phone": "0422-2546100"},
+    {"id": "ps-tn-coimbatore-saibaba", "state": "Tamil Nadu", "district": "Coimbatore", "name": "Saibaba Colony Police Station", "address": "Saibaba Colony, Coimbatore - 641011", "phone": "0422-2438100"},
+    {"id": "ps-tn-madurai-central", "state": "Tamil Nadu", "district": "Madurai", "name": "Madurai Central Police Station", "address": "West Masi Street, Madurai - 625001", "phone": "0452-2330100"},
+    {"id": "ps-tn-trichy", "state": "Tamil Nadu", "district": "Tiruchirappalli", "name": "Cantonment Police Station", "address": "Trichy Cantonment - 620001", "phone": "0431-2412100"},
+    {"id": "ps-tn-cyber-chennai", "state": "Tamil Nadu", "district": "Chennai", "name": "Cybercrime Cell, Greater Chennai", "address": "Vepery, Chennai - 600007", "phone": "044-23452971"},
+
+    {"id": "ps-ka-blr-mg", "state": "Karnataka", "district": "Bengaluru Urban", "name": "MG Road Police Station", "address": "MG Road, Bengaluru - 560001", "phone": "080-22942500"},
+    {"id": "ps-ka-blr-koramangala", "state": "Karnataka", "district": "Bengaluru Urban", "name": "Koramangala Police Station", "address": "Koramangala 4 Block, Bengaluru - 560034", "phone": "080-25531750"},
+    {"id": "ps-ka-blr-whitefield", "state": "Karnataka", "district": "Bengaluru Urban", "name": "Whitefield Police Station", "address": "Whitefield Main Road, Bengaluru - 560066", "phone": "080-28452303"},
+    {"id": "ps-ka-blr-electronic-city", "state": "Karnataka", "district": "Bengaluru Urban", "name": "Electronics City Police Station", "address": "Electronic City, Bengaluru - 560100", "phone": "080-28524300"},
+    {"id": "ps-ka-blr-women", "state": "Karnataka", "district": "Bengaluru Urban", "name": "Women Police Station, Bengaluru", "address": "Halasuru, Bengaluru - 560008", "phone": "080-25587333"},
+    {"id": "ps-ka-mysuru", "state": "Karnataka", "district": "Mysuru", "name": "Devaraja Police Station", "address": "Devaraja, Mysuru - 570001", "phone": "0821-2422100"},
+    {"id": "ps-ka-cyber-blr", "state": "Karnataka", "district": "Bengaluru Urban", "name": "CEN (Cybercrime) Bengaluru", "address": "1 Ali Asker Road, Bengaluru - 560052", "phone": "080-22942475"},
+
+    {"id": "ps-mh-mumbai-marine", "state": "Maharashtra", "district": "Mumbai", "name": "Marine Drive Police Station", "address": "Marine Drive, Mumbai - 400020", "phone": "022-22041212"},
+    {"id": "ps-mh-mumbai-colaba", "state": "Maharashtra", "district": "Mumbai", "name": "Colaba Police Station", "address": "Colaba, Mumbai - 400005", "phone": "022-22020001"},
+    {"id": "ps-mh-mumbai-bandra", "state": "Maharashtra", "district": "Mumbai Suburban", "name": "Bandra Police Station", "address": "Linking Road, Bandra West, Mumbai - 400050", "phone": "022-26421212"},
+    {"id": "ps-mh-mumbai-andheri", "state": "Maharashtra", "district": "Mumbai Suburban", "name": "Andheri Police Station", "address": "Andheri East, Mumbai - 400093", "phone": "022-26841212"},
+    {"id": "ps-mh-pune-shivajinagar", "state": "Maharashtra", "district": "Pune", "name": "Shivajinagar Police Station", "address": "Shivajinagar, Pune - 411005", "phone": "020-25538961"},
+    {"id": "ps-mh-pune-koregaon", "state": "Maharashtra", "district": "Pune", "name": "Koregaon Park Police Station", "address": "Koregaon Park, Pune - 411001", "phone": "020-26121012"},
+    {"id": "ps-mh-cyber-mumbai", "state": "Maharashtra", "district": "Mumbai", "name": "BKC Cybercrime PS", "address": "BKC, Bandra East, Mumbai - 400051", "phone": "022-26504008"},
+
+    {"id": "ps-dl-cp", "state": "Delhi", "district": "New Delhi", "name": "Connaught Place Police Station", "address": "Connaught Place, New Delhi - 110001", "phone": "011-23341011"},
+    {"id": "ps-dl-saket", "state": "Delhi", "district": "South Delhi", "name": "Saket Police Station", "address": "Saket District Centre, New Delhi - 110017", "phone": "011-26852112"},
+    {"id": "ps-dl-vasantkunj", "state": "Delhi", "district": "South Delhi", "name": "Vasant Kunj Police Station", "address": "Vasant Kunj, New Delhi - 110070", "phone": "011-26134701"},
+    {"id": "ps-dl-dwarka", "state": "Delhi", "district": "South West Delhi", "name": "Dwarka Sector-23 Police Station", "address": "Sector 23 Dwarka, New Delhi - 110077", "phone": "011-25086100"},
+    {"id": "ps-dl-rohini", "state": "Delhi", "district": "North West Delhi", "name": "Rohini Police Station", "address": "Sector-15 Rohini, New Delhi - 110089", "phone": "011-27551100"},
+    {"id": "ps-dl-women-nanakpura", "state": "Delhi", "district": "New Delhi", "name": "All-Women Police Station, Nanakpura", "address": "Nanakpura, New Delhi - 110021", "phone": "011-24105485"},
+    {"id": "ps-dl-cyber", "state": "Delhi", "district": "New Delhi", "name": "Cyber Crime Unit, Mandir Marg", "address": "Mandir Marg, New Delhi - 110001", "phone": "011-23490312"},
+
+    {"id": "ps-ts-hyd-banjarahills", "state": "Telangana", "district": "Hyderabad", "name": "Banjara Hills Police Station", "address": "Road No.12, Banjara Hills, Hyderabad - 500034", "phone": "040-23552727"},
+    {"id": "ps-ts-hyd-hitec", "state": "Telangana", "district": "Cyberabad", "name": "Madhapur Police Station", "address": "Madhapur, Hyderabad - 500081", "phone": "040-23110108"},
+    {"id": "ps-ts-hyd-cyber", "state": "Telangana", "district": "Cyberabad", "name": "Cybercrime PS, Cyberabad", "address": "Gachibowli, Hyderabad - 500032", "phone": "040-27852721"},
+
+    {"id": "ps-ap-vizag", "state": "Andhra Pradesh", "district": "Visakhapatnam", "name": "Vizag Two Town Police Station", "address": "Town Police Station, Visakhapatnam - 530001", "phone": "0891-2740114"},
+    {"id": "ps-ap-vijayawada", "state": "Andhra Pradesh", "district": "NTR (Vijayawada)", "name": "Governorpet Police Station", "address": "Governorpet, Vijayawada - 520002", "phone": "0866-2474411"},
+
+    {"id": "ps-kl-tvm", "state": "Kerala", "district": "Thiruvananthapuram", "name": "Cantonment Police Station, TVM", "address": "Vellayambalam, Thiruvananthapuram - 695010", "phone": "0471-2331843"},
+    {"id": "ps-kl-kochi", "state": "Kerala", "district": "Ernakulam", "name": "Ernakulam North Police Station", "address": "Banerjee Road, Kochi - 682018", "phone": "0484-2360100"},
+    {"id": "ps-kl-cyber-tvm", "state": "Kerala", "district": "Thiruvananthapuram", "name": "Cyber Cell Kerala Police, TVM", "address": "Thiruvananthapuram - 695010", "phone": "0471-2722500"},
+
+    {"id": "ps-wb-kol-park", "state": "West Bengal", "district": "Kolkata", "name": "Park Street Police Station", "address": "Park Street, Kolkata - 700016", "phone": "033-22290100"},
+    {"id": "ps-wb-kol-shyam", "state": "West Bengal", "district": "Kolkata", "name": "Shyampukur Police Station", "address": "BK Pal Avenue, Kolkata - 700004", "phone": "033-25551014"},
+    {"id": "ps-wb-cyber", "state": "West Bengal", "district": "Kolkata", "name": "Cyber Crime PS, Kolkata", "address": "Lalbazar, Kolkata - 700001", "phone": "033-22143230"},
+
+    {"id": "ps-up-lko-hazratganj", "state": "Uttar Pradesh", "district": "Lucknow", "name": "Hazratganj Police Station", "address": "Hazratganj, Lucknow - 226001", "phone": "0522-2614444"},
+    {"id": "ps-up-noida-s20", "state": "Uttar Pradesh", "district": "Gautam Buddha Nagar", "name": "Sector 20 Police Station, Noida", "address": "Sector 20, Noida - 201301", "phone": "0120-2422222"},
+    {"id": "ps-up-noida-s39", "state": "Uttar Pradesh", "district": "Gautam Buddha Nagar", "name": "Sector 39 Cybercrime PS, Noida", "address": "Sector 39, Noida - 201303", "phone": "0120-2425000"},
+    {"id": "ps-up-ghaziabad-indra", "state": "Uttar Pradesh", "district": "Ghaziabad", "name": "Indirapuram Police Station", "address": "Indirapuram, Ghaziabad - 201014", "phone": "0120-4159200"},
+    {"id": "ps-up-kanpur", "state": "Uttar Pradesh", "district": "Kanpur Nagar", "name": "Kotwali Police Station, Kanpur", "address": "Generalganj, Kanpur - 208001", "phone": "0512-2530055"},
+    {"id": "ps-up-prayagraj", "state": "Uttar Pradesh", "district": "Prayagraj", "name": "Civil Lines Police Station, Prayagraj", "address": "Civil Lines, Prayagraj - 211001", "phone": "0532-2407311"},
+
+    {"id": "ps-gj-amd-navrangpura", "state": "Gujarat", "district": "Ahmedabad", "name": "Navrangpura Police Station", "address": "Navrangpura, Ahmedabad - 380009", "phone": "079-26443422"},
+    {"id": "ps-gj-amd-cyber", "state": "Gujarat", "district": "Ahmedabad", "name": "Ahmedabad Cyber Crime Cell", "address": "Police Bhavan, Sector 18, Gandhinagar", "phone": "079-23253371"},
+    {"id": "ps-gj-surat", "state": "Gujarat", "district": "Surat", "name": "Athwa Lines Police Station", "address": "Athwa Lines, Surat - 395001", "phone": "0261-2244100"},
+
+    {"id": "ps-rj-jaipur-jb", "state": "Rajasthan", "district": "Jaipur", "name": "Jyoti Nagar Police Station", "address": "Jyoti Nagar, Jaipur - 302005", "phone": "0141-2208888"},
+    {"id": "ps-rj-jodhpur", "state": "Rajasthan", "district": "Jodhpur", "name": "Sardarpura Police Station", "address": "Sardarpura, Jodhpur - 342003", "phone": "0291-2510690"},
+
+    {"id": "ps-pb-chd-s17", "state": "Chandigarh", "district": "Chandigarh", "name": "Sector 17 Police Station", "address": "Sector 17, Chandigarh - 160017", "phone": "0172-2700100"},
+    {"id": "ps-pb-mohali", "state": "Punjab", "district": "Mohali", "name": "Mohali Phase 8 Police Station", "address": "Phase 8, Mohali - 160071", "phone": "0172-2271100"},
+
+    {"id": "ps-mp-bhopal", "state": "Madhya Pradesh", "district": "Bhopal", "name": "TT Nagar Police Station", "address": "TT Nagar, Bhopal - 462003", "phone": "0755-2700300"},
+    {"id": "ps-mp-indore", "state": "Madhya Pradesh", "district": "Indore", "name": "MIG Police Station", "address": "MIG Colony, Indore - 452008", "phone": "0731-2531100"},
+
+    {"id": "ps-or-bbsr", "state": "Odisha", "district": "Khordha", "name": "Capital Police Station, Bhubaneswar", "address": "Bhubaneswar - 751014", "phone": "0674-2531100"},
+
+    {"id": "ps-br-patna", "state": "Bihar", "district": "Patna", "name": "Kotwali Police Station, Patna", "address": "Gandhi Maidan, Patna - 800001", "phone": "0612-2222351"},
+
+    {"id": "ps-jh-ranchi", "state": "Jharkhand", "district": "Ranchi", "name": "Kotwali Police Station, Ranchi", "address": "Main Road, Ranchi - 834001", "phone": "0651-2331100"},
+
+    {"id": "ps-as-guwahati", "state": "Assam", "district": "Kamrup Metropolitan", "name": "Panbazar Police Station", "address": "Panbazar, Guwahati - 781001", "phone": "0361-2520500"},
+
+    {"id": "ps-jk-srinagar", "state": "Jammu and Kashmir", "district": "Srinagar", "name": "Kothibagh Police Station", "address": "Kothibagh, Srinagar - 190001", "phone": "0194-2452100"},
+
+    {"id": "ps-ut-dehradun", "state": "Uttarakhand", "district": "Dehradun", "name": "Kotwali Police Station, Dehradun", "address": "Paltan Bazar, Dehradun - 248001", "phone": "0135-2654100"},
+
+    {"id": "ps-hp-shimla", "state": "Himachal Pradesh", "district": "Shimla", "name": "Sadar Police Station, Shimla", "address": "Mall Road, Shimla - 171001", "phone": "0177-2812100"},
+
+    {"id": "ps-hr-gurugram-s14", "state": "Haryana", "district": "Gurugram", "name": "Sector 14 Police Station, Gurugram", "address": "Sector 14, Gurugram - 122001", "phone": "0124-2306100"},
+    {"id": "ps-hr-faridabad", "state": "Haryana", "district": "Faridabad", "name": "Central Police Station, Faridabad", "address": "Sector 12, Faridabad - 121007", "phone": "0129-2222100"},
+
+    {"id": "ps-gao", "state": "Goa", "district": "North Goa", "name": "Panaji Police Station", "address": "Old Quarters, Panaji - 403001", "phone": "0832-2428360"}
+  ]
+}

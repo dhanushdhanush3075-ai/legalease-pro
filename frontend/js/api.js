@@ -106,6 +106,12 @@ export const api = {
   news: ({ q = "", source = "", limit = 30 } = {}) =>
     request(`/api/news/?q=${encodeURIComponent(q)}&source=${encodeURIComponent(source)}&limit=${limit}`),
   newsFeatured: () => request("/api/news/featured"),
+
+  // Core (no AI)
+  emergencyCards: () => request("/api/core/emergency-cards", { auth: false }),
+  dictionary: (q = "") => request(`/api/core/dictionary?q=${encodeURIComponent(q)}`, { auth: false }),
+  policeStations: ({ q = "", state = "", district = "" } = {}) =>
+    request(`/api/core/police-stations?q=${encodeURIComponent(q)}&state=${encodeURIComponent(state)}&district=${encodeURIComponent(district)}`, { auth: false }),
 };
 
 export { ApiError };

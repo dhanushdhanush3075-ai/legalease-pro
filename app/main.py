@@ -12,7 +12,7 @@ from app.core.config import get_settings
 from app.core.limiter import limiter
 from app.core.logging import setup_logging, get_logger
 from app.db.database import init_db
-from app.routers import chat, complaint, history, templates, auth, laws, analyse, courts, calculators, lawyers, tracker, news
+from app.routers import chat, complaint, history, templates, auth, laws, analyse, courts, calculators, lawyers, tracker, news, core
 
 setup_logging()
 log = get_logger("legalease")
@@ -90,6 +90,7 @@ app.include_router(calculators.router)
 app.include_router(lawyers.router)
 app.include_router(tracker.router)
 app.include_router(news.router)
+app.include_router(core.router)
 
 
 # --- Static frontend (PWA) ---
