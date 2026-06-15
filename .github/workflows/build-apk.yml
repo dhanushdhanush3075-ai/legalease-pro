@@ -3,18 +3,17 @@ name: Build Android APK
 on:
   push:
     branches: [main, master]
-    paths:
-      - "frontend/**"
-      - "capacitor.config.json"
-      - "package.json"
-      - ".github/workflows/build-apk.yml"
-  workflow_dispatch:    # manual trigger via "Run workflow" button
+  workflow_dispatch:
   release:
     types: [created]
+
+permissions:
+  contents: write     # needed to create releases
 
 jobs:
   build-apk:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -22,7 +21,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
 
       - name: Set up Java JDK
         uses: actions/setup-java@v4
@@ -32,24 +30,31 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: "platforms;android-34 build-tools;34.0.0 platform-tools"
 
       - name: Install Capacitor + plugins
-        run: npm ci || npm install
+        run: |
+          echo "Installing npm dependencies..."
+          npm install --no-audit --no-fund
+          npx cap --version
 
       - name: Bake production API URL into frontend
         run: |
-          # Replace the placeholder so APK points at deployed backend
           API_URL="${{ vars.PROD_API_URL }}"
           if [ -z "$API_URL" ]; then
             API_URL="https://legalease-api.onrender.com"
           fi
           echo "Using API URL: $API_URL"
-          sed -i "s|window.__LEGALEASE_PROD_API__ = \"\";|window.__LEGALEASE_PROD_API__ = \"$API_URL\";|g" frontend/index.html
+          sed -i.bak "s|window.__LEGALEASE_PROD_API__ = \"\";|window.__LEGALEASE_PROD_API__ = \"$API_URL\";|g" frontend/index.html
+          grep "__LEGALEASE_PROD_API__" frontend/index.html || true
 
-      - name: Add Android platform
+      - name: Add Android platform (only if missing)
         run: |
           if [ ! -d "android" ]; then
             npx cap add android
+          else
+            echo "android folder already exists, skipping cap add"
           fi
 
       - name: Sync web -> native
@@ -58,54 +63,62 @@ jobs:
       - name: Patch AndroidManifest with permissions
         run: |
           MANIFEST=android/app/src/main/AndroidManifest.xml
+          echo "Before patch:"
+          cat "$MANIFEST"
           for PERM in INTERNET ACCESS_NETWORK_STATE RECORD_AUDIO MODIFY_AUDIO_SETTINGS CALL_PHONE; do
             if ! grep -q "android.permission.${PERM}" "$MANIFEST"; then
-              sed -i "s|<manifest |<manifest xmlns:fix=\"x\" |" "$MANIFEST"
-              sed -i "0,/<application/s||<uses-permission android:name=\"android.permission.${PERM}\" />\n    <application|" "$MANIFEST"
+              # Insert permission before <application
+              python3 -c "
+import sys, re
+p = open('$MANIFEST').read()
+perm = '    <uses-permission android:name=\"android.permission.${PERM}\" />\n'
+p = p.replace('<application', perm + '    <application', 1)
+open('$MANIFEST', 'w').write(p)
+"
             fi
           done
+          echo "After patch:"
           cat "$MANIFEST"
+
+      - name: Make gradlew executable
+        run: chmod +x android/gradlew
 
       - name: Build debug APK
         working-directory: android
-        run: ./gradlew assembleDebug --no-daemon
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
 
-      - name: Rename APK with version
+      - name: Rename APK with build number
         run: |
           mkdir -p dist
-          cp android/app/build/outputs/apk/debug/app-debug.apk dist/LegalEase-Pro-${{ github.sha }}.apk
+          SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
+          cp android/app/build/outputs/apk/debug/app-debug.apk \
+             dist/LegalEase-Pro-build${{ github.run_number }}-${SHORT_SHA}.apk
           ls -lh dist/
 
       - name: Upload APK as workflow artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: LegalEase-Pro-APK
           path: dist/*.apk
           retention-days: 90
+          if-no-files-found: warn
 
-      - name: Publish to GitHub Release (on tag/release only)
-        if: github.event_name == 'release'
-        uses: softprops/action-gh-release@v2
-        with:
-          files: dist/*.apk
-          fail_on_unmatched_files: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create automatic release on main push
+      - name: Create GitHub Release with APK
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ github.run_number }}
           name: "LegalEase Pro Build #${{ github.run_number }}"
           body: |
-            🤖 Automated APK build from commit ${{ github.sha }}.
+            Auto-built APK from commit `${{ github.sha }}`.
 
-            **Install:**
+            **Install on phone:**
             1. Download `LegalEase-Pro-*.apk` below.
-            2. On phone: open file → allow "Install unknown apps" → Install.
-            3. Open the app → onboarding → terms → phone OTP login.
+            2. Open on phone, allow "Install from unknown sources".
+            3. Open app, complete onboarding + login.
           files: dist/*.apk
           prerelease: true
+          fail_on_unmatched_files: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
