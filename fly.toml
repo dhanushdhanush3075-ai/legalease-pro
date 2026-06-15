@@ -1,0 +1,48 @@
+# ===== Fly.io deploy config =====
+# 1. Install flyctl: https://fly.io/docs/hands-on/install-flyctl/
+# 2. Run: fly auth signup  (free tier with credit card hold)
+# 3. From this folder: fly launch --no-deploy --copy-config
+# 4. Set secrets: fly secrets set GEMINI_API_KEY=...
+# 5. Deploy: fly deploy
+#
+# Closest region to India: bom (Mumbai)
+
+app = "legalease-pro"
+primary_region = "bom"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  APP_ENV = "production"
+  APP_HOST = "0.0.0.0"
+  APP_PORT = "8001"
+  LOG_LEVEL = "INFO"
+  CORS_ORIGINS = "*"
+  RATE_LIMIT_PER_MIN = "60"
+  OTP_DEV_MODE = "false"
+  DATABASE_URL = "sqlite:///./data/legalease.db"
+
+[http_service]
+  internal_port = 8001
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[http_service.checks]]
+  grace_period = "10s"
+  interval = "30s"
+  method = "GET"
+  timeout = "5s"
+  path = "/api/health"
+
+[[mounts]]
+  source = "legalease_data"
+  destination = "/app/data"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory = "256mb"

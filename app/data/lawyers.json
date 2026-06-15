@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "description": "Curated directory of free legal aid clinics (NALSA/SLSA) + verified pro-bono helplines. Last updated 2026.",
+    "helpline_national": {"label": "NALSA Free Legal Aid", "number": "15100", "hours": "24x7 All India", "languages": ["English","Hindi","Tamil","Telugu","Kannada","Marathi","Bengali","Gujarati"]},
+    "helpline_women": {"label": "Women in Distress (NCW)", "number": "7827170170", "hours": "24x7"},
+    "helpline_child": {"label": "Child Helpline (CHILDLINE)", "number": "1098", "hours": "24x7"},
+    "helpline_cyber": {"label": "Cybercrime Helpline", "number": "1930", "hours": "24x7"},
+    "helpline_emergency": {"label": "Emergency Response", "number": "112", "hours": "24x7"},
+    "helpline_senior": {"label": "Elder Helpline", "number": "14567", "hours": "8 AM - 8 PM"}
+  },
+  "entries": [
+    {"id": "tn-slsa", "state": "Tamil Nadu", "type": "SLSA", "name": "Tamil Nadu State Legal Services Authority", "address": "High Court Buildings, Chennai - 600104", "phone": "044-25305401", "email": "memsec.tnslsa@nic.in", "website": "https://www.tnslsa.tn.gov.in", "free": true, "specialization": ["all"]},
+    {"id": "tn-dlsa-chennai", "state": "Tamil Nadu", "type": "DLSA", "name": "Chennai District Legal Services Authority", "address": "City Civil Court Complex, Chennai", "phone": "044-25340030", "free": true, "specialization": ["all"]},
+    {"id": "tn-dlsa-coimbatore", "state": "Tamil Nadu", "type": "DLSA", "name": "Coimbatore DLSA", "address": "District Court Complex, Coimbatore", "phone": "0422-2393056", "free": true, "specialization": ["all"]},
+    {"id": "tn-dlsa-madurai", "state": "Tamil Nadu", "type": "DLSA", "name": "Madurai DLSA", "address": "District Court, Madurai - 625020", "phone": "0452-2531100", "free": true, "specialization": ["all"]},
+    {"id": "tn-bar-chennai", "state": "Tamil Nadu", "type": "Bar Association", "name": "Madras High Court Advocates' Association", "address": "Madras High Court, Chennai", "phone": "044-25340142", "website": "https://www.mhaa.org.in", "free": false, "specialization": ["all"]},
+
+    {"id": "mh-slsa", "state": "Maharashtra", "type": "SLSA", "name": "Maharashtra State Legal Services Authority", "address": "Bombay HC, Mumbai - 400032", "phone": "022-22691395", "email": "mslsa-mh@nic.in", "website": "https://mslsa.mah.nic.in", "free": true, "specialization": ["all"]},
+    {"id": "mh-dlsa-mumbai", "state": "Maharashtra", "type": "DLSA", "name": "Mumbai City DLSA", "address": "City Civil Court, Fort, Mumbai", "phone": "022-22650471", "free": true, "specialization": ["all"]},
+    {"id": "mh-dlsa-pune", "state": "Maharashtra", "type": "DLSA", "name": "Pune DLSA", "address": "Shivajinagar, Pune - 411005", "phone": "020-25538961", "free": true, "specialization": ["all"]},
+
+    {"id": "dl-slsa", "state": "Delhi", "type": "SLSA", "name": "Delhi State Legal Services Authority", "address": "Patiala House Courts, New Delhi", "phone": "011-23388416", "email": "dslsa-dl@nic.in", "website": "https://dslsa.org", "free": true, "specialization": ["all"]},
+    {"id": "dl-dlsa-tishazari", "state": "Delhi", "type": "DLSA", "name": "Central DLSA, Tis Hazari", "address": "Tis Hazari Courts, Delhi", "phone": "011-23900500", "free": true, "specialization": ["all"]},
+    {"id": "dl-dlsa-saket", "state": "Delhi", "type": "DLSA", "name": "South DLSA, Saket", "address": "Saket Court Complex, Delhi", "phone": "011-29562501", "free": true, "specialization": ["all"]},
+
+    {"id": "ka-slsa", "state": "Karnataka", "type": "SLSA", "name": "Karnataka State Legal Services Authority", "address": "Nyaya Degula, Bengaluru - 560009", "phone": "080-22111714", "email": "memsec-kslsa@nic.in", "website": "https://kslsa.kar.nic.in", "free": true, "specialization": ["all"]},
+    {"id": "ka-dlsa-blr", "state": "Karnataka", "type": "DLSA", "name": "Bengaluru Urban DLSA", "address": "City Civil Court, Bengaluru", "phone": "080-22865555", "free": true, "specialization": ["all"]},
+
+    {"id": "ts-slsa", "state": "Telangana", "type": "SLSA", "name": "Telangana State Legal Services Authority", "address": "HC of Telangana, Hyderabad", "phone": "040-23446005", "email": "memsec.tslsa@nic.in", "free": true, "specialization": ["all"]},
+    {"id": "ap-slsa", "state": "Andhra Pradesh", "type": "SLSA", "name": "AP State Legal Services Authority", "address": "Amaravati - 522237", "phone": "0863-2354729", "free": true, "specialization": ["all"]},
+
+    {"id": "kl-slsa", "state": "Kerala", "type": "SLSA", "name": "Kerala State Legal Services Authority", "address": "Kerala HC, Kochi", "phone": "0484-2562265", "website": "https://kelsa.gov.in", "free": true, "specialization": ["all"]},
+
+    {"id": "wb-slsa", "state": "West Bengal", "type": "SLSA", "name": "West Bengal State Legal Services Authority", "address": "Calcutta HC, Kolkata", "phone": "033-22483050", "free": true, "specialization": ["all"]},
+
+    {"id": "up-slsa", "state": "Uttar Pradesh", "type": "SLSA", "name": "UP State Legal Services Authority", "address": "Allahabad HC, Prayagraj", "phone": "0532-2421168", "free": true, "specialization": ["all"]},
+
+    {"id": "gj-slsa", "state": "Gujarat", "type": "SLSA", "name": "Gujarat State Legal Services Authority", "address": "Gujarat HC, Ahmedabad", "phone": "079-27664773", "free": true, "specialization": ["all"]},
+
+    {"id": "rj-slsa", "state": "Rajasthan", "type": "SLSA", "name": "Rajasthan State Legal Services Authority", "address": "Jodhpur - 342001", "phone": "0291-2510690", "free": true, "specialization": ["all"]},
+
+    {"id": "mp-slsa", "state": "Madhya Pradesh", "type": "SLSA", "name": "MP State Legal Services Authority", "address": "MP HC, Jabalpur", "phone": "0761-2625531", "free": true, "specialization": ["all"]},
+
+    {"id": "br-slsa", "state": "Bihar", "type": "SLSA", "name": "Bihar State Legal Services Authority", "address": "Patna HC, Patna", "phone": "0612-2222351", "free": true, "specialization": ["all"]},
+
+    {"id": "pb-slsa", "state": "Punjab", "type": "SLSA", "name": "Punjab State Legal Services Authority", "address": "P&H HC, Chandigarh", "phone": "0172-2740674", "free": true, "specialization": ["all"]},
+
+    {"id": "or-slsa", "state": "Odisha", "type": "SLSA", "name": "Odisha State Legal Services Authority", "address": "Cuttack - 753002", "phone": "0671-2304000", "free": true, "specialization": ["all"]},
+
+    {"id": "as-slsa", "state": "Assam", "type": "SLSA", "name": "Assam State Legal Services Authority", "address": "Gauhati HC, Guwahati", "phone": "0361-2520545", "free": true, "specialization": ["all"]},
+
+    {"id": "ngo-hrln", "state": "All India", "type": "NGO", "name": "Human Rights Law Network (HRLN)", "address": "576 Masjid Road, Jangpura, Delhi - 110014", "phone": "011-24379702", "website": "https://hrln.org", "free": true, "specialization": ["human rights", "women", "labour", "refugees"]},
+    {"id": "ngo-majlis", "state": "Maharashtra", "type": "NGO", "name": "Majlis Legal Centre (women)", "address": "Mumbai", "phone": "022-26661252", "website": "https://majlislaw.com", "free": true, "specialization": ["women", "domestic violence"]},
+    {"id": "ngo-aali", "state": "All India", "type": "NGO", "name": "Association for Advocacy and Legal Initiatives (AALI)", "address": "Lucknow", "phone": "0522-2351070", "website": "https://www.aalilegal.org", "free": true, "specialization": ["women", "honour-based violence"]},
+    {"id": "ngo-clc", "state": "Delhi", "type": "NGO", "name": "Centre for Law and Policy Research (CLPR)", "address": "Bengaluru", "phone": "080-25655885", "website": "https://clpr.org.in", "free": true, "specialization": ["constitutional", "discrimination"]},
+    {"id": "ngo-iclu", "state": "All India", "type": "NGO", "name": "Lawyers Collective", "address": "Mumbai / Delhi", "phone": "022-22822801", "website": "https://lawyerscollective.org", "free": true, "specialization": ["women", "HIV/AIDS", "human rights"]}
+  ]
+}

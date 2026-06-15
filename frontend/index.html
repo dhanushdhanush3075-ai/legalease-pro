@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a6b5a" />
+  <script>
+    // Override API base for production / Capacitor APK builds.
+    // Leave the line below as-is for local dev (uses page origin).
+    // Before building APK: set this to your deployed backend URL, e.g.:
+    //   window.__LEGALEASE_PROD_API__ = "https://your-app.onrender.com";
+    window.__LEGALEASE_PROD_API__ = "";
+  </script>
+  <meta name="description" content="LegalEase Pro - AI-powered Indian legal assistant" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/icon-192.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=15" />
+  <title>LegalEase Pro</title>
+</head>
+<body>
+
+<!-- ===== SPLASH SCREEN ===== -->
+<section id="splash-screen" class="splash">
+  <div class="splash-bg"></div>
+  <div class="splash-content">
+    <div class="splash-logo">
+      <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
+        <defs>
+          <linearGradient id="splgrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fff" stop-opacity=".95"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity=".7"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="56" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+        <g stroke="url(#splgrad)" stroke-width="3" fill="none" stroke-linecap="round">
+          <path d="M60 24 L60 92"/>
+          <path d="M40 36 L80 36"/>
+          <path d="M28 64 Q36 48 44 64 M76 64 Q84 48 92 64"/>
+          <path d="M22 64 L50 64 M70 64 L98 64"/>
+        </g>
+      </svg>
+    </div>
+    <h1 class="splash-brand">LegalEase Pro</h1>
+    <p class="splash-tagline">Bharat's AI Legal Companion</p>
+    <div class="splash-spinner"></div>
+  </div>
+</section>
+
+<!-- ===== ONBOARDING CAROUSEL ===== -->
+<section id="onboarding-screen" class="onboarding hidden">
+  <div class="ob-slides" id="ob-slides">
+    <div class="ob-slide active" data-slide="0">
+      <div class="ob-illustration ob-illust-1">
+        <svg viewBox="0 0 240 200" width="220" height="180" aria-hidden="true">
+          <defs>
+            <linearGradient id="obg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a6b5a"/><stop offset="100%" stop-color="#145048"/></linearGradient>
+          </defs>
+          <ellipse cx="120" cy="180" rx="100" ry="8" fill="rgba(26,107,90,.1)"/>
+          <rect x="50" y="40" width="140" height="120" rx="14" fill="url(#obg1)"/>
+          <rect x="60" y="56" width="120" height="10" rx="5" fill="rgba(255,255,255,.85)"/>
+          <rect x="60" y="72" width="86" height="8" rx="4" fill="rgba(255,255,255,.4)"/>
+          <rect x="60" y="86" width="100" height="8" rx="4" fill="rgba(255,255,255,.4)"/>
+          <circle cx="170" cy="125" r="22" fill="#b8963e"/>
+          <text x="170" y="131" text-anchor="middle" fill="#fff" font-family="serif" font-weight="800" font-size="20">⚖</text>
+          <rect x="60" y="120" width="60" height="6" rx="3" fill="rgba(255,255,255,.7)"/>
+          <rect x="60" y="132" width="80" height="6" rx="3" fill="rgba(255,255,255,.5)"/>
+          <rect x="60" y="144" width="40" height="6" rx="3" fill="rgba(255,255,255,.5)"/>
+        </svg>
+      </div>
+      <h2 class="ob-title">Ask in your language</h2>
+      <p class="ob-desc">English, தமிழ், हिन्दी — get plain-language legal guidance backed by real IPC/BNS sections.</p>
+    </div>
+    <div class="ob-slide" data-slide="1">
+      <div class="ob-illustration ob-illust-2">
+        <svg viewBox="0 0 240 200" width="220" height="180" aria-hidden="true">
+          <defs>
+            <linearGradient id="obg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a6b5a"/><stop offset="100%" stop-color="#0d3d2c"/></linearGradient>
+          </defs>
+          <ellipse cx="120" cy="180" rx="100" ry="8" fill="rgba(26,107,90,.1)"/>
+          <path d="M120 30 L200 60 L200 130 Q200 165 120 185 Q40 165 40 130 L40 60 Z" fill="url(#obg2)"/>
+          <path d="M120 30 L200 60 L120 90 L40 60 Z" fill="rgba(255,255,255,.15)"/>
+          <text x="120" y="120" text-anchor="middle" fill="#fff" font-family="serif" font-weight="800" font-size="36">⚖</text>
+          <circle cx="180" cy="50" r="14" fill="#b8963e"/>
+          <text x="180" y="56" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">★</text>
+          <rect x="80" y="135" width="80" height="6" rx="3" fill="rgba(255,255,255,.7)"/>
+          <rect x="90" y="148" width="60" height="6" rx="3" fill="rgba(255,255,255,.5)"/>
+        </svg>
+      </div>
+      <h2 class="ob-title">Real Supreme Court cases</h2>
+      <p class="ob-desc">70+ landmark judgments, Indian Kanoon live search, IPC ↔ BNS 2024 mapping. Never hallucinated.</p>
+    </div>
+    <div class="ob-slide" data-slide="2">
+      <div class="ob-illustration ob-illust-3">
+        <svg viewBox="0 0 240 200" width="220" height="180" aria-hidden="true">
+          <defs>
+            <linearGradient id="obg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a6b5a"/><stop offset="100%" stop-color="#145048"/></linearGradient>
+          </defs>
+          <ellipse cx="120" cy="180" rx="100" ry="8" fill="rgba(26,107,90,.1)"/>
+          <rect x="78" y="30" width="84" height="140" rx="14" fill="#fff" stroke="url(#obg3)" stroke-width="3"/>
+          <rect x="84" y="46" width="72" height="100" rx="6" fill="url(#obg3)"/>
+          <text x="120" y="100" text-anchor="middle" fill="#fff" font-family="serif" font-weight="800" font-size="28">15100</text>
+          <text x="120" y="120" text-anchor="middle" fill="rgba(255,255,255,.8)" font-size="9" font-weight="600">NALSA HELPLINE</text>
+          <circle cx="120" cy="158" r="6" fill="#b8963e"/>
+        </svg>
+      </div>
+      <h2 class="ob-title">One tap → free lawyer</h2>
+      <p class="ob-desc">NALSA 15100, NCW, CHILDLINE, cybercrime helplines — plus 30+ free legal aid clinics across India.</p>
+    </div>
+  </div>
+
+  <div class="ob-dots">
+    <span class="ob-dot active" data-dot="0"></span>
+    <span class="ob-dot" data-dot="1"></span>
+    <span class="ob-dot" data-dot="2"></span>
+  </div>
+
+  <div class="ob-actions">
+    <button id="ob-skip" class="ghost-btn">Skip</button>
+    <button id="ob-next" class="primary-btn">Next →</button>
+  </div>
+</section>
+
+<!-- ===== TERMS &amp; PRIVACY ===== -->
+<section id="terms-screen" class="terms hidden">
+  <div class="terms-card">
+    <div class="terms-icon">📄</div>
+    <h2>Before we begin</h2>
+    <p class="muted">Please review and accept to continue. We take your trust seriously.</p>
+
+    <div class="terms-list">
+      <label class="terms-check">
+        <input type="checkbox" id="t-1" />
+        <div>
+          <b>I am 18+ years old</b>
+          <small>Required to use legal services in India.</small>
+        </div>
+      </label>
+      <label class="terms-check">
+        <input type="checkbox" id="t-2" />
+        <div>
+          <b>I accept the Terms of Service</b>
+          <small>AI responses are <b>informational only</b>, not legal advice. Consult an advocate for serious matters.</small>
+        </div>
+      </label>
+      <label class="terms-check">
+        <input type="checkbox" id="t-3" />
+        <div>
+          <b>I accept the Privacy Policy</b>
+          <small>Your phone is used only for OTP login. Chats stay encrypted on our India servers.</small>
+        </div>
+      </label>
+      <label class="terms-check">
+        <input type="checkbox" id="t-4" />
+        <div>
+          <b>I understand the limitations</b>
+          <small>For emergencies dial <b>112</b>. For women in distress call <b>1091</b>. For cybercrime call <b>1930</b>.</small>
+        </div>
+      </label>
+    </div>
+
+    <button id="t-accept" class="primary-btn block big" disabled>Continue to Login</button>
+    <p class="muted small center">By continuing you confirm all the above. You can review the full terms in Settings.</p>
+  </div>
+</section>
+
+<!-- ===== AUTH SCREEN (Login / Signup) ===== -->
+<section id="auth-screen" class="auth-screen">
+  <div class="auth-hero">
+    <div class="auth-hero-overlay"></div>
+    <div class="auth-hero-content">
+      <div class="auth-logo">
+        <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+          <path d="M32 14 L32 50 M20 22 L44 22 M16 36 Q20 28 24 36 M40 36 Q44 28 48 36 M14 36 L26 36 M38 36 L50 36" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h1 class="auth-brand">LegalEase Pro</h1>
+      <p class="auth-tagline">Bharat's AI Legal Companion</p>
+      <div class="auth-stats">
+        <div><b>511+</b><span>IPC Sections</span></div>
+        <div><b>358</b><span>BNS Sections</span></div>
+        <div><b>6M+</b><span>Case Records</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-card">
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-auth-tab="login">Login</button>
+      <button class="auth-tab" data-auth-tab="signup">Sign up</button>
+    </div>
+
+    <!-- Phone OTP login -->
+    <form id="auth-phone-form" class="auth-form active" autocomplete="on">
+      <label class="auth-label">Phone number</label>
+      <div class="phone-input">
+        <span class="ccode">+91</span>
+        <input type="tel" id="auth-phone" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile" autocomplete="tel" required />
+      </div>
+
+      <div id="otp-block" class="hidden">
+        <label class="auth-label">Enter OTP <small id="otp-timer" class="muted small"></small></label>
+        <div class="otp-input">
+          <input type="text" inputmode="numeric" maxlength="1" />
+          <input type="text" inputmode="numeric" maxlength="1" />
+          <input type="text" inputmode="numeric" maxlength="1" />
+          <input type="text" inputmode="numeric" maxlength="1" />
+          <input type="text" inputmode="numeric" maxlength="1" />
+          <input type="text" inputmode="numeric" maxlength="1" />
+        </div>
+        <button type="button" id="resend-otp" class="link-btn" disabled>Resend OTP</button>
+      </div>
+
+      <button type="submit" id="auth-submit" class="primary-btn block big">Send OTP</button>
+
+      <p class="auth-divider"><span>or</span></p>
+
+      <button type="button" class="oauth-btn" id="google-signin">
+        <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 01-1.796 2.716v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 013.68 9c0-.593.102-1.17.284-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
+        Continue with Google
+      </button>
+
+      <p class="auth-fineprint">
+        By continuing you agree to our <a href="#" tabindex="-1">Terms</a> and <a href="#" tabindex="-1">Privacy Policy</a>.
+        <br/>Your data stays on your device + our secure servers in India.
+      </p>
+    </form>
+
+    <!-- Signup form -->
+    <form id="auth-signup-form" class="auth-form" autocomplete="on">
+      <label class="auth-label">Full name</label>
+      <input type="text" id="signup-name" placeholder="As on Aadhaar / PAN" autocomplete="name" required />
+
+      <label class="auth-label">Phone number</label>
+      <div class="phone-input">
+        <span class="ccode">+91</span>
+        <input type="tel" id="signup-phone" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile" autocomplete="tel" required />
+      </div>
+
+      <label class="auth-label">Email <small class="muted">(optional)</small></label>
+      <input type="email" id="signup-email" placeholder="you@example.com" autocomplete="email" />
+
+      <label class="auth-label">State</label>
+      <select id="signup-state" required></select>
+
+      <button type="submit" class="primary-btn block big">Create account</button>
+    </form>
+  </div>
+
+  <div class="auth-footer">
+    <span class="badge-trust">🔒 256-bit encrypted</span>
+    <span class="badge-trust">🇮🇳 Made in India</span>
+    <span class="badge-trust">⚖️ Indian law focused</span>
+  </div>
+</section>
+
+<!-- ===== MAIN APP (shown after auth) ===== -->
+<div id="app-shell" class="hidden">
+
+<!-- Top App Bar -->
+<header class="appbar">
+  <button id="back-btn" class="icon-btn back-arrow hidden" aria-label="Back to home">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="20" y1="12" x2="4" y2="12"/>
+      <polyline points="11 19 4 12 11 5"/>
+    </svg>
+  </button>
+  <h1 id="screen-title">LegalEase Pro</h1>
+  <button id="theme-btn" class="icon-btn" aria-label="Toggle theme">🌙</button>
+</header>
+
+<!-- Screen container -->
+<main id="screens">
+
+  <!-- HOME SCREEN -->
+  <section id="screen-home" class="screen active" aria-label="Home">
+    <div class="home-hero">
+      <div class="home-hero-bg"></div>
+      <div class="home-hero-content">
+        <p class="home-greeting" id="home-greeting">Vanakkam 🙏</p>
+        <h2 class="home-heading" data-i18n="home.heading">How can we help today?</h2>
+        <p class="home-sub muted" data-i18n="home.sub">Ask a legal question, draft a complaint, or search Indian case law.</p>
+        <button class="home-ask-btn" id="home-ask-btn">
+          <span style="font-size:18px">💬</span>
+          <span data-i18n="home.askBtn">Ask a legal question</span>
+          <span style="margin-left:auto;font-size:14px">→</span>
+        </button>
+      </div>
+    </div>
+
+    <h3 class="home-section-title" data-i18n="home.quickActions">Quick Actions</h3>
+    <div class="home-actions">
+      <button class="ha-card" data-action="chat">
+        <div class="ha-icon" style="background:linear-gradient(135deg,#1a6b5a,#0d3d2c)">💬</div>
+        <div class="ha-label">AI Chat</div>
+        <div class="ha-desc">Ask anything</div>
+      </button>
+      <button class="ha-card" data-action="complaint">
+        <div class="ha-icon" style="background:linear-gradient(135deg,#c0362a,#8a2820)">🚨</div>
+        <div class="ha-label">Draft FIR</div>
+        <div class="ha-desc">Police complaint</div>
+      </button>
+      <button class="ha-card" data-action="analyse">
+        <div class="ha-icon" style="background:linear-gradient(135deg,#b8963e,#7a5010)">🔍</div>
+        <div class="ha-label">Analyse Doc</div>
+        <div class="ha-desc">OCR &amp; explain</div>
+      </button>
+      <button class="ha-card" data-action="laws">
+        <div class="ha-icon" style="background:linear-gradient(135deg,#1a5fa8,#0d3a64)">📜</div>
+        <div class="ha-label">IPC ↔ BNS</div>
+        <div class="ha-desc">Section lookup</div>
+      </button>
+      <button class="ha-card" data-action="cases">
+        <div class="ha-icon" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)">⚖️</div>
+        <div class="ha-label">Case Law</div>
+        <div class="ha-desc">70+ landmarks</div>
+      </button>
+      <button class="ha-card" data-action="courts">
+        <div class="ha-icon" style="background:linear-gradient(135deg,#0e7490,#155e75)">🏛️</div>
+        <div class="ha-label">Courts</div>
+        <div class="ha-desc">54 listed</div>
+      </button>
+      <button class="ha-card" data-action="lawyers">
+        <div class="ha-icon" style="background:linear-gradient(135deg,#1a8a3a,#0d4d22)">👨‍⚖️</div>
+        <div class="ha-label">Free Lawyer</div>
+        <div class="ha-desc">SLSA &amp; NGO</div>
+      </button>
+      <button class="ha-card" data-action="tracker">
+        <div class="ha-icon" style="background:linear-gradient(135deg,#0369a1,#1e3a8a)">🔎</div>
+        <div class="ha-label">Track Case</div>
+        <div class="ha-desc">CNR / eCourts</div>
+      </button>
+    </div>
+
+    <a href="tel:15100" class="home-nalsa">
+      <div class="nalsa-icon">📞</div>
+      <div class="nalsa-info">
+        <div class="nalsa-title" data-i18n="home.nalsa">Free Legal Aid · 24×7</div>
+        <div class="nalsa-num">NALSA 15100</div>
+      </div>
+      <div class="nalsa-arrow">→</div>
+    </a>
+
+    <div class="home-section-row">
+      <h3 class="home-section-title">📰 <span data-i18n="home.todayLaw">Today in Law</span></h3>
+      <button id="home-news-refresh" class="ghost-btn" title="Refresh">↻</button>
+    </div>
+    <div class="home-news" id="home-news">
+      <div class="muted center small">Loading legal news...</div>
+    </div>
+
+    <h3 class="home-section-title">⭐ <span data-i18n="home.featured">Featured judgment</span></h3>
+    <div class="home-featured" id="home-featured">
+      <div class="muted center small">Loading...</div>
+    </div>
+
+    <h3 class="home-section-title">🆘 <span data-i18n="home.emergency">Emergency numbers</span></h3>
+    <div class="home-emergency" id="home-emergency"></div>
+
+    <p class="muted small center" style="padding:16px;margin-top:8px">
+      Tip: tap any external link to open in your browser. To make Chrome the default:<br/>
+      Windows Settings → Apps → Default apps → Web browser → Chrome.
+    </p>
+  </section>
+
+  <!-- CHAT SCREEN -->
+  <section id="screen-chat" class="screen" aria-label="Chat">
+    <div class="chat-controls">
+      <label class="select-wrap">
+        <span class="select-label">State</span>
+        <select id="state-select"></select>
+      </label>
+      <label class="select-wrap">
+        <span class="select-label">Language</span>
+        <select id="lang-select">
+          <option value="english">English</option>
+          <option value="tanglish">Tanglish</option>
+          <option value="tamil">தமிழ்</option>
+          <option value="hindi">हिन्दी</option>
+        </select>
+      </label>
+      <button id="new-chat-btn" class="ghost-btn" title="New chat">＋</button>
+    </div>
+
+    <div id="chat-box" class="chat-box" role="log" aria-live="polite"></div>
+
+    <div id="typing-indicator" class="typing hidden">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+    </div>
+
+    <form id="chat-form" class="input-area" autocomplete="off">
+      <button type="button" id="mic-btn" class="icon-btn input-icon" aria-label="Voice input">🎤</button>
+      <input type="text" id="user-input" data-i18n-placeholder="chat.placeholder" placeholder="Ask your legal question..." maxlength="4000" autocomplete="off" />
+      <button type="submit" id="send-btn" class="primary-btn" aria-label="Send">➤</button>
+    </form>
+  </section>
+
+  <!-- COMPLAINT SCREEN -->
+  <section id="screen-complaint" class="screen" aria-label="Draft FIR">
+    <form id="complaint-form" class="form-card">
+      <h2>Draft a Police Complaint (FIR)</h2>
+      <p class="muted">Fill in the details. AI will draft a formal letter to the SHO.</p>
+
+      <label>Offence type
+        <select name="offence_type" required>
+          <option value="">-- Select --</option>
+          <option>Theft</option>
+          <option>Cheating / Fraud</option>
+          <option>Assault</option>
+          <option>Cybercrime / Online fraud</option>
+          <option>Harassment</option>
+          <option>Domestic violence</option>
+          <option>Missing person</option>
+          <option>Property dispute</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label>State
+        <select name="state" id="complaint-state" required></select>
+      </label>
+
+      <label>Date of incident
+        <input type="date" name="date" required />
+      </label>
+
+      <label>Describe what happened
+        <textarea name="description" rows="5" maxlength="4000" required placeholder="Date, time, location, persons involved, sequence of events..."></textarea>
+      </label>
+
+      <label>Witnesses (names & contact, optional)
+        <textarea name="witnesses" rows="2" maxlength="2000"></textarea>
+      </label>
+
+      <label>Your full name
+        <input type="text" name="name" required maxlength="128" />
+      </label>
+
+      <label>Your address
+        <textarea name="address" rows="2" maxlength="512" required></textarea>
+      </label>
+
+      <button type="submit" class="primary-btn block">Generate Complaint Letter</button>
+    </form>
+
+    <div id="complaint-result" class="hidden"></div>
+  </section>
+
+  <!-- TEMPLATES + DOC ANALYSER SCREEN -->
+  <section id="screen-templates" class="screen" aria-label="Templates &amp; Document Analyser">
+    <div class="laws-tabs">
+      <button class="docs-tab active" data-docs-tab="templates">📄 Templates</button>
+      <button class="docs-tab" data-docs-tab="analyse">🔍 Analyse my doc</button>
+    </div>
+
+    <div id="docs-pane-templates" class="docs-pane active">
+      <div class="templates-header">
+        <h2>Document Templates</h2>
+        <p class="muted">Tap a template to start.</p>
+      </div>
+      <div id="templates-grid" class="templates-grid"></div>
+    </div>
+
+    <div id="docs-pane-analyse" class="docs-pane">
+      <h2>Analyse Your Legal Document</h2>
+      <p class="muted">Upload a photo/PDF of any court notice, FIR, summons, contract, or legal letter — AI explains in plain language and tells you what to do.</p>
+
+      <div class="upload-zone" id="upload-zone">
+        <div style="font-size:36px">📄</div>
+        <div style="font-weight:600;margin-top:6px">Drop file here or tap to upload</div>
+        <div class="muted small">PDF, PNG, JPG · max 10 MB</div>
+        <input type="file" id="doc-file" accept=".pdf,.png,.jpg,.jpeg,.webp" style="display:none" />
+      </div>
+
+      <p class="muted small" style="margin-top:14px">Or paste text:</p>
+      <textarea id="doc-text" rows="5" placeholder="Paste court notice / FIR / contract text here..."></textarea>
+
+      <div class="calc-row">
+        <select id="doc-lang">
+          <option value="english">Explain in English</option>
+          <option value="tamil">Explain in தமிழ்</option>
+          <option value="hindi">Explain in हिन्दी</option>
+        </select>
+        <button id="doc-analyse-btn" class="primary-btn block">Analyse Document</button>
+      </div>
+
+      <div id="doc-result" class="hidden"></div>
+    </div>
+  </section>
+
+  <!-- LAWS SCREEN (IPC ↔ BNS + case search) -->
+  <section id="screen-laws" class="screen" aria-label="Indian Laws">
+    <div class="laws-header">
+      <h2>Indian Laws &amp; Cases</h2>
+      <p class="muted">IPC ↔ BNS 2024 map · landmark Supreme Court cases · live search</p>
+    </div>
+
+    <div class="laws-tabs">
+      <button class="laws-tab active" data-laws-tab="section">📜 IPC↔BNS</button>
+      <button class="laws-tab" data-laws-tab="cases">⚖️ Cases</button>
+      <button class="laws-tab" data-laws-tab="landmark">🏛️ Landmark</button>
+      <button class="laws-tab" data-laws-tab="courts">📍 Courts</button>
+      <button class="laws-tab" data-laws-tab="calc">🧮 Calc</button>
+      <button class="laws-tab" data-laws-tab="lawyers">👨‍⚖️ Lawyers</button>
+      <button class="laws-tab" data-laws-tab="tracker">🔎 Track</button>
+    </div>
+
+    <!-- Section lookup -->
+    <div id="laws-pane-section" class="laws-pane active">
+      <div class="laws-search-row">
+        <input type="text" id="law-query" placeholder="Search: 'theft', 'IPC 302', 'BNS 103', 'cyber'..." />
+        <button id="law-search-btn" class="primary-btn">Search</button>
+      </div>
+      <div id="law-results" class="law-results">
+        <p class="muted center">Try: <b>IPC 302</b>, <b>BNS 103</b>, <b>theft</b>, <b>cheating</b>, <b>defamation</b></p>
+      </div>
+    </div>
+
+    <!-- Case search -->
+    <div id="laws-pane-cases" class="laws-pane">
+      <div class="laws-search-row">
+        <input type="text" id="case-query" placeholder="e.g. 'cheque bounce', 'Section 138', 'right to privacy'" />
+        <button id="case-search-btn" class="primary-btn">Search</button>
+      </div>
+
+      <p class="muted small">Or pick a category below — most important cases by topic:</p>
+      <div class="case-cat-row" id="case-cat-row">
+        <button class="case-cat-chip" data-cat="criminal">🚨 Criminal</button>
+        <button class="case-cat-chip" data-cat="women">👩 Women</button>
+        <button class="case-cat-chip" data-cat="family">💍 Family</button>
+        <button class="case-cat-chip" data-cat="property">🏠 Property</button>
+        <button class="case-cat-chip" data-cat="constitutional">⚖️ Constitutional</button>
+        <button class="case-cat-chip" data-cat="privacy">🔒 Privacy</button>
+        <button class="case-cat-chip" data-cat="consumer">🛒 Consumer</button>
+        <button class="case-cat-chip" data-cat="religion">🕊️ Religion</button>
+      </div>
+
+      <div id="case-results" class="law-results"></div>
+    </div>
+
+    <!-- Landmark cases -->
+    <div id="laws-pane-landmark" class="laws-pane">
+      <div id="landmark-list" class="law-results">
+        <p class="muted center">Loading landmark cases...</p>
+      </div>
+    </div>
+
+    <!-- Court Locator -->
+    <div id="laws-pane-courts" class="laws-pane">
+      <div class="laws-search-row">
+        <input type="text" id="court-query" placeholder="Search by name, city, jurisdiction..." />
+        <select id="court-state" style="max-width:130px"></select>
+        <button id="court-search-btn" class="primary-btn">Find</button>
+      </div>
+      <div id="court-results" class="law-results">
+        <p class="muted center">Loading courts...</p>
+      </div>
+    </div>
+
+    <!-- Calculators -->
+    <div id="laws-pane-calc" class="laws-pane">
+      <div class="calc-card">
+        <h3 class="calc-title">⚖️ Bail / Cognizability check</h3>
+        <p class="muted small">Type a section number — e.g. <b>302</b>, <b>420</b>, <b>138NI</b>, <b>POCSO7</b>, <b>NDPS20</b>.</p>
+        <div class="laws-search-row">
+          <input type="text" id="bail-section" placeholder="e.g. 302" />
+          <button id="bail-check-btn" class="primary-btn">Check</button>
+        </div>
+        <div id="bail-result" class="law-results"></div>
+      </div>
+
+      <div class="calc-card">
+        <h3 class="calc-title">📅 Limitation period</h3>
+        <p class="muted small">When does my civil/criminal claim expire? Type a keyword: <b>appeal</b>, <b>cheque</b>, <b>tort</b>, <b>consumer</b>, <b>property</b>.</p>
+        <div class="laws-search-row">
+          <input type="text" id="limit-q" placeholder="e.g. appeal" />
+          <button id="limit-btn" class="primary-btn">Search</button>
+        </div>
+        <div id="limit-result" class="law-results"></div>
+      </div>
+
+      <div class="calc-card">
+        <h3 class="calc-title">💰 Court fee estimate</h3>
+        <p class="muted small">Approximate ad valorem court fee for a money suit.</p>
+        <div class="calc-row">
+          <select id="fee-state"></select>
+          <input type="number" id="fee-value" placeholder="Claim value (₹)" min="0" />
+          <button id="fee-btn" class="primary-btn">Estimate</button>
+        </div>
+        <div id="fee-result" class="law-results"></div>
+      </div>
+    </div>
+
+    <!-- Lawyers / Legal Aid -->
+    <div id="laws-pane-lawyers" class="laws-pane">
+      <div class="helpline-grid" id="helpline-grid"></div>
+      <div class="laws-search-row" style="margin-top:14px">
+        <input type="text" id="lawyer-query" placeholder="Search by state, specialization, NGO name..." />
+        <select id="lawyer-state" style="max-width:130px"></select>
+        <button id="lawyer-search-btn" class="primary-btn">Find</button>
+      </div>
+      <div id="lawyer-results" class="law-results">
+        <p class="muted center">Loading legal aid clinics...</p>
+      </div>
+    </div>
+
+    <!-- Case Tracker -->
+    <div id="laws-pane-tracker" class="laws-pane">
+      <div class="calc-card">
+        <h3 class="calc-title">🔎 Track by CNR number</h3>
+        <p class="muted small">CNR (Case Number Record) is the 16-character unique ID for every Indian case. Find it on your case papers or any court order.</p>
+        <div class="laws-search-row">
+          <input type="text" id="cnr-input" placeholder="e.g. MHCT010000012024" maxlength="20" />
+          <button id="cnr-btn" class="primary-btn">Look up</button>
+        </div>
+        <div id="cnr-result" class="law-results"></div>
+      </div>
+
+      <div class="calc-card">
+        <h3 class="calc-title">🔎 Search by party name</h3>
+        <p class="muted small">Search by petitioner or respondent name across eCourts and Indian Kanoon.</p>
+        <div class="laws-search-row">
+          <input type="text" id="party-input" placeholder="e.g. Reliance Industries" />
+          <button id="party-btn" class="primary-btn">Search</button>
+        </div>
+        <div id="party-result" class="law-results"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY SCREEN -->
+  <section id="screen-history" class="screen" aria-label="History">
+    <h2>Your Chat History</h2>
+    <div id="history-list" class="history-list">
+      <p class="muted center">No conversations yet.</p>
+    </div>
+  </section>
+
+  <!-- SETTINGS SCREEN -->
+  <section id="screen-settings" class="screen" aria-label="Settings">
+    <h2>Settings</h2>
+
+    <div class="settings-card">
+      <h3>API Server</h3>
+      <p class="muted">For mobile devices, set the LAN IP of your backend (e.g. http://192.168.1.5:8001).</p>
+      <input type="url" id="api-base-input" placeholder="http://localhost:8001" />
+      <button id="save-api-btn" class="primary-btn">Save</button>
+      <p id="api-status" class="muted small"></p>
+    </div>
+
+    <div class="settings-card">
+      <h3>Theme</h3>
+      <label class="row">
+        <span>Dark mode</span>
+        <input type="checkbox" id="dark-toggle" />
+      </label>
+    </div>
+
+    <div class="settings-card">
+      <h3>Voice & Speech</h3>
+      <label class="row">
+        <span>Auto-read AI replies</span>
+        <input type="checkbox" id="tts-toggle" />
+      </label>
+    </div>
+
+    <div class="settings-card">
+      <h3>About</h3>
+      <p class="muted small">
+        LegalEase Pro v1.0<br/>
+        <b>Disclaimer:</b> AI responses are informational only and do not constitute legal advice.
+        Always consult a licensed advocate for serious matters.
+      </p>
+    </div>
+
+    <div class="settings-card">
+      <h3>Account</h3>
+      <p id="account-info" class="muted small">Not logged in.</p>
+      <button id="logout-btn" class="danger-btn block hidden">Logout</button>
+    </div>
+
+    <div class="settings-card danger">
+      <button id="clear-data-btn" class="danger-btn block">Clear all local data</button>
+    </div>
+  </section>
+</main>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav" role="navigation">
+  <button class="nav-btn active" data-screen="home"><span>🏠</span><small data-i18n="nav.home">Home</small></button>
+  <button class="nav-btn" data-screen="chat"><span>💬</span><small data-i18n="nav.chat">Chat</small></button>
+  <button class="nav-btn" data-screen="laws"><span>⚖️</span><small data-i18n="nav.laws">Laws</small></button>
+  <button class="nav-btn" data-screen="templates"><span>📄</span><small data-i18n="nav.docs">Docs</small></button>
+  <button class="nav-btn" data-screen="settings"><span>⚙️</span><small data-i18n="nav.more">More</small></button>
+</nav>
+
+</div> <!-- /#app-shell -->
+
+<!-- Template Generator Modal -->
+<div id="tpl-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <div id="tpl-modal-icon" class="modal-icon">📄</div>
+        <h3 id="tpl-modal-title">Template</h3>
+        <p id="tpl-modal-desc" class="muted small"></p>
+      </div>
+      <button class="modal-close" id="tpl-modal-close" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <form id="tpl-form" autocomplete="off"></form>
+      <div id="tpl-result" class="hidden"></div>
+    </div>
+    <div class="modal-foot">
+      <button id="tpl-generate-btn" class="primary-btn block big">✨ Generate Document</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+<script type="module" src="js/app.js?v=15"></script>
+</body>
+</html>

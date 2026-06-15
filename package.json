@@ -1,0 +1,27 @@
+{
+  "name": "legalease-pro",
+  "version": "1.0.0",
+  "description": "LegalEase Pro - AI-powered Indian legal assistant (Capacitor wrapper)",
+  "private": true,
+  "scripts": {
+    "cap:init": "cap init LegalEasePro com.legalease.pro --web-dir=frontend",
+    "cap:add:android": "cap add android",
+    "cap:sync": "cap sync",
+    "cap:open:android": "cap open android",
+    "cap:build:android": "cap sync && cd android && gradlew.bat assembleDebug",
+    "android": "npm run cap:sync && npm run cap:open:android"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/app": "^6.0.1",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/haptics": "^6.0.1",
+    "@capacitor/keyboard": "^6.0.2",
+    "@capacitor/preferences": "^6.0.2",
+    "@capacitor/splash-screen": "^6.0.2",
+    "@capacitor/status-bar": "^6.0.1"
+  }
+}

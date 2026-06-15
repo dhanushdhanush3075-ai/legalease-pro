@@ -1,0 +1,884 @@
+{
+  "meta": {
+    "description": "Real-life Indian legal scenarios with applicable sections, step-by-step procedure, and practical advice. All verified.",
+    "total": 60,
+    "updated": "2024-12"
+  },
+  "scenarios": [
+    {
+      "id": "rent-deposit-not-returned",
+      "title": "Landlord not returning security deposit",
+      "category": "Rent / Property",
+      "keywords": ["deposit", "advance", "rent return", "landlord", "tenant", "vacate"],
+      "applicable_law": ["TN Tenancy Act 2017 Sec 5 (or similar state law)", "Indian Contract Act Section 73"],
+      "procedure": [
+        "Send a written legal notice via registered post demanding the deposit within 15 days.",
+        "Mention deductions you accept (for actual damage), if any.",
+        "If no response: file civil suit before the Civil Court / Rent Controller (max ₹3L in District; higher in Civil).",
+        "Or invoke RERA if it's a builder/registered project.",
+        "TN: TN Tenancy Act gives landlord 1 month to return deposit after vacate."
+      ],
+      "remedies": ["Recovery of deposit", "Interest on amount withheld", "Damages for harassment"],
+      "tip": "Always sign a written rent agreement with deposit amount, deduction conditions, and return timeline."
+    },
+    {
+      "id": "room-rental-issue",
+      "title": "PG/room owner not allowing girls or being abusive",
+      "category": "Rent / Property",
+      "keywords": ["PG", "room", "hostel", "abuse", "discrimination", "girls"],
+      "applicable_law": ["IPC 506/BNS 351 (intimidation)", "IPC 504/BNS 352 (insult)", "Consumer Protection Act 2019", "Local Police Act"],
+      "procedure": [
+        "Record the abuse (call recording, text screenshots) — Indian Evidence Act Sec 65B.",
+        "Send written notice to PG/hostel owner.",
+        "Approach local police station — file written complaint or FIR if intimidation/threat.",
+        "Local Municipal Corporation / Health Dept for unhygienic conditions.",
+        "Consumer Forum if you paid advance and got below-standard service."
+      ],
+      "remedies": ["Refund of advance", "Damages", "FIR for intimidation"],
+      "tip": "Take photos of the room before paying advance. Save WhatsApp chats as evidence."
+    },
+    {
+      "id": "employer-not-paying-salary",
+      "title": "Employer not paying salary or PF/ESI",
+      "category": "Employment",
+      "keywords": ["salary", "wage", "PF", "ESI", "unpaid", "bonus"],
+      "applicable_law": ["Payment of Wages Act 1936", "Industrial Disputes Act 1947 Sec 33C(2)", "Code on Wages 2019", "Labour Court"],
+      "procedure": [
+        "Send written demand to employer (registered post / email).",
+        "File complaint with the Labour Commissioner office of your district.",
+        "EPF claim via EPFiGMS portal (epfigms.gov.in) — get UAN active and file grievance.",
+        "ESIC complaint via esic.in if ESI default.",
+        "Labour Court application under Sec 33C(2) within 1 year of due date."
+      ],
+      "remedies": ["Full back wages", "Interest", "Compensation"],
+      "tip": "Keep appointment letter, payslips, and emails. EPF claims must include UAN."
+    },
+    {
+      "id": "online-fraud-paytm-upi",
+      "title": "Lost money to online fraud (Paytm, UPI, fake call)",
+      "category": "Cybercrime",
+      "keywords": ["online fraud", "UPI", "phishing", "scam", "OTP", "cyber"],
+      "applicable_law": ["IPC 420/BNS 318(4) (cheating)", "IT Act Sec 66C (identity theft)", "IT Act 66D (impersonation)"],
+      "procedure": [
+        "IMMEDIATELY call Cybercrime Helpline 1930 (within 1 hour for chargeback chance).",
+        "File complaint at cybercrime.gov.in.",
+        "Inform your bank to freeze beneficiary account.",
+        "FIR at local police station / Cyber Cell.",
+        "Preserve all SMS, screenshots, transaction IDs."
+      ],
+      "remedies": ["Account freeze", "Money recovery if reported within 24 hrs", "Criminal action against offender"],
+      "tip": "Reporting within 1 hour is critical — RBI 'zero liability' framework only applies if you report quickly."
+    },
+    {
+      "id": "domestic-violence",
+      "title": "Wife facing domestic violence by husband / in-laws",
+      "category": "Family",
+      "keywords": ["DV", "domestic violence", "498A", "cruelty", "in-laws"],
+      "applicable_law": ["IPC 498A/BNS 85 (cruelty)", "DV Act 2005 Sec 12 (civil)", "IPC 304B/BNS 80 (dowry death)"],
+      "procedure": [
+        "Reach Protection Officer / Service Provider under DV Act.",
+        "File DV Act application before Magistrate (Sec 12) — civil reliefs.",
+        "Parallel FIR under IPC 498A/BNS 85 + 506 (intimidation).",
+        "Call Women Helpline 7827170170 or 181.",
+        "One Stop Centre (Sakhi) for emergency shelter."
+      ],
+      "remedies": [
+        "Protection order — no contact",
+        "Residence order — right to stay in shared household",
+        "Monetary relief + maintenance",
+        "Custody of children",
+        "Compensation"
+      ],
+      "tip": "DV Act gives civil remedies WITHOUT criminal arrest. Use Sec 41A CrPC/BNSS — police must give notice before arrest in 498A cases (Arnesh Kumar 2014)."
+    },
+    {
+      "id": "cheque-bounce",
+      "title": "Cheque I received bounced",
+      "category": "Financial",
+      "keywords": ["cheque bounce", "138", "dishonor", "NI Act"],
+      "applicable_law": ["Negotiable Instruments Act Sec 138"],
+      "procedure": [
+        "Get bank's return memo (must be returned for insufficient funds, account closed, signature mismatch, etc.).",
+        "Send statutory legal notice to drawer within 30 DAYS of receiving return memo (via registered post + email + WhatsApp).",
+        "Demand payment within 15 DAYS in the notice.",
+        "If unpaid: file complaint within 30 DAYS of notice expiry before JM First Class court of payee's place.",
+        "Court will issue summons. Trial proceeds."
+      ],
+      "remedies": ["Cheque amount + interest", "Up to 2 years imprisonment", "Compensation up to 2× cheque amount"],
+      "tip": "Strict timelines! 30+15+30 days. Missing any = complaint dismissed. Save the original cheque + memo."
+    },
+    {
+      "id": "accident-victim-compensation",
+      "title": "Road accident victim — claim compensation",
+      "category": "Accident",
+      "keywords": ["accident", "motor accident", "MACT", "compensation", "insurance"],
+      "applicable_law": ["Motor Vehicles Act 1988 Sec 166", "Motor Accident Claims Tribunal (MACT)"],
+      "procedure": [
+        "File FIR at police station having jurisdiction over accident.",
+        "Get charge sheet copy + medico-legal certificate from hospital.",
+        "Compute compensation: lost income + medical + future loss + pain & suffering (Sarla Verma formula).",
+        "File MACT claim petition within 6 months (no upper limit since 2019 amendment).",
+        "Insurance company is the main respondent."
+      ],
+      "remedies": [
+        "Hit and run: Compensation Scheme — ₹2L for death, ₹50K injury",
+        "Full insurance claim",
+        "Punitive damages for negligent drivers"
+      ],
+      "tip": "Multiplier method per Supreme Court — age × future income. Save all medical bills."
+    },
+    {
+      "id": "consumer-defective-product",
+      "title": "Defective product or fake delivery (Amazon / Flipkart / shop)",
+      "category": "Consumer",
+      "keywords": ["consumer", "defective", "Amazon", "Flipkart", "warranty"],
+      "applicable_law": ["Consumer Protection Act 2019 Sec 35"],
+      "procedure": [
+        "Contact seller customer support, record TID/ticket numbers.",
+        "Send written complaint via post or eDaakhil (edaakhil.nic.in).",
+        "File complaint before District Consumer Disputes Redressal Commission within 2 years.",
+        "Pay nominal fee (₹100 - ₹500 based on claim).",
+        "Hearing usually within 3 months."
+      ],
+      "remedies": ["Refund", "Replacement", "Compensation", "Punitive damages", "Litigation costs"],
+      "tip": "District Commission handles up to ₹50L claim. State up to ₹2Cr. National >₹2Cr. eDaakhil portal works fully online."
+    },
+    {
+      "id": "false-fir-against-you",
+      "title": "Someone filed a fake FIR against me",
+      "category": "Criminal Defence",
+      "keywords": ["fake FIR", "false case", "quash"],
+      "applicable_law": ["Section 482 CrPC / Sec 528 BNSS (quashing power)", "Article 226 (Writ)"],
+      "procedure": [
+        "Get certified copy of FIR.",
+        "Approach High Court for FIR quashing under Sec 482 CrPC / 528 BNSS.",
+        "Grounds: no offence made out, civil dispute disguised, malicious, etc.",
+        "If arrested: anticipatory bail Sec 438 CrPC / 482 BNSS.",
+        "File counter-complaint under IPC 211/BNS 248 (false charge) and IPC 182/BNS 217 (false info)."
+      ],
+      "remedies": ["FIR quashed", "Anticipatory bail", "Counter-complaint", "Damages for malicious prosecution"],
+      "tip": "Bhajan Lal guidelines (1992) — 7 categories where HC must quash FIR. Engage criminal lawyer immediately."
+    },
+    {
+      "id": "marital-divorce",
+      "title": "Want a divorce — what to do?",
+      "category": "Family",
+      "keywords": ["divorce", "mutual consent", "marriage"],
+      "applicable_law": ["Hindu Marriage Act 1955 Sec 13 / 13B", "Special Marriage Act 1954", "Personal laws"],
+      "procedure": [
+        "Mutual Consent (Sec 13B HMA): File joint petition in Family Court after 1 year of marriage. 6-month cooling period (waivable per Amardeep Singh 2017). Second motion + decree.",
+        "Contested: File petition citing grounds — cruelty, desertion (2+ years), adultery, conversion, mental disorder, etc.",
+        "Mediation usually mandatory before trial.",
+        "Maintenance can be claimed under Sec 24 HMA + Sec 125 CrPC."
+      ],
+      "remedies": ["Decree of divorce", "Permanent alimony / maintenance", "Custody arrangement"],
+      "tip": "Mutual consent is fastest (6-18 months). Contested can take 3-7 years."
+    },
+    {
+      "id": "child-custody",
+      "title": "Child custody after divorce",
+      "category": "Family",
+      "keywords": ["custody", "child", "guardian"],
+      "applicable_law": ["Guardians and Wards Act 1890", "Hindu Minority and Guardianship Act 1956"],
+      "procedure": [
+        "Family Court petition under Sec 7 GWA.",
+        "Consider: child's welfare is paramount (Gita Hariharan 1999).",
+        "Custody types: physical, legal, joint, visitation.",
+        "Below 5: ordinarily with mother. Above 9: child's wishes considered."
+      ],
+      "remedies": ["Custody order", "Visitation rights", "Maintenance for child"],
+      "tip": "Court always sees 'best interest of child', not parental rights."
+    },
+    {
+      "id": "property-partition",
+      "title": "Want my share of family property",
+      "category": "Property",
+      "keywords": ["partition", "property", "ancestral"],
+      "applicable_law": ["Hindu Succession Act 1956 (amended 2005 — daughters equal)"],
+      "procedure": [
+        "Try amicable partition with family — registered partition deed.",
+        "If denied: file partition suit in Civil Court of jurisdiction.",
+        "Get preliminary decree fixing shares, then final decree with allotments.",
+        "Daughters have equal share in ancestral property (Vineeta Sharma 2020)."
+      ],
+      "remedies": ["Share allocation", "Mesne profits (rents earned)", "Injunction against alienation"],
+      "tip": "12 year limitation period. Daughters' rights apply even if father died before 2005 (Vineeta Sharma)."
+    },
+    {
+      "id": "neighbor-noise-dispute",
+      "title": "Neighbour playing loud music / disturbing peace",
+      "category": "Civic",
+      "keywords": ["noise", "neighbour", "nuisance"],
+      "applicable_law": ["IPC 268/BNS 270 (public nuisance)", "Noise Pollution (Regulation and Control) Rules 2000"],
+      "procedure": [
+        "First polite request.",
+        "Police complaint under Sec 268 IPC / 270 BNS at local police station.",
+        "Approach Municipal Corporation / Pollution Control Board.",
+        "Sec 133 CrPC / 152 BNSS — Magistrate can order removal of nuisance."
+      ],
+      "remedies": ["Order to stop nuisance", "Fine on offender", "Damages"],
+      "tip": "Day: 55 dB; Night (10 PM-6 AM): 45 dB in residential. Use a decibel meter app for evidence."
+    },
+    {
+      "id": "workplace-sexual-harassment",
+      "title": "Sexual harassment at workplace",
+      "category": "Employment / Women",
+      "keywords": ["sexual harassment", "POSH", "workplace"],
+      "applicable_law": ["Sexual Harassment at Workplace Act 2013 (POSH)", "IPC 354A/BNS 75"],
+      "procedure": [
+        "File written complaint to Internal Committee (IC) within 3 months (extendable to 6).",
+        "IC has 90 days to complete inquiry.",
+        "Parallel FIR under IPC 354A / BNS 75 if criminal aspect.",
+        "If no IC at workplace (<10 employees): Local Committee at District level."
+      ],
+      "remedies": ["Termination of accused", "Transfer", "Compensation", "Leave with pay during inquiry"],
+      "tip": "POSH applies to all workplaces — including domestic workers, contract employees, students."
+    },
+    {
+      "id": "eve-teasing",
+      "title": "Eve-teasing / catcalling / public harassment of women",
+      "category": "Women",
+      "keywords": ["eve teasing", "harassment", "catcalling"],
+      "applicable_law": ["IPC 354/BNS 74 (outraging modesty)", "IPC 354A/BNS 75 (harassment)", "IPC 509/BNS 79 (insulting modesty)", "IPC 294/BNS 296 (obscene act)"],
+      "procedure": [
+        "Dial 100 or 112 for immediate help.",
+        "File FIR at nearest police station.",
+        "Provide CCTV / mobile recording / witnesses.",
+        "Women helpline 1091."
+      ],
+      "remedies": ["FIR registration", "Arrest of offender", "Compensation under Victim Compensation Scheme"],
+      "tip": "Women police stations exist in many cities. CCTV in public transport is admissible."
+    },
+    {
+      "id": "rti-application",
+      "title": "Want information from government office (RTI)",
+      "category": "Government",
+      "keywords": ["RTI", "information", "transparency"],
+      "applicable_law": ["RTI Act 2005 Sec 6 + 7"],
+      "procedure": [
+        "Write to CPIO of the public authority — name, address, specific questions.",
+        "Pay ₹10 fee (free for BPL). Indian Postal Order or cash.",
+        "Reply within 30 days. Life/liberty: 48 hours.",
+        "First Appeal within 30 days if no/partial reply (Sec 19).",
+        "Second Appeal to Information Commission within 90 days."
+      ],
+      "remedies": ["Information disclosure", "Penalty on CPIO up to ₹25,000 for refusal"],
+      "tip": "Use rtionline.gov.in for online filing to central govt. State portals exist for many states."
+    },
+    {
+      "id": "loan-recovery-harassment",
+      "title": "Loan recovery agents harassing me",
+      "category": "Financial",
+      "keywords": ["loan", "recovery agent", "harassment", "EMI"],
+      "applicable_law": ["RBI Code for Fair Practices", "IPC 506/BNS 351", "Consumer Protection Act 2019"],
+      "procedure": [
+        "Record calls and threats.",
+        "File complaint with the bank's grievance redressal cell.",
+        "Banking Ombudsman if no response in 30 days (rbi.org.in/cms).",
+        "FIR under IPC 506/BNS 351 for criminal intimidation.",
+        "RBI's Sachet portal (sachet.rbi.org.in) for fake loan apps."
+      ],
+      "remedies": ["Stop harassment", "Compensation", "Criminal action against agents"],
+      "tip": "RBI says: agents can call only 7 AM - 7 PM. Cannot visit your home unless invited. Cannot abuse or threaten."
+    },
+    {
+      "id": "police-not-filing-fir",
+      "title": "Police refusing to file FIR",
+      "category": "Criminal",
+      "keywords": ["FIR", "police", "refuse", "lalita kumari"],
+      "applicable_law": ["CrPC Sec 154 / BNSS Sec 173", "CrPC Sec 156(3) / BNSS 175(3)", "Lalita Kumari 2013"],
+      "procedure": [
+        "Submit written complaint to SHO. Get acknowledgment.",
+        "If refused: send written complaint to Superintendent of Police (SP) under Sec 154(3).",
+        "If still no FIR: approach Magistrate under Sec 156(3) CrPC / 175(3) BNSS — Magistrate can order FIR.",
+        "Or file private complaint before Magistrate under Sec 200 CrPC / 223 BNSS."
+      ],
+      "remedies": ["Order to register FIR", "Departmental action on erring officer"],
+      "tip": "FIR registration is mandatory for cognizable offences (Lalita Kumari 2013). Police cannot refuse based on jurisdiction."
+    },
+    {
+      "id": "alcohol-laws",
+      "title": "Alcohol legality in my state — minimum age, purchase rules",
+      "category": "Public Order",
+      "keywords": ["alcohol", "liquor", "drinking", "prohibition"],
+      "applicable_law": ["State excise acts"],
+      "procedure": [
+        "Minimum drinking age varies: 18 (Goa, HP, KA, Pondy); 21 (most states); 25 (DL, MH, PB, HR); Prohibition: BR, GJ, NL, ML, MZ.",
+        "Driving over 30 mg/100ml = MV Act Sec 185 (drunk driving).",
+        "Public drinking — local police act offences."
+      ],
+      "remedies": ["—"],
+      "tip": "TN: Only TASMAC outlets allowed. KL: bars in 4-star+ hotels. Don't drink and drive — license suspended."
+    },
+    {
+      "id": "child-labour-reporting",
+      "title": "Seen a child working in shop / factory — how to report?",
+      "category": "Children",
+      "keywords": ["child labour", "shop", "reporting"],
+      "applicable_law": ["Child Labour (Prohibition and Regulation) Act 1986 Sec 3", "JJ Act 2015"],
+      "procedure": [
+        "Call CHILDLINE 1098.",
+        "Online complaint at PENCIL portal (pencil.gov.in).",
+        "Police complaint + Labour Inspector.",
+        "FIR under JJ Act 75 (cruelty) and CLPRA Sec 3."
+      ],
+      "remedies": ["Child rescue + rehabilitation", "Compensation ₹20,000 to child", "Punishment to employer"],
+      "tip": "Children under 14 cannot work except family enterprise (non-hazardous, after school). 14-18 in hazardous occupations is offence."
+    },
+    {
+      "id": "honour-killing-inter-caste",
+      "title": "Family threatening over inter-caste / inter-faith relationship",
+      "category": "Women / Liberty",
+      "keywords": ["honour killing", "inter-caste", "marriage", "khap"],
+      "applicable_law": ["Shakti Vahini 2018 directives", "Article 21 (right to choose partner)", "Special Marriage Act 1954"],
+      "procedure": [
+        "Approach High Court for protection order (writ jurisdiction).",
+        "Approach SP for police protection.",
+        "Marriage under Special Marriage Act 1954 — 30 days notice can be waived for security reasons (post-Hadiya).",
+        "Safe house can be sought from State Legal Services Authority."
+      ],
+      "remedies": ["Police protection", "Restraint order against family", "Safe house"],
+      "tip": "Shafin Jahan (Hadiya 2018) — adult's choice of partner is fundamental right. Lata Singh 2006 — no offence is committed by inter-caste marriage."
+    },
+    {
+      "id": "girls-arrangement-discrimination",
+      "title": "Hostel / PG / shop refusing to rent / serve girls",
+      "category": "Discrimination",
+      "keywords": ["girls", "discrimination", "PG", "hostel", "rental"],
+      "applicable_law": ["Article 15 (no discrimination on sex)", "Indian Contract Act"],
+      "procedure": [
+        "Document refusal in writing (record audio if needed).",
+        "File complaint with State Women Commission / Human Rights Commission.",
+        "Civil suit for damages.",
+        "Article 226 writ petition before HC if state actor involved."
+      ],
+      "remedies": ["Damages", "Compelled service", "Public apology"],
+      "tip": "Article 15(2) bars discrimination in hotels, restaurants, places of public entertainment. Private hostels' 'house rules' must not violate this."
+    },
+    {
+      "id": "passport-not-renewed",
+      "title": "Passport not being renewed by Police Verification",
+      "category": "Government",
+      "keywords": ["passport", "police verification", "renewal"],
+      "applicable_law": ["Passports Act 1967"],
+      "procedure": [
+        "Track status on passportindia.gov.in.",
+        "Visit PSK / POPSK to follow up.",
+        "File RTI to ascertain reason for delay.",
+        "Writ in High Court if denied without sufficient grounds."
+      ],
+      "remedies": ["Order to process passport", "Damages for delay"],
+      "tip": "Sudesh Kumar 2008 — denial must be reasoned. Mere pendency of case cannot deny passport unless court directs."
+    },
+    {
+      "id": "fir-against-doctor-medical-negligence",
+      "title": "Medical negligence — doctor / hospital mistake",
+      "category": "Medical",
+      "keywords": ["medical negligence", "doctor", "hospital", "Jacob Mathew"],
+      "applicable_law": ["IPC 304A/BNS 106", "Consumer Protection Act 2019", "MCI guidelines"],
+      "procedure": [
+        "Get all medical records, prescriptions, bills.",
+        "Get an expert opinion from independent doctor.",
+        "Consumer Forum complaint (CPA 2019).",
+        "Complaint to State Medical Council against doctor.",
+        "FIR under IPC 304A if death — but with Jacob Mathew safeguards."
+      ],
+      "remedies": ["Compensation", "License action against doctor", "Criminal prosecution if gross negligence"],
+      "tip": "Jacob Mathew 2005 — prior expert opinion from independent doctor needed for criminal case against doctor."
+    },
+    {
+      "id": "income-tax-notice",
+      "title": "Got income tax notice — what to do?",
+      "category": "Tax",
+      "keywords": ["income tax", "IT notice", "143", "148"],
+      "applicable_law": ["Income Tax Act 1961"],
+      "procedure": [
+        "Read notice carefully — note section, AY, response deadline.",
+        "Login to incometax.gov.in → e-Proceedings.",
+        "Respond within deadline — usually 30 days.",
+        "Hire CA / tax lawyer for complex cases (assessment, scrutiny)."
+      ],
+      "remedies": ["Drop notice if compliance acceptable", "Appeal to CIT(A) within 30 days of assessment order", "ITAT within 60 days"],
+      "tip": "Ignoring notice = best judgment assessment + penalty. Sec 143(2) = scrutiny notice. Sec 148 = reassessment. Sec 156 = demand."
+    },
+    {
+      "id": "tenant-not-vacating",
+      "title": "Tenant not vacating house after rent agreement ends",
+      "category": "Rent / Property",
+      "keywords": ["tenant eviction", "rent control", "vacate"],
+      "applicable_law": ["Rent Control Acts (state-specific)", "Transfer of Property Act"],
+      "procedure": [
+        "Send written notice to vacate (typically 1-3 months as per agreement).",
+        "If tenant doesn't vacate: file eviction suit in Rent Controller / Civil Court.",
+        "Grounds: rent default, sub-letting, personal need, change of user, etc.",
+        "Decree of eviction → execution → bailiff handover."
+      ],
+      "remedies": ["Eviction", "Mesne profits", "Costs"],
+      "tip": "Don't cut electricity/water — illegal and tenant can file civil + criminal case against you. Take legal route only."
+    },
+    {
+      "id": "stalking-online-offline",
+      "title": "Someone is stalking me (offline / online)",
+      "category": "Women",
+      "keywords": ["stalking", "harassment", "354D", "online"],
+      "applicable_law": ["IPC 354D / BNS 78 (stalking)", "IT Act Sec 66E"],
+      "procedure": [
+        "Preserve all evidence — messages, call logs, screenshots.",
+        "FIR at local police station — invoke 354D / BNS 78.",
+        "For online stalking, also invoke IT Act Sec 66E and 66C.",
+        "Apply for protection order under DV Act if relationship exists."
+      ],
+      "remedies": ["Arrest of stalker", "Restraint order", "Compensation"],
+      "tip": "First offence: bailable; second offence: non-bailable. Take screenshots with date/time. Indian Evidence Sec 65B certificate needed for digital evidence."
+    },
+    {
+      "id": "marriage-registration",
+      "title": "How to register marriage in India?",
+      "category": "Family",
+      "keywords": ["marriage registration", "Hindu Marriage Act", "Special Marriage"],
+      "applicable_law": ["Hindu Marriage Act 1955 Sec 8", "Special Marriage Act 1954", "Registration of Births and Deaths Act"],
+      "procedure": [
+        "Hindu Marriage: After religious ceremony, register with Marriage Registrar of jurisdiction. Application + 2 witnesses + ₹100-500 fee.",
+        "Special Marriage Act: 30-day notice → no objection → marriage before Marriage Officer + 3 witnesses. Civil marriage, any religion/inter-faith.",
+        "Online: Many states have online portals.",
+        "Inter-religion: SMA recommended. Conversion not necessary."
+      ],
+      "remedies": ["Marriage certificate"],
+      "tip": "Compulsory marriage registration is mandatory in many states (e.g., MH, KA). Useful for passport, visa, insurance, succession."
+    },
+    {
+      "id": "cyber-bullying",
+      "title": "Cyber-bullying / online abuse / morphed photos",
+      "category": "Cybercrime / Women",
+      "keywords": ["cyber bullying", "morphed", "online abuse", "trolling"],
+      "applicable_law": ["IT Act 66E (privacy)", "IT Act 67 (obscenity)", "IPC 354A/BNS 75 (harassment)", "IPC 354D/BNS 78 (stalking)", "IPC 499/BNS 356 (defamation)"],
+      "procedure": [
+        "Screenshot everything with date/time.",
+        "Report on platform (Twitter/X, Instagram, etc.).",
+        "Cybercrime portal cybercrime.gov.in.",
+        "Cybercrime Helpline 1930.",
+        "FIR if serious."
+      ],
+      "remedies": ["Account takedown", "Arrest of offender", "Damages"],
+      "tip": "Sec 79 IT Act — intermediaries (FB, Insta, X) liable if no takedown after notice. Forward emails to abuse@platform domain."
+    },
+    {
+      "id": "land-encroachment",
+      "title": "Someone encroached on my land",
+      "category": "Property",
+      "keywords": ["encroachment", "land", "boundary"],
+      "applicable_law": ["IPC 441/BNS 329 (trespass)", "IPC 447/BNS 329(3) (criminal trespass)", "Civil suit for declaration + injunction"],
+      "procedure": [
+        "Get land survey done by Revenue / Tahsildar.",
+        "Send legal notice asking to vacate.",
+        "FIR under IPC 447/BNS 329(3) if recent.",
+        "Civil suit for declaration of title + permanent injunction.",
+        "Or summary suit if registered title."
+      ],
+      "remedies": ["Possession restored", "Damages", "Permanent injunction"],
+      "tip": "Adverse possession over 12 years can create rights for trespasser. Act fast."
+    },
+    {
+      "id": "passport-impound",
+      "title": "Passport impounded by police",
+      "category": "Government",
+      "keywords": ["passport impound", "look out notice"],
+      "applicable_law": ["Passports Act 1967 Sec 10"],
+      "procedure": [
+        "Get show-cause notice; respond within timeline.",
+        "Writ before HC under Article 226.",
+        "Look Out Circular (LOC) can be quashed if grounds insufficient."
+      ],
+      "remedies": ["Restoration", "Travel permission"],
+      "tip": "LOCs by ED/CBI without authority were quashed by Bombay HC in 2024. Maneka Gandhi 1978 — passport seizure must follow procedure."
+    },
+    {
+      "id": "tax-on-cash-gift",
+      "title": "Tax on cash gifts / weddings / inheritance",
+      "category": "Tax",
+      "keywords": ["gift tax", "inheritance", "wedding gift"],
+      "applicable_law": ["Income Tax Act Sec 56(2)(x)"],
+      "procedure": [
+        "Aggregate gifts in cash/kind from non-relatives in a year.",
+        "If > ₹50,000: entire amount taxable as 'Income from other sources'.",
+        "Gifts from relatives (spouse, parents, siblings, in-laws etc.) are EXEMPT regardless of amount.",
+        "Wedding gifts received by bride/groom: EXEMPT."
+      ],
+      "remedies": ["—"],
+      "tip": "Maintain documentation — gift deed, donor's KYC. Inheritance is not taxable in India."
+    },
+    {
+      "id": "aadhaar-card-issues",
+      "title": "Aadhaar card problems (name, address, photo)",
+      "category": "Government",
+      "keywords": ["aadhaar", "UIDAI", "update"],
+      "applicable_law": ["Aadhaar Act 2016"],
+      "procedure": [
+        "Online update at uidai.gov.in for demographic details — ₹50 fee.",
+        "Biometric update only at Aadhaar Seva Kendra — ₹100.",
+        "Grievance: 1947 helpline.",
+        "Writ before HC if unjust denial."
+      ],
+      "remedies": ["Updation", "Damages for denial of service"],
+      "tip": "Aadhaar is not mandatory proof of citizenship. Linking with PAN, mobile, bank is mandatory but limited (Puttaswamy 2018)."
+    },
+    {
+      "id": "rape-victim-procedure",
+      "title": "Rape survivor — what to do?",
+      "category": "Women / Criminal",
+      "keywords": ["rape", "survivor", "POCSO"],
+      "applicable_law": ["IPC 376/BNS 64", "POCSO Act 2012 if minor", "Criminal Law Amendment 2013 (Nirbhaya)"],
+      "procedure": [
+        "Reach nearest hospital — medico-legal exam (MLC) MANDATORY and FREE.",
+        "FIR at any police station — Zero FIR concept (Lalita Kumari).",
+        "Statement before Magistrate under Sec 164 CrPC / 183 BNSS — by woman judicial officer if female.",
+        "One Stop Centre / 181 / 1091 for support.",
+        "Free legal aid via NALSA."
+      ],
+      "remedies": ["Criminal prosecution", "Compensation under Nirbhaya Fund / Victim Compensation Scheme (₹3-10L)", "Free medical treatment"],
+      "tip": "Identity of victim CANNOT be disclosed (IPC 228A / BNS 72). All-woman team should record statement. Recording in 'safe space' permitted."
+    },
+    {
+      "id": "child-marriage-stop",
+      "title": "Want to stop child marriage in my community",
+      "category": "Children",
+      "keywords": ["child marriage", "minor", "PCMA"],
+      "applicable_law": ["Prohibition of Child Marriage Act 2006", "POCSO Act"],
+      "procedure": [
+        "Call CHILDLINE 1098 immediately.",
+        "Report to District Magistrate or Child Marriage Prohibition Officer.",
+        "File FIR — PCMA Sec 9 (male above 18 marrying minor) + POCSO if minor.",
+        "Court can issue injunction order under Sec 13 PCMA."
+      ],
+      "remedies": ["Marriage void or voidable", "2 years imprisonment", "₹1L fine"],
+      "tip": "Marriage of girl <18 / boy <21 is child marriage — voidable at option of child. POCSO if marriage was consummated."
+    },
+    {
+      "id": "fake-currency-received",
+      "title": "Received fake currency note",
+      "category": "Currency",
+      "keywords": ["fake currency", "counterfeit", "489B"],
+      "applicable_law": ["IPC 489B/BNS 179"],
+      "procedure": [
+        "Don't pass it on — knowing use is offence.",
+        "Take to nearest bank — fill 'Counterfeit Note Detection Receipt'.",
+        "Bank will impound and report to police.",
+        "FIR is filed by bank."
+      ],
+      "remedies": ["Note impounded (you lose the value)", "Police investigation"],
+      "tip": "Banks DO NOT compensate you for fake notes. Always check serial number, security thread, watermark."
+    },
+    {
+      "id": "school-not-issuing-tc",
+      "title": "School not giving Transfer Certificate / withholding documents",
+      "category": "Education",
+      "keywords": ["TC", "transfer certificate", "school", "education"],
+      "applicable_law": ["RTE Act 2009 Sec 16", "Consumer Protection Act 2019"],
+      "procedure": [
+        "Written application with payment proof.",
+        "Complaint to school management committee.",
+        "District Education Officer / Block Education Officer.",
+        "Consumer Forum (education service) — CPA 2019."
+      ],
+      "remedies": ["Order to issue TC", "Damages", "Fee refund"],
+      "tip": "RTE 16 — no school can hold back / expel up to Class 8. P.T. Munichikkanna 2009 — TC withholding is unlawful."
+    },
+    {
+      "id": "court-marriage",
+      "title": "Want to do court marriage — procedure?",
+      "category": "Family",
+      "keywords": ["court marriage", "registrar", "SMA"],
+      "applicable_law": ["Special Marriage Act 1954"],
+      "procedure": [
+        "Both must be 18+ female, 21+ male; unmarried; not within prohibited relationships.",
+        "Submit Notice of Intended Marriage to Marriage Officer of district where either has resided 30+ days.",
+        "30-day waiting period (waiver post-Hadiya).",
+        "Marriage before Officer + 3 witnesses + signing register.",
+        "Certificate issued."
+      ],
+      "remedies": ["Marriage certificate (registered)"],
+      "tip": "Inter-faith / inter-caste — SMA is the secular option. Fee ₹100-1000 by state. Online filing in many states now."
+    },
+    {
+      "id": "fir-zero-fir-jurisdiction",
+      "title": "Crime happened in another city — can I file FIR here?",
+      "category": "Criminal Procedure",
+      "keywords": ["zero FIR", "jurisdiction"],
+      "applicable_law": ["CrPC Sec 154 / BNSS 173", "Lalita Kumari 2013"],
+      "procedure": [
+        "Yes — Zero FIR concept. Police of any station MUST register FIR for cognizable offence.",
+        "FIR is later transferred to PS of jurisdiction.",
+        "Especially for rape, kidnapping — mandatory."
+      ],
+      "remedies": ["FIR registration", "Investigation initiated"],
+      "tip": "Refusal by police is itself offence. Approach SP / HC writ if refused."
+    },
+    {
+      "id": "bail-procedure",
+      "title": "How to get bail for accused?",
+      "category": "Criminal Procedure",
+      "keywords": ["bail", "anticipatory bail", "regular bail"],
+      "applicable_law": ["CrPC Sec 437-439 / BNSS 480-483"],
+      "procedure": [
+        "Bailable offences: matter of right; bond + surety at police station.",
+        "Non-bailable: bail application before Magistrate. If denied: Sessions Court → High Court.",
+        "Anticipatory bail (Sec 438 CrPC / 482 BNSS) — before arrest if you fear false case.",
+        "Sureties — usually 2 with PAN/Aadhaar and property proof."
+      ],
+      "remedies": ["Liberty pending trial"],
+      "tip": "Arnesh Kumar 2014 + Satender Antil 2022 — bail is rule, jail is exception. Sec 41A CrPC/BNSS notice before arrest in offences up to 7 years."
+    },
+    {
+      "id": "police-illegal-detention",
+      "title": "Family member taken away by police but no FIR — illegal detention?",
+      "category": "Criminal Procedure",
+      "keywords": ["illegal detention", "habeas corpus", "DK Basu"],
+      "applicable_law": ["Article 22 (rights of arrested)", "DK Basu 1997", "Habeas Corpus"],
+      "procedure": [
+        "Demand to see arrest memo + grounds of arrest in writing.",
+        "Police must inform family / friend AND allow legal counsel.",
+        "If detention continues unjustly: file Habeas Corpus writ in HC.",
+        "DK Basu 1997 — 11 mandatory arrest guidelines must be followed."
+      ],
+      "remedies": ["Production before Magistrate within 24 hrs", "Release if illegal", "Compensation"],
+      "tip": "Arrest must be inside 24 hours; Magistrate's permission needed for further custody. Family must be informed."
+    },
+    {
+      "id": "company-not-paying-vendor",
+      "title": "Business: Company not paying my invoice / vendor",
+      "category": "Commercial",
+      "keywords": ["invoice", "vendor", "MSME", "delay"],
+      "applicable_law": ["MSMED Act 2006 Sec 15-17", "Commercial Courts Act 2015", "IBC 2016 Sec 7/9"],
+      "procedure": [
+        "MSME registered: file complaint at MSME Samadhaan portal — 45-day decision.",
+        "Otherwise: legal notice + Commercial Court suit if >₹3L.",
+        "If insolvency suspected: IBC Sec 9 Operational Creditor — National Company Law Tribunal."
+      ],
+      "remedies": ["Recovery of dues", "Interest at 3× bank rate (MSMED)", "IBC initiation"],
+      "tip": "Get Udyam Registration if MSME — significant benefits in recovery."
+    },
+    {
+      "id": "online-defamation-twitter",
+      "title": "Someone defamed me on Twitter / Instagram",
+      "category": "Reputation / Cybercrime",
+      "keywords": ["defamation", "Twitter", "Instagram", "online"],
+      "applicable_law": ["IPC 499/BNS 356 + 500/BNS 356(2)", "IT Act Sec 79 (intermediary takedown)"],
+      "procedure": [
+        "Preserve screenshots.",
+        "Report to platform (Twitter, Insta) — Section 79 takedown.",
+        "Send legal notice via lawyer.",
+        "File criminal complaint under IPC 499/500 OR civil suit for damages."
+      ],
+      "remedies": ["Takedown", "Damages (civil)", "Up to 2 years (criminal)"],
+      "tip": "Subramanian Swamy 2016 — criminal defamation constitutional. Truth + public interest is a defence."
+    },
+    {
+      "id": "dowry-asking-after-marriage",
+      "title": "In-laws demanding dowry after marriage",
+      "category": "Women",
+      "keywords": ["dowry", "demand", "DPA"],
+      "applicable_law": ["Dowry Prohibition Act 1961", "IPC 498A/BNS 85", "IPC 304B/BNS 80"],
+      "procedure": [
+        "Document demands — messages, recordings, witness statements.",
+        "DV Act 12 — civil reliefs.",
+        "FIR under DPA Sec 3-4 + IPC 498A.",
+        "Sec 304B/BNS 80 if death within 7 years of marriage with prior cruelty."
+      ],
+      "remedies": ["Imprisonment 5 years - life", "Return of dowry items", "Maintenance"],
+      "tip": "Dowry items (stridhan) belong to wife absolutely. Pratibha Rani 1985."
+    },
+    {
+      "id": "neighbour-blocking-access",
+      "title": "Neighbour blocking my pathway / driveway",
+      "category": "Property",
+      "keywords": ["easement", "right of way", "pathway"],
+      "applicable_law": ["Indian Easements Act 1882", "IPC 339/BNS 126 (restraint)"],
+      "procedure": [
+        "Civil suit for declaration of easement + permanent injunction.",
+        "If easement of necessity / quasi-easement claimed: prove with revenue records.",
+        "FIR under IPC 339 if wrongful restraint."
+      ],
+      "remedies": ["Restoration of access", "Damages"],
+      "tip": "20 years of uninterrupted use = easement by prescription. Documents help — photos, neighbours' affidavits."
+    },
+    {
+      "id": "succession-no-will",
+      "title": "Father died without will — succession",
+      "category": "Family / Property",
+      "keywords": ["succession", "no will", "intestate"],
+      "applicable_law": ["Hindu Succession Act 1956", "Indian Succession Act 1925 (others)"],
+      "procedure": [
+        "Hindu: Class I heirs equally — spouse, children (including daughters per 2005 amendment), mother.",
+        "Apply for Legal Heir Certificate from Tahsildar / Revenue Court.",
+        "Obtain Succession Certificate for movables/securities from District Judge.",
+        "Mutation of immovable property in revenue records."
+      ],
+      "remedies": ["Legal heir certificate", "Succession certificate"],
+      "tip": "Vineeta Sharma 2020 — daughters have equal coparcenary rights even if father died before 2005."
+    },
+    {
+      "id": "will-drafting",
+      "title": "Want to make a Will",
+      "category": "Family / Property",
+      "keywords": ["will", "testament", "executor"],
+      "applicable_law": ["Indian Succession Act 1925 Sec 63", "Hindu Succession Act"],
+      "procedure": [
+        "Write Will: identify testator, list beneficiaries, list assets, appoint executor.",
+        "Sign in presence of 2 witnesses (who must also sign).",
+        "Registration optional but recommended.",
+        "Can be revoked/changed any time."
+      ],
+      "remedies": ["—"],
+      "tip": "No specific format required. Hand-written valid. Witnesses must NOT be beneficiaries. Probate may be needed in Mumbai, Chennai, Kolkata jurisdiction."
+    },
+    {
+      "id": "ed-pmla-summons",
+      "title": "Got ED summons in PMLA case",
+      "category": "PMLA",
+      "keywords": ["ED", "PMLA", "summons", "Section 50"],
+      "applicable_law": ["PMLA 2002 Sec 50"],
+      "procedure": [
+        "Mandatory to attend. Non-compliance = arrest.",
+        "Take a lawyer (interrogation rules permit lawyer at visible but inaudible distance per Senthil Balaji 2023).",
+        "Carry ID, summons. Note who interrogates and what is asked.",
+        "Sec 50 — statements before ED are admissible in evidence."
+      ],
+      "remedies": ["Cooperate with summons"],
+      "tip": "Anticipatory bail can be filed parallelly. ED can arrest only with written grounds (Pankaj Bansal 2023)."
+    },
+    {
+      "id": "fake-id-arrest",
+      "title": "Friend posted fake ID — what's the offence?",
+      "category": "Cybercrime",
+      "keywords": ["fake ID", "impersonation", "social media"],
+      "applicable_law": ["IT Act 66C (identity theft)", "IT Act 66D (impersonation)", "IPC 419/BNS 319 (cheating by personation)"],
+      "procedure": [
+        "Report account to platform.",
+        "FIR under IT Act 66C + 66D + IPC 419."
+      ],
+      "remedies": ["Account takedown", "Up to 3 years imprisonment"],
+      "tip": "Even creating fake account in your own name to defame someone else = offence."
+    },
+    {
+      "id": "harassment-by-bank-creditor",
+      "title": "Bank threatening to seize my home / SARFAESI notice",
+      "category": "Financial",
+      "keywords": ["SARFAESI", "loan default", "seizure"],
+      "applicable_law": ["SARFAESI Act 2002 Sec 13", "RDB Act 1993"],
+      "procedure": [
+        "60-day notice under Sec 13(2) — challenge within 60 days.",
+        "Sec 13(4) possession notice — file appeal under Sec 17 before DRT within 45 days.",
+        "Restructure loan via OTS (One Time Settlement) — request to bank.",
+        "Mediation / DRAT for appeal."
+      ],
+      "remedies": ["Stay on possession", "Restructuring", "Damages"],
+      "tip": "Mardia Chemicals 2004 — SARFAESI constitutional but with safeguards. Don't ignore notices."
+    },
+    {
+      "id": "mental-illness-rights",
+      "title": "Family member mentally ill — what are their rights?",
+      "category": "Health",
+      "keywords": ["mental health", "MHCA 2017", "rights"],
+      "applicable_law": ["Mental Healthcare Act 2017"],
+      "procedure": [
+        "Right to access community-based treatment, medical insurance, confidentiality.",
+        "Right to make 'Advance Directive' (Sec 5) about how to be treated.",
+        "Independent Mental Health Review Boards exist.",
+        "Suicide attempt — decriminalized under MHCA 2017 + presumption of severe stress."
+      ],
+      "remedies": ["Insurance must cover mental illness (IRDAI 2018)", "Govt mental health services"],
+      "tip": "Mental Illness includes substance abuse. Restraint must be least restrictive. Hospitalization without consent — strict conditions."
+    },
+    {
+      "id": "consumer-product-medicines",
+      "title": "Got expired / fake medicine from pharmacy",
+      "category": "Consumer / Medical",
+      "keywords": ["fake medicine", "expired", "pharmacy"],
+      "applicable_law": ["Drugs and Cosmetics Act 1940 Sec 27", "CPA 2019"],
+      "procedure": [
+        "Take photos of medicine + bill + batch info.",
+        "Complaint to State Drug Controller.",
+        "Consumer Forum for damages."
+      ],
+      "remedies": ["License suspension", "Imprisonment up to life (if spurious caused harm)", "Compensation"],
+      "tip": "FSSAI for food. DCGI for drugs. Always insist on pukka bill."
+    },
+    {
+      "id": "fir-by-spouse-fake",
+      "title": "Wife filed false 498A against me",
+      "category": "Family / Criminal Defence",
+      "keywords": ["498A", "false case", "Arnesh Kumar"],
+      "applicable_law": ["IPC 498A/BNS 85", "IPC 211/BNS 248 (false case)", "CrPC 41A"],
+      "procedure": [
+        "Don't panic. Section 41A notice from police is standard now.",
+        "Get anticipatory bail (Sec 438 CrPC / 482 BNSS).",
+        "Engage criminal lawyer.",
+        "Family Welfare Committee verification mandated in many HCs.",
+        "Counter-complaint under IPC 211 if proven malicious."
+      ],
+      "remedies": ["Quashing of FIR", "Bail", "Damages"],
+      "tip": "Arnesh Kumar 2014 — no automatic arrest in 498A. Police MUST give 41A notice first. Sushil Sharma 2005 — court must guard against false 498A."
+    },
+    {
+      "id": "right-to-internet",
+      "title": "Internet shutdown in my area — legal?",
+      "category": "Civil Liberties",
+      "keywords": ["internet shutdown", "Article 19", "Anuradha Bhasin"],
+      "applicable_law": ["Article 19(1)(a) and (g)", "Telecom Suspension Rules 2017", "Anuradha Bhasin 2020"],
+      "procedure": [
+        "Demand the order under RTI / court.",
+        "Writ before HC challenging proportionality.",
+        "Faheema Shirin (Kerala HC) — Internet access part of right to education."
+      ],
+      "remedies": ["Restoration of internet", "Damages"],
+      "tip": "Anuradha Bhasin 2020 — orders must be (a) written, (b) reasoned, (c) for limited duration, (d) reviewable."
+    },
+    {
+      "id": "abortion-rights",
+      "title": "Pregnant unmarried woman — abortion rights?",
+      "category": "Women / Health",
+      "keywords": ["abortion", "MTP", "X case"],
+      "applicable_law": ["MTP Act 1971 (Amended 2021) Sec 3"],
+      "procedure": [
+        "Up to 20 weeks: 1 registered medical practitioner.",
+        "20-24 weeks: 2 doctors, for certain categories (survivors of rape, minors, disability, etc.) — includes UNMARRIED women per X v Principal Sec 2022.",
+        "After 24 weeks: medical board approval.",
+        "Confidentiality protected — Sec 5A MTP Act."
+      ],
+      "remedies": ["Safe medical termination", "Govt facilities free"],
+      "tip": "X v. Principal Secretary 2022 — marital status cannot deny MTP rights. Even minors entitled (without parent in some cases)."
+    },
+    {
+      "id": "income-from-youtube",
+      "title": "Started earning from YouTube / Instagram — what tax?",
+      "category": "Tax",
+      "keywords": ["YouTube", "influencer", "ITR", "TDS"],
+      "applicable_law": ["Income Tax Act Sec 194O, 194R, 28-44"],
+      "procedure": [
+        "Register PAN. Open business bank account.",
+        "Income from YT/Insta = business income (Sec 28).",
+        "TDS @ 1% under Sec 194O by platforms.",
+        "Gifts > ₹20,000 from brands: TDS 10% (Sec 194R).",
+        "File ITR-3 / ITR-4 (presumptive)."
+      ],
+      "remedies": ["—"],
+      "tip": "GST registration if turnover > ₹20L (₹10L for special states). Maintain books — bills, brand deals, expenses."
+    },
+    {
+      "id": "rights-during-arrest",
+      "title": "My rights during arrest",
+      "category": "Criminal Procedure",
+      "keywords": ["arrest", "rights", "DK Basu"],
+      "applicable_law": ["Article 22", "DK Basu 1997", "CrPC 41 / BNSS 35-43"],
+      "procedure": [
+        "Right to know grounds of arrest in writing.",
+        "Right to inform a family member / friend.",
+        "Right to consult lawyer.",
+        "Must be produced before Magistrate within 24 hours (excluding journey time).",
+        "Medical examination at time of arrest."
+      ],
+      "remedies": ["Habeas corpus if violated", "Compensation"],
+      "tip": "Arrest memo with witness signature. Female accused: only by female police officer."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+# ===== Render.com one-click deploy =====
+# Push this repo to GitHub, then go to https://dashboard.render.com/blueprints
+# and connect this repo. Render will auto-detect this file.
+#
+# Free tier: 750 hrs/month, sleeps after 15 min inactivity.
+# Paid: $7/mo for always-on starter.
+services:
+  - type: web
+    name: legalease-api
+    runtime: docker
+    region: singapore        # closest to India
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false          # set in Render dashboard
+      - key: APP_ENV
+        value: production
+      - key: APP_HOST
+        value: 0.0.0.0
+      - key: APP_PORT
+        value: "10000"       # Render maps this to public 443
+      - key: LOG_LEVEL
+        value: INFO
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: RATE_LIMIT_PER_MIN
+        value: "60"
+      - key: OTP_DEV_MODE
+        value: "false"       # production: real OTP sender required
+      - key: DATABASE_URL
+        fromDatabase:
+          name: legalease-db
+          property: connectionString
+
+databases:
+  - name: legalease-db
+    plan: free
+    databaseName: legalease
+    user: legalease
+    region: singapore

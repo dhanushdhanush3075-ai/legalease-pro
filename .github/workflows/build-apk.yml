@@ -1,0 +1,111 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "frontend/**"
+      - "capacitor.config.json"
+      - "package.json"
+      - ".github/workflows/build-apk.yml"
+  workflow_dispatch:    # manual trigger via "Run workflow" button
+  release:
+    types: [created]
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Set up Java JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Capacitor + plugins
+        run: npm ci || npm install
+
+      - name: Bake production API URL into frontend
+        run: |
+          # Replace the placeholder so APK points at deployed backend
+          API_URL="${{ vars.PROD_API_URL }}"
+          if [ -z "$API_URL" ]; then
+            API_URL="https://legalease-api.onrender.com"
+          fi
+          echo "Using API URL: $API_URL"
+          sed -i "s|window.__LEGALEASE_PROD_API__ = \"\";|window.__LEGALEASE_PROD_API__ = \"$API_URL\";|g" frontend/index.html
+
+      - name: Add Android platform
+        run: |
+          if [ ! -d "android" ]; then
+            npx cap add android
+          fi
+
+      - name: Sync web -> native
+        run: npx cap sync android
+
+      - name: Patch AndroidManifest with permissions
+        run: |
+          MANIFEST=android/app/src/main/AndroidManifest.xml
+          for PERM in INTERNET ACCESS_NETWORK_STATE RECORD_AUDIO MODIFY_AUDIO_SETTINGS CALL_PHONE; do
+            if ! grep -q "android.permission.${PERM}" "$MANIFEST"; then
+              sed -i "s|<manifest |<manifest xmlns:fix=\"x\" |" "$MANIFEST"
+              sed -i "0,/<application/s||<uses-permission android:name=\"android.permission.${PERM}\" />\n    <application|" "$MANIFEST"
+            fi
+          done
+          cat "$MANIFEST"
+
+      - name: Build debug APK
+        working-directory: android
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Rename APK with version
+        run: |
+          mkdir -p dist
+          cp android/app/build/outputs/apk/debug/app-debug.apk dist/LegalEase-Pro-${{ github.sha }}.apk
+          ls -lh dist/
+
+      - name: Upload APK as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LegalEase-Pro-APK
+          path: dist/*.apk
+          retention-days: 90
+
+      - name: Publish to GitHub Release (on tag/release only)
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.apk
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create automatic release on main push
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: "LegalEase Pro Build #${{ github.run_number }}"
+          body: |
+            🤖 Automated APK build from commit ${{ github.sha }}.
+
+            **Install:**
+            1. Download `LegalEase-Pro-*.apk` below.
+            2. On phone: open file → allow "Install unknown apps" → Install.
+            3. Open the app → onboarding → terms → phone OTP login.
+          files: dist/*.apk
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

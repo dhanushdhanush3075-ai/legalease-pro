@@ -1,0 +1,39 @@
+# Secrets
+.env
+*.env.local
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Node / Capacitor
+node_modules/
+dist/
+build/
+.cache/
+android/app/build/
+android/.gradle/
+android/build/
+android/local.properties
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

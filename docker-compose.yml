@@ -1,0 +1,18 @@
+services:
+  legalease:
+    build: .
+    container_name: legalease-pro
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    environment:
+      APP_ENV: production
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      CORS_ORIGINS: ${CORS_ORIGINS:-*}
+      RATE_LIMIT_PER_MIN: ${RATE_LIMIT_PER_MIN:-30}
+      DATABASE_URL: sqlite:////data/legalease.db
+    volumes:
+      - legalease_data:/data
+
+volumes:
+  legalease_data:

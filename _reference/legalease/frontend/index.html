@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>LegalEase India — Legal Help in Your Language</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════ TOKENS ═══════ */
+:root{
+  --bg:#fafaf8; --sf:#fff; --sf2:#f5f4f0; --sf3:#eceae2;
+  --bd:#e2e0d8; --bd2:#ccc9be;
+  --ink:#111318; --ink2:#3c4050; --ink3:#7a808c;
+  --teal:#1a6b5a; --teal2:#145048; --tl:#e2f0ec; --tm:#9ecebf;
+  --gold:#b8963e; --gl:#f7f0e0; --gm:#e5d090;
+  --red:#c0362a; --rl:#faeaea;
+  --amb:#c07820; --al:#fdf3e3;
+  --blue:#1a5fa8; --bl:#e8f0fc;
+  --grn:#1a8a3a; --gnl:#e2f5e8;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --r:10px; --rl2:16px; --rxl:22px;
+  --sh:0 2px 8px rgba(0,0,0,.06);
+  --shl:0 8px 32px rgba(0,0,0,.09);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px;scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:2px}
+img{max-width:100%}
+
+/* ═══════ ANIMATIONS ═══════ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes ripple{0%{transform:scale(0);opacity:.6}100%{transform:scale(4);opacity:0}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(26,107,90,.3)}50%{box-shadow:0 0 0 8px rgba(26,107,90,.0)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes statCount{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ═══════ TOPBAR ═══════ */
+.topbar{
+  position:sticky;top:0;z-index:300;
+  height:56px;display:flex;align-items:center;gap:10px;padding:0 16px;
+  background:rgba(250,250,248,.95);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--bd);
+  animation:fadeIn .4s ease;
+}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;cursor:pointer}
+.logo-mark{
+  width:34px;height:34px;background:linear-gradient(135deg,var(--ink),#2a3050);
+  border-radius:9px;display:grid;place-items:center;font-size:18px;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);transition:transform .2s;
+}
+.logo-mark:hover{transform:scale(1.08) rotate(-3deg)}
+.logo-name{font-family:var(--serif);font-size:19px;font-weight:700;line-height:1}
+.logo-name span{color:var(--teal)}
+.tb-fill{flex:1}
+
+.lang-toggle{display:flex;background:var(--sf2);border:1px solid var(--bd);border-radius:40px;padding:3px;gap:2px}
+.lang-btn{
+  padding:3px 12px;border-radius:40px;border:none;
+  background:transparent;cursor:pointer;font-size:12px;font-weight:600;
+  color:var(--ink3);font-family:var(--sans);transition:all .2s;
+}
+.lang-btn.active{background:var(--ink);color:#fff;animation:fadeIn .2s}
+
+.state-btn{
+  display:flex;align-items:center;gap:6px;padding:5px 12px 5px 9px;
+  background:var(--sf2);border:1px solid var(--bd);border-radius:40px;
+  cursor:pointer;font-size:12.5px;color:var(--ink2);white-space:nowrap;
+  transition:all .2s;font-family:var(--sans);position:relative;overflow:hidden;
+}
+.state-btn:hover{border-color:var(--teal);color:var(--teal);background:var(--tl)}
+.state-flag{font-size:15px}
+.chevron{width:11px;height:11px;opacity:.5;transition:transform .2s}
+.state-btn:hover .chevron{transform:rotate(180deg)}
+
+.api-link{
+  font-family:var(--mono);font-size:10px;padding:4px 10px;
+  background:var(--tl);color:var(--teal);border:1px solid var(--tm);
+  border-radius:40px;text-decoration:none;white-space:nowrap;transition:all .2s;
+}
+.api-link:hover{background:var(--teal);color:#fff}
+
+/* ═══════ HERO ═══════ */
+#hero{
+  max-width:1100px;margin:0 auto;padding:56px 16px 52px;
+  display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;
+  animation:fadeUp .6s ease;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:10px;font-family:var(--mono);letter-spacing:.8px;text-transform:uppercase;
+  color:var(--gold);background:var(--gl);border:1px solid var(--gm);
+  padding:4px 14px;border-radius:40px;margin-bottom:20px;
+}
+.hero-badge::before{content:'⚖';font-size:13px}
+.hero-h1{
+  font-family:var(--serif);font-size:clamp(36px,5vw,58px);
+  font-weight:700;line-height:1.1;letter-spacing:-.5px;margin-bottom:16px;
+}
+.hero-h1 em{font-style:italic;color:var(--teal);font-weight:400}
+.hero-p{font-size:15px;color:var(--ink2);line-height:1.8;max-width:420px;margin-bottom:28px}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap}
+.hstat{animation:statCount .5s ease both}
+.hstat:nth-child(2){animation-delay:.1s}
+.hstat:nth-child(3){animation-delay:.2s}
+.hstat:nth-child(4){animation-delay:.3s}
+.stat-num{font-family:var(--serif);font-size:28px;font-weight:700;line-height:1;display:block;color:var(--teal)}
+.stat-lbl{font-size:11px;color:var(--ink3);margin-top:2px}
+
+/* ═══════ SEARCH CARD ═══════ */
+.sc{
+  background:var(--sf);border:1px solid var(--bd);
+  border-radius:var(--rxl);box-shadow:var(--shl);overflow:hidden;
+  animation:fadeUp .6s ease .15s both;
+  transition:box-shadow .3s;
+}
+.sc:hover{box-shadow:0 16px 48px rgba(0,0,0,.12)}
+.sc-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:11px 15px;border-bottom:1px solid var(--bd);background:var(--sf2);
+}
+.sc-tag{font-size:10px;font-family:var(--mono);color:var(--ink3)}
+.sc-modes{display:flex;gap:3px}
+.sc-mode{
+  font-size:11px;font-weight:600;padding:3px 11px;border-radius:20px;
+  border:none;background:transparent;cursor:pointer;
+  color:var(--ink3);font-family:var(--sans);transition:all .2s;
+}
+.sc-mode.active{background:var(--teal);color:#fff}
+.sc-body{padding:14px}
+.sc-ta{
+  width:100%;border:none;outline:none;resize:none;min-height:90px;
+  font-family:var(--sans);font-size:14px;color:var(--ink);
+  background:transparent;line-height:1.7;
+}
+.sc-ta::placeholder{color:var(--ink3)}
+.sc-chips{padding:9px 15px;border-top:1px solid var(--bd)}
+.sc-lbl{font-size:9px;font-family:var(--mono);color:var(--ink3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px}
+.sc-cr{display:flex;flex-wrap:wrap;gap:5px}
+.sc-chip{
+  font-size:11px;padding:4px 10px;border-radius:20px;
+  background:var(--sf2);border:1px solid var(--bd);
+  cursor:pointer;color:var(--ink2);transition:all .18s;
+}
+.sc-chip:hover{background:var(--tl);border-color:var(--teal);color:var(--teal);transform:translateY(-1px)}
+.sc-foot{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 15px;border-top:1px solid var(--bd);
+}
+.vbtn{
+  display:flex;align-items:center;gap:6px;font-size:12px;
+  color:var(--ink3);background:none;border:none;cursor:pointer;
+  font-family:var(--sans);transition:all .18s;padding:6px 10px;
+  border-radius:var(--r);
+}
+.vbtn:hover{color:var(--teal);background:var(--tl)}
+.vbtn.on{color:var(--red);animation:glow 1.5s infinite}
+.ask-btn{
+  display:flex;align-items:center;gap:7px;padding:10px 22px;
+  background:linear-gradient(135deg,var(--ink),#2a3050);
+  color:#fff;font-size:13px;font-weight:700;
+  border:none;border-radius:var(--r);cursor:pointer;
+  font-family:var(--sans);transition:all .2s;
+  box-shadow:0 3px 12px rgba(0,0,0,.2);position:relative;overflow:hidden;
+}
+.ask-btn:hover{background:linear-gradient(135deg,var(--teal),var(--teal2));transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,107,90,.35)}
+.ask-btn:active{transform:translateY(0)}
+.ask-btn::after{content:'';position:absolute;inset:0;background:radial-gradient(circle,rgba(255,255,255,.3),transparent);transform:scale(0);transition:transform .4s}
+.ask-btn:active::after{animation:ripple .4s ease}
+
+/* ═══════ APP ═══════ */
+#app{display:none;height:calc(100vh - 56px)}
+#app.on{display:grid;grid-template-columns:220px 1fr 260px}
+
+/* ═══════ LEFT SIDEBAR ═══════ */
+.lsb{
+  border-right:1px solid var(--bd);overflow-y:auto;
+  background:var(--sf);display:flex;flex-direction:column;
+  animation:slideIn .3s ease;
+}
+.lsb-sec{padding:12px 0 6px}
+.lsb-lbl{
+  font-size:9px;font-family:var(--mono);text-transform:uppercase;
+  letter-spacing:1.2px;color:var(--ink3);padding:0 12px 4px;display:block;
+}
+.nbtn{
+  display:flex;align-items:center;gap:9px;width:100%;padding:8px 12px;
+  background:none;border:none;cursor:pointer;font-size:13px;
+  color:var(--ink2);font-family:var(--sans);text-align:left;
+  transition:all .15s;position:relative;
+}
+.nbtn:hover{background:var(--sf2);color:var(--ink);padding-left:15px}
+.nbtn.active{background:var(--tl);color:var(--teal);font-weight:600}
+.nbtn.active::before{
+  content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:3px;height:20px;background:var(--teal);border-radius:0 3px 3px 0;
+}
+.ni{width:15px;height:15px;opacity:.55;flex-shrink:0;transition:opacity .15s}
+.nbtn.active .ni,.nbtn:hover .ni{opacity:1}
+.ldiv{height:1px;background:var(--bd);margin:6px 12px}
+.hi{padding:7px 12px;cursor:pointer;transition:all .15s;border-radius:var(--r);margin:0 4px}
+.hi:hover{background:var(--sf2)}
+.hq{font-size:11.5px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:185px}
+.hm{font-size:10px;color:var(--ink3);margin-top:1px;font-family:var(--mono)}
+
+/* ═══════ MAIN ═══════ */
+.main{display:flex;flex-direction:column;overflow:hidden;background:var(--bg)}
+.ptb{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:9px 16px;border-bottom:1px solid var(--bd);
+  background:var(--sf);flex-shrink:0;min-height:44px;
+}
+.ptitle{font-size:12.5px;color:var(--ink2)}
+.p-acts{display:flex;gap:5px}
+.ic{
+  width:29px;height:29px;border-radius:7px;border:1px solid var(--bd);
+  background:none;cursor:pointer;display:grid;place-items:center;
+  color:var(--ink3);transition:all .15s;
+}
+.ic:hover{background:var(--sf2);color:var(--ink);border-color:var(--bd2)}
+.ic svg{width:13px;height:13px}
+.pv{display:none;flex:1;overflow:hidden;flex-direction:column}
+.pv.on{display:flex;animation:fadeIn .25s ease}
+.ps{flex:1;overflow-y:auto;padding:18px}
+
+/* ═══════ CHAT ═══════ */
+.msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:16px}
+.msg{display:flex;gap:9px;animation:msgIn .25s ease}
+.msg.user{flex-direction:row-reverse}
+.av{
+  width:30px;height:30px;border-radius:8px;flex-shrink:0;
+  display:grid;place-items:center;font-size:11px;font-weight:700;
+}
+.msg.ai .av{
+  background:linear-gradient(135deg,var(--ink),#2a3050);color:#fff;
+  font-family:var(--serif);font-size:12px;
+}
+.msg.user .av{background:var(--sf3);border:1px solid var(--bd);color:var(--ink2);font-size:10px}
+.mbody{max-width:76%}
+.msg.user .mbody{display:flex;flex-direction:column;align-items:flex-end}
+.bbl{padding:11px 14px;font-size:13.5px;line-height:1.7;border-radius:14px}
+.msg.ai .bbl{
+  background:var(--sf);border:1px solid var(--bd);
+  border-top-left-radius:3px;color:var(--ink);
+}
+.msg.user .bbl{
+  background:linear-gradient(135deg,var(--ink),#2a3050);
+  color:#fff;border-top-right-radius:3px;
+}
+.mt{font-size:10px;color:var(--ink3);margin-top:3px;font-family:var(--mono)}
+.cites{margin-top:9px;display:flex;flex-direction:column;gap:4px}
+.cite{
+  display:flex;gap:8px;padding:8px 11px;border-radius:9px;
+  background:var(--sf);border:1px solid var(--bd);
+  transition:border-color .15s;
+}
+.cite:hover{border-color:var(--teal)}
+.cbdg{
+  font-size:9px;font-family:var(--mono);font-weight:600;
+  padding:2px 6px;border-radius:4px;background:var(--teal);color:#fff;flex-shrink:0;margin-top:1px;
+}
+.ct{font-size:12px;font-weight:600;color:var(--ink)}
+.cd{font-size:11px;color:var(--ink3);margin-top:1px}
+.alrts{margin-top:9px;display:flex;flex-direction:column;gap:4px}
+.al{
+  padding:8px 11px;border-radius:0 8px 8px 0;
+  display:flex;gap:7px;font-size:12px;line-height:1.5;align-items:flex-start;
+  animation:fadeIn .3s ease;
+}
+.al.dl{background:var(--rl);border-left:3px solid var(--red);color:#6b1616}
+.al.rsk{background:var(--al);border-left:3px solid var(--amb);color:#6b3a10}
+.al.act{background:var(--tl);border-left:3px solid var(--teal);color:#0d3d2c}
+.al.info{background:var(--bl);border-left:3px solid var(--blue);color:#1a3060}
+
+/* Typing dots */
+.typing{display:flex;gap:4px;padding:3px 0;align-items:center}
+.td{width:5px;height:5px;border-radius:50%;background:var(--ink3);animation:bounce 1.2s ease infinite}
+.td:nth-child(2){animation-delay:.2s}
+.td:nth-child(3){animation-delay:.4s}
+
+/* Chat input */
+.cia{border-top:1px solid var(--bd);padding:10px 12px;background:var(--sf);flex-shrink:0}
+.cib{
+  display:flex;align-items:flex-end;gap:6px;padding:8px 10px;
+  background:var(--sf2);border:1px solid var(--bd);
+  border-radius:var(--r);transition:all .2s;
+}
+.cib:focus-within{border-color:var(--teal);box-shadow:0 0 0 3px rgba(26,107,90,.08)}
+.ci{
+  flex:1;border:none;background:transparent;outline:none;
+  font-family:var(--sans);font-size:13.5px;color:var(--ink);
+  resize:none;max-height:90px;line-height:1.5;
+}
+.ci::placeholder{color:var(--ink3)}
+.csend{
+  width:30px;height:30px;border-radius:8px;
+  background:linear-gradient(135deg,var(--ink),#2a3050);
+  border:none;cursor:pointer;display:grid;place-items:center;
+  color:#fff;transition:all .2s;flex-shrink:0;
+}
+.csend:hover{background:linear-gradient(135deg,var(--teal),var(--teal2));transform:scale(1.05)}
+.csend svg{width:13px;height:13px}
+.cc-row{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+.cc{
+  font-size:11px;padding:3px 9px;border-radius:20px;
+  border:1px solid var(--bd);cursor:pointer;background:var(--sf);
+  color:var(--ink2);display:flex;align-items:center;gap:4px;transition:all .18s;
+}
+.cc.on{background:var(--tl);border-color:var(--teal);color:var(--teal)}
+.ccd{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.5}
+.cc.on .ccd{opacity:1}
+.disc{
+  font-size:10px;color:var(--ink3);text-align:center;
+  padding:5px 12px;border-top:1px solid var(--bd);background:var(--sf);flex-shrink:0;
+}
+
+/* ═══════ NEWS ═══════ */
+.nc{
+  background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl2);
+  padding:14px 16px;margin-bottom:10px;cursor:pointer;
+  transition:all .2s;max-width:680px;position:relative;overflow:hidden;
+}
+.nc:hover{box-shadow:var(--sh);border-color:var(--tm);transform:translateY(-1px)}
+.nc::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--teal);border-radius:3px 0 0 3px;
+}
+.nc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px}
+.nc-cat{font-size:9px;font-family:var(--mono);font-weight:600;text-transform:uppercase;padding:2px 8px;border-radius:4px;background:var(--tl);color:var(--teal);white-space:nowrap}
+.nc-dt{font-size:10px;color:var(--ink3);font-family:var(--mono);white-space:nowrap}
+.nc-title{font-family:var(--serif);font-size:15px;font-weight:600;margin-bottom:6px;line-height:1.3}
+.nc-sum{font-size:12.5px;color:var(--ink2);line-height:1.6;margin-bottom:8px}
+.nc-foot{display:flex;align-items:center;justify-content:space-between}
+.nc-ipc{font-size:10px;font-family:var(--mono);color:var(--teal)}
+.nc-play{
+  font-size:11px;padding:3px 10px;border-radius:20px;
+  background:var(--tl);border:1px solid var(--tm);color:var(--teal);
+  cursor:pointer;border:none;font-family:var(--sans);font-weight:600;transition:all .18s;
+}
+.nc-play:hover{background:var(--teal);color:#fff}
+.vbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 14px;margin-bottom:14px;
+  background:linear-gradient(135deg,var(--tl),#f0f9f6);
+  border:1px solid var(--tm);border-radius:var(--r);
+}
+.vbar-t{font-size:13px;color:var(--teal);font-weight:500}
+.vbar-b{
+  display:flex;align-items:center;gap:6px;padding:7px 14px;
+  background:var(--teal);color:#fff;border:none;border-radius:var(--r);
+  cursor:pointer;font-size:12px;font-weight:600;font-family:var(--sans);transition:all .18s;
+}
+.vbar-b:hover{background:var(--teal2);transform:translateY(-1px)}
+.lf-row{display:flex;gap:5px;margin-bottom:12px}
+.lf{
+  font-size:11px;padding:4px 12px;border-radius:20px;
+  border:1px solid var(--bd);background:var(--sf);
+  cursor:pointer;color:var(--ink2);font-family:var(--sans);transition:all .18s;
+}
+.lf.active{background:var(--teal);border-color:var(--teal);color:#fff}
+
+/* ═══════ FORMS ═══════ */
+.ph2{font-family:var(--serif);font-size:24px;font-weight:700;margin-bottom:5px}
+.psub{font-size:13px;color:var(--ink3);margin-bottom:20px;line-height:1.5}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.fl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--ink2)}
+.fc{
+  padding:9px 12px;border:1px solid var(--bd);border-radius:var(--r);
+  background:var(--sf);font-family:var(--sans);font-size:13.5px;
+  color:var(--ink);outline:none;transition:all .18s;width:100%;
+}
+.fc:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(26,107,90,.08)}
+textarea.fc{resize:vertical;min-height:80px}
+select.fc{cursor:pointer}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fgf{grid-column:1/-1}
+.br{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
+.btn{padding:9px 20px;border-radius:var(--r);font-family:var(--sans);font-size:13px;font-weight:700;border:none;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.bp{background:linear-gradient(135deg,var(--ink),#2a3050);color:#fff}
+.bp:hover{background:linear-gradient(135deg,var(--teal),var(--teal2));transform:translateY(-1px);box-shadow:0 4px 14px rgba(26,107,90,.3)}
+.bs{background:var(--sf2);color:var(--ink2);border:1px solid var(--bd)}
+.bs:hover{background:var(--sf3)}
+.bt{background:var(--teal);color:#fff}
+.bt:hover{background:var(--teal2);transform:translateY(-1px)}
+
+/* Code output */
+.cw{border:1px solid var(--bd);border-radius:var(--rl2);overflow:hidden;margin-top:18px;max-width:680px}
+.ch{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--sf2);border-bottom:1px solid var(--bd)}
+.cn{font-size:11px;font-family:var(--mono);color:var(--ink3)}
+.cb{
+  padding:18px 20px;background:var(--sf);font-family:'Courier New',monospace;
+  font-size:12px;line-height:1.9;white-space:pre-wrap;
+  max-height:400px;overflow-y:auto;color:var(--ink);
+}
+
+/* Doc analysis */
+.doc-out{
+  display:none;margin-top:18px;max-width:640px;
+  animation:fadeUp .3s ease;
+}
+.doc-out.on{display:block}
+.doc-box{
+  background:var(--sf);border:1px solid var(--bd);
+  border-radius:var(--rl2);padding:16px 18px;margin-bottom:12px;
+  border-left:4px solid var(--teal);
+}
+
+/* Court/Lawyer cards */
+.ccard{
+  background:var(--sf);border:1px solid var(--bd);
+  border-radius:var(--rl2);padding:13px 15px;margin-bottom:9px;
+  max-width:620px;transition:all .18s;
+}
+.ccard:hover{box-shadow:var(--sh);border-color:var(--tm);transform:translateY(-1px)}
+.ct-type{font-size:10px;font-family:var(--mono);color:var(--teal);text-transform:uppercase;margin-bottom:4px}
+.ct-name{font-size:14px;font-weight:700;margin-bottom:4px;font-family:var(--serif)}
+.ct-addr{font-size:12px;color:var(--ink2);margin-bottom:4px}
+.ct-ph{font-size:12px;font-family:var(--mono);color:var(--teal);font-weight:600}
+.ct-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.ct-tag{font-size:10px;padding:2px 8px;border-radius:4px;background:var(--tl);color:var(--teal)}
+
+/* Cases */
+.ccase{
+  background:var(--sf);border:1px solid var(--bd);
+  border-radius:var(--rl2);padding:13px 15px;margin-bottom:9px;
+  max-width:620px;transition:all .18s;
+}
+.ccase:hover{box-shadow:var(--sh)}
+.ccase-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.cnum{font-size:11px;font-family:var(--mono);color:var(--teal);font-weight:600}
+.cbdg2{font-size:10px;padding:2px 8px;border-radius:20px;font-weight:600}
+.up{background:var(--gl);color:#7a5010;border:1px solid var(--gm)}
+.actv{background:var(--tl);color:var(--teal);border:1px solid var(--tm)}
+.ctitle{font-size:13.5px;font-weight:700;margin-bottom:4px}
+.cnxt{font-size:12px;color:var(--ink3)}
+.crmd{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--teal);margin-top:7px}
+.rp{width:5px;height:5px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+
+/* Land */
+.lres{
+  display:none;background:var(--sf);border:1px solid var(--bd);
+  border-radius:var(--rl2);padding:15px 17px;margin-bottom:14px;max-width:560px;
+}
+.lres.on{display:block;animation:fadeUp .3s ease}
+.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.ll{font-size:10px;color:var(--ink3);margin-bottom:2px;text-transform:uppercase;letter-spacing:.4px}
+.lv{font-size:14px;font-weight:600}
+.chk{display:flex;align-items:flex-start;gap:9px;padding:8px 0;border-bottom:1px solid var(--bd)}
+.chk:last-child{border-bottom:none}
+.chk input{margin-top:3px;accent-color:var(--teal);cursor:pointer}
+.cht{font-size:13px;color:var(--ink2)}
+.chn{font-size:11px;color:var(--ink3);margin-top:2px}
+
+/* Right sidebar */
+.rsb{border-left:1px solid var(--bd);overflow-y:auto;background:var(--sf)}
+.rsec{padding:13px;border-bottom:1px solid var(--bd)}
+.rlbl{
+  font-size:9px;font-family:var(--mono);font-weight:700;text-transform:uppercase;
+  letter-spacing:1.2px;color:var(--ink3);margin-bottom:10px;display:block;
+}
+.sb{
+  background:linear-gradient(135deg,var(--tl),#f0f9f6);
+  border:1px solid var(--tm);border-radius:var(--r);padding:10px 12px;
+}
+.sb-name{font-family:var(--serif);font-size:15px;color:var(--teal);font-weight:700;margin-bottom:7px}
+.sl{font-size:11px;color:#0d3d2c;padding:2px 0;display:flex;gap:5px}
+.sl::before{content:'›';color:var(--teal)}
+.mc{background:var(--sf2);border:1px solid var(--bd);border-radius:var(--r);padding:9px 11px;margin-bottom:7px;transition:all .15s}
+.mc:hover{border-color:var(--teal)}
+.mn{font-size:10px;font-family:var(--mono);color:var(--teal)}
+.mt2{font-size:12px;font-weight:600;margin:2px 0}
+.md{font-size:11px;color:var(--ink3)}
+.acb{
+  width:100%;padding:8px;border:1px dashed var(--bd);
+  border-radius:var(--r);background:none;cursor:pointer;
+  font-size:12px;color:var(--ink3);font-family:var(--sans);transition:all .15s;
+}
+.acb:hover{border-color:var(--teal);color:var(--teal);background:var(--tl)}
+.ipcr{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--bd);font-size:12px}
+.ipcr:last-child{border-bottom:none}
+.ic2{font-family:var(--mono);color:var(--teal);font-size:11px}
+.id{color:var(--ink2)}
+.cf{margin-top:7px}
+.cfr{display:flex;justify-content:space-between;font-size:10px;font-family:var(--mono);color:var(--ink3);margin-bottom:5px}
+.ctr{height:4px;background:var(--sf3);border-radius:2px;overflow:hidden}
+.cfil{height:100%;background:linear-gradient(90deg,var(--teal),#27ae7a);border-radius:2px;transition:width .8s ease}
+.hl{font-size:12px;display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--bd)}
+.hl:last-child{border-bottom:none}
+.hnum{font-family:var(--mono);color:var(--teal);font-weight:600}
+
+/* Modals */
+.overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(17,19,24,.5);backdrop-filter:blur(6px);
+  z-index:500;align-items:center;justify-content:center;padding:16px;
+}
+.overlay.on{display:flex;animation:fadeIn .2s ease}
+.modal{
+  background:var(--sf);border-radius:var(--rxl);
+  box-shadow:0 24px 64px rgba(0,0,0,.16);
+  width:520px;max-width:100%;max-height:90vh;
+  display:flex;flex-direction:column;animation:fadeUp .25s ease;
+}
+.mhd{display:flex;align-items:center;justify-content:space-between;padding:17px 20px 13px;border-bottom:1px solid var(--bd);flex-shrink:0}
+.mtitle{font-family:var(--serif);font-size:21px;font-weight:700}
+.mx{width:27px;height:27px;border-radius:7px;border:1px solid var(--bd);background:none;cursor:pointer;display:grid;place-items:center;color:var(--ink3);font-size:13px;transition:all .15s}
+.mx:hover{background:var(--sf2)}
+.mbody{padding:16px 20px;overflow-y:auto;flex:1}
+.mfoot{padding:12px 20px;border-top:1px solid var(--bd);display:flex;justify-content:flex-end;gap:7px;flex-shrink:0}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.so{
+  padding:9px;border:1px solid var(--bd);border-radius:var(--r);
+  cursor:pointer;text-align:center;font-size:12px;font-weight:600;
+  color:var(--ink2);transition:all .18s;background:var(--sf);
+}
+.so:hover{border-color:var(--teal);color:var(--teal);background:var(--tl);transform:translateY(-1px)}
+.so.sel{border-color:var(--teal);background:var(--teal);color:#fff}
+.so-flag{font-size:22px;display:block;margin-bottom:3px}
+.conflict-box{background:var(--rl);border:1px solid #e8a0a0;border-radius:var(--r);padding:10px 12px;margin-top:10px;font-size:12px;color:#6b1616;line-height:1.6}
+
+/* Toast */
+#toast{
+  position:fixed;bottom:20px;right:20px;z-index:9999;
+  padding:10px 18px;border-radius:var(--r);font-size:13px;font-weight:600;
+  transform:translateY(80px);transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 8px 30px rgba(0,0,0,.16);font-family:var(--sans);max-width:300px;
+}
+#toast.on{transform:translateY(0)}
+
+/* Upload zone */
+.uz{
+  border:2px dashed var(--bd);border-radius:var(--rl2);
+  padding:32px 18px;text-align:center;cursor:pointer;
+  transition:all .2s;margin-bottom:14px;max-width:580px;
+}
+.uz:hover,.uz.drag{border-color:var(--teal);background:var(--tl)}
+
+/* Detect alert */
+.detect-banner{
+  padding:10px 14px;border-radius:var(--r);margin-bottom:8px;
+  font-size:12.5px;font-weight:600;
+  display:flex;align-items:center;gap:8px;
+}
+.detect-banner.harmful{background:var(--rl);color:var(--red);border:1px solid #e8a0a0}
+.detect-banner.abusive{background:var(--al);color:var(--amb);border:1px solid #e8c080}
+
+/* ═══════ RESPONSIVE ═══════ */
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr;gap:30px;padding:36px 16px 32px}
+  .sc{display:none}
+  #app.on{grid-template-columns:1fr}
+  .lsb,.rsb{display:none}
+  .fg2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<nav class="topbar">
+  <div class="logo" onclick="goHome()">
+    <div class="logo-mark">⚖</div>
+    <div class="logo-name">Legal<span>Ease</span></div>
+  </div>
+  <div class="tb-fill"></div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+    <button class="lang-btn" onclick="setLang('ta',this)">த</button>
+    <button class="lang-btn" onclick="setLang('hi',this)">हि</button>
+  </div>
+  <button class="state-btn" onclick="openM('sm')">
+    <span class="state-flag" id="tbf">🏛️</span>
+    <span id="tbs">Select State</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <a class="api-link" href="/api/docs" target="_blank">API</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div>
+    <div class="hero-badge">INDIA'S LEGAL AI — JURISDICTION-AWARE</div>
+    <h1 class="hero-h1">Legal help,<br><em>in your language.</em></h1>
+    <p class="hero-p">Ask in Tamil, Hindi, or English. Get cited answers with real IPC sections, state laws, court locations, and lawyer contacts — instantly and free.</p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="stat-num">511+</span><div class="stat-lbl">IPC Sections</div></div>
+      <div class="hstat"><span class="stat-num">9</span><div class="stat-lbl">States</div></div>
+      <div class="hstat"><span class="stat-num">3</span><div class="stat-lbl">Languages</div></div>
+      <div class="hstat"><span class="stat-num">Free</span><div class="stat-lbl">Always</div></div>
+    </div>
+  </div>
+  <div class="sc">
+    <div class="sc-head">
+      <span class="sc-tag">ask_legal_question()</span>
+      <div class="sc-modes">
+        <button class="sc-mode active" onclick="setScM(this)">Ask</button>
+        <button class="sc-mode" onclick="setScM(this)">Analyse</button>
+        <button class="sc-mode" onclick="setScM(this)">Draft</button>
+      </div>
+    </div>
+    <div class="sc-body">
+      <textarea class="sc-ta" id="hta" rows="3"
+        placeholder="e.g. My landlord is not returning my deposit. What can I do?"
+        onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();heroSend()}"></textarea>
+    </div>
+    <div class="sc-chips">
+      <div class="sc-lbl">common queries</div>
+      <div class="sc-cr">
+        <span class="sc-chip" onclick="setHQ('My landlord is not returning my security deposit')">Rent deposit</span>
+        <span class="sc-chip" onclick="setHQ('My friend broke my laptop')">Laptop damaged</span>
+        <span class="sc-chip" onclick="setHQ('Employer not paying salary')">Unpaid salary</span>
+        <span class="sc-chip" onclick="setHQ('Is alcohol legal in my state?')">Alcohol laws</span>
+        <span class="sc-chip" onclick="setHQ('How to file a consumer complaint?')">Consumer complaint</span>
+        <span class="sc-chip" onclick="setHQ('sexual harassment at workplace')">Sexual harassment</span>
+      </div>
+    </div>
+    <div class="sc-foot">
+      <button class="vbtn" id="hvbtn" onclick="startVoice('hta','hvbtn')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+        <span id="hvlbl">🎤 Speak in Tamil / Hindi</span>
+      </button>
+      <button class="ask-btn" onclick="heroSend()">
+        Ask LegalEase
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- APP -->
+<div id="app">
+  <!-- LEFT SIDEBAR -->
+  <aside class="lsb">
+    <div class="lsb-sec">
+      <span class="lsb-lbl">Features</span>
+      <button class="nbtn active" onclick="swV('chat',this)">
+        <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Legal Q&amp;A
+      </button>
+      <button class="nbtn" onclick="swV('news',this)">
+        <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M18 18h-8M18 10h-8"/></svg>Legal News
+      </button>
+      <button class="nbtn" onclick="swV('complaint',this)">
+        <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Complaint Writer
+      </button>
+      <button class="nbtn" onclick="swV('analyse',this)">
+        <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Document Analyser
+      </button>
+      <button class="nbtn" onclick="swV('courts',this)">
+        <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>Court Locator
+      </button>
+      <button class="nbtn" onclick="swV('lawyers',this)">
+        <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Find Lawyer
+      </button>
+      <button class="nbtn" onclick="swV('tracker',this)">
+        <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Case Tracker
+      </button>
+      <button class="nbtn" onclick="swV('land',this)">
+        <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Land Documents
+      </button>
+    </div>
+    <div class="ldiv"></div>
+    <div class="lsb-sec">
+      <span class="lsb-lbl">Recent</span>
+      <div class="hi" onclick="loadH(0)"><div class="hq">Landlord deposit not returned...</div><div class="hm">Today · Tamil Nadu</div></div>
+      <div class="hi" onclick="loadH(1)"><div class="hq">Friend broke my laptop...</div><div class="hm">Yesterday</div></div>
+      <div class="hi" onclick="loadH(2)"><div class="hq">Consumer complaint filing...</div><div class="hm">3 days ago</div></div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="ptb">
+      <span class="ptitle" id="ptitle">Legal Q&amp;A — <span id="plng">English</span> · <span id="pst">Select a state</span></span>
+      <div class="p-acts">
+        <button class="ic" title="New chat" onclick="clearChat()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- CHAT -->
+    <div class="pv on" id="v-chat">
+      <div class="msgs" id="msgs">
+        <div class="msg ai">
+          <div class="av">LE</div>
+          <div class="mbody">
+            <div class="bbl">
+              <strong style="font-family:var(--serif);font-size:16px">Welcome to LegalEase India.</strong><br><br>
+              I answer Indian legal questions — cited from IPC &amp; Indian Kanoon. Topics I handle:<br><br>
+              🏠 Rent &amp; deposit &nbsp;·&nbsp; 💼 Salary &amp; workplace &nbsp;·&nbsp; 🛒 Consumer rights<br>
+              👨‍👩‍👧 Divorce &amp; custody &nbsp;·&nbsp; 🚨 Sexual harassment &nbsp;·&nbsp; 👶 Child labour<br>
+              ⚖️ FIR &amp; complaints &nbsp;·&nbsp; 🍺 Alcohol laws &nbsp;·&nbsp; 📄 Document analysis<br><br>
+              <strong>Select your state (top-right)</strong> for jurisdiction-specific answers.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cia">
+        <div class="cib">
+          <textarea class="ci" id="ci" rows="1" placeholder="Ask your legal question..."
+            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMsg()}"
+            oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,90)+'px'"></textarea>
+          <button class="ic" title="Voice" onclick="startVoice('ci','cvbtn')" style="border:none;color:var(--ink3);cursor:pointer;flex-shrink:0" id="cvbtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+          </button>
+          <button class="csend" onclick="sendMsg()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+        <div class="cc-row">
+          <div class="cc on" onclick="this.classList.toggle('on')"><div class="ccd"></div>Cite sources</div>
+          <div class="cc on" onclick="this.classList.toggle('on')"><div class="ccd"></div>State-aware</div>
+          <div class="cc" onclick="this.classList.toggle('on')"><div class="ccd"></div>Simple mode</div>
+          <div class="cc" id="cct" onclick="this.classList.toggle('on')"><div class="ccd"></div>Tamil output</div>
+        </div>
+      </div>
+      <div class="disc">LegalEase provides legal information, not legal advice. Consult a qualified advocate for serious matters.</div>
+    </div>
+
+    <!-- NEWS -->
+    <div class="pv" id="v-news">
+      <div class="ps">
+        <h2 class="ph2">Legal News India</h2>
+        <p class="psub">Latest judgments &amp; amendments — auto-translated and read aloud in your language.</p>
+        <div class="vbar">
+          <span class="vbar-t">🔊 Hear today's top legal news in Tamil, Hindi, or English</span>
+          <button class="vbar-b" onclick="readAllNews()">▶ Read All News</button>
+        </div>
+        <div class="lf-row">
+          <button class="lf active" onclick="setNLang('en',this)">English</button>
+          <button class="lf" onclick="setNLang('ta',this)">Tamil</button>
+          <button class="lf" onclick="setNLang('hi',this)">Hindi</button>
+        </div>
+        <div id="nlist"></div>
+      </div>
+    </div>
+
+    <!-- COMPLAINT -->
+    <div class="pv" id="v-complaint">
+      <div class="ps">
+        <h2 class="ph2">Police Complaint Writer</h2>
+        <p class="psub">Generate a court-ready FIR in English, Tamil, or Hindi with correct IPC sections. Fill once — download instantly.</p>
+        <div class="fg2" style="max-width:680px">
+          <div class="fg">
+            <label class="fl">Type of Offence</label>
+            <select class="fc" id="ot">
+              <option value="">Select offence...</option>
+              <option value="theft">Theft / Robbery (IPC 379)</option>
+              <option value="fraud">Cheating / Fraud (IPC 420)</option>
+              <option value="assault">Assault / Hurt (IPC 351)</option>
+              <option value="property_damage">Property Damage (IPC 427)</option>
+              <option value="cyber">Cybercrime (IT Act 66C)</option>
+              <option value="domestic">Domestic Violence (IPC 498A)</option>
+              <option value="harassment">Stalking / Harassment (IPC 354D)</option>
+              <option value="sexual">Sexual Harassment (IPC 354A)</option>
+              <option value="child_labour">Child Labour (CLPRA §3)</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label class="fl">Output Language</label>
+            <select class="fc" id="cl">
+              <option value="en">English</option>
+              <option value="ta">Tamil (தமிழ்)</option>
+              <option value="hi">Hindi (हिंदी)</option>
+            </select>
+          </div>
+          <div class="fg fgf">
+            <label class="fl">Describe What Happened</label>
+            <textarea class="fc" id="cd" rows="4" placeholder="e.g. On 15th January 2025, my neighbour Ramesh stole my Honda Activa (Reg. TN-01-AB-1234) from my compound..."></textarea>
+          </div>
+          <div class="fg">
+            <label class="fl">State</label>
+            <select class="fc" id="cs">
+              <option value="TN">Tamil Nadu</option><option value="MH">Maharashtra</option>
+              <option value="KA">Karnataka</option><option value="AP">Andhra Pradesh</option>
+              <option value="DL">Delhi</option><option value="UP">Uttar Pradesh</option><option value="GJ">Gujarat</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label class="fl">Date of Incident</label>
+            <input type="date" class="fc" id="cdt">
+          </div>
+          <div class="fg">
+            <label class="fl">Your Full Name</label>
+            <input type="text" class="fc" id="cname" placeholder="As per Aadhaar">
+          </div>
+          <div class="fg">
+            <label class="fl">Your Address</label>
+            <input type="text" class="fc" id="caddr" placeholder="Full address with PIN">
+          </div>
+          <div class="fg">
+            <label class="fl">Witnesses (optional)</label>
+            <input type="text" class="fc" id="cwit" placeholder="Witness names if any">
+          </div>
+        </div>
+        <div class="br">
+          <button class="btn bp" onclick="genComp()">Generate Complaint</button>
+          <button class="btn bs">Save Draft</button>
+        </div>
+        <div id="cout" style="display:none">
+          <div class="cw">
+            <div class="ch">
+              <span class="cn" id="cfname">FIR_Draft.txt</span>
+              <div class="br" style="margin:0;gap:6px">
+                <button class="btn bs" style="padding:5px 12px;font-size:11px" onclick="copyC()">Copy</button>
+                <button class="btn bt" style="padding:5px 12px;font-size:11px" onclick="readC()">🔊 Read</button>
+                <button class="btn bt" style="padding:5px 12px;font-size:11px">⬇ Download</button>
+              </div>
+            </div>
+            <div class="cb" id="ctxt"></div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-direction:column;gap:5px;max-width:680px">
+            <div class="al act"><span>✅</span><span>Submit to nearest police station. Keep a copy with officer's stamp.</span></div>
+            <div class="al rsk"><span>⚠</span><span>False complaint = IPC §182 offence. Verify all facts before submitting.</span></div>
+            <div class="al dl"><span>🕐</span><span>If police refuse FIR — approach SP or Magistrate under CrPC §156(3).</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOCUMENT ANALYSER -->
+    <div class="pv" id="v-analyse">
+      <div class="ps">
+        <h2 class="ph2">Document Analyser</h2>
+        <p class="psub">Paste or upload any court notice, FIR, affidavit, legal notice, summons, or contract. We'll explain what it is, key points, and what to do — in your language.</p>
+        <div class="uz" id="uz" onclick="document.getElementById('fi').click()"
+          ondragover="event.preventDefault();this.classList.add('drag')"
+          ondragleave="this.classList.remove('drag')">
+          <div style="font-size:30px;margin-bottom:8px">📄</div>
+          <div style="font-size:13.5px;color:var(--ink2);font-weight:500" id="uztext">Drop your document here, or click to upload</div>
+          <div style="font-size:11px;color:var(--ink3);margin-top:3px">PDF, DOCX, Image · Max 10MB</div>
+          <input type="file" id="fi" style="display:none" accept=".pdf,.docx,.png,.jpg" onchange="fileChosen(this)">
+        </div>
+        <p style="font-size:12px;color:var(--ink3);margin-bottom:10px;max-width:580px">Or paste document text:</p>
+        <textarea class="fc" id="dtxt" rows="6" style="max-width:580px"
+          placeholder="Paste court notice, FIR, affidavit, legal notice, contract text here...
+
+Example: 'In the Court of the Civil Judge... You are hereby required to appear before this Court on...'"></textarea>
+        <div class="fg" style="max-width:200px;margin-top:10px">
+          <label class="fl">Explain in language</label>
+          <select class="fc" id="dlng">
+            <option value="en">English</option>
+            <option value="ta">Tamil</option>
+            <option value="hi">Hindi</option>
+          </select>
+        </div>
+        <div class="br">
+          <button class="btn bp" onclick="analyseDoc()">Analyse Document</button>
+        </div>
+        <div class="doc-out" id="dout">
+          <div class="doc-box">
+            <div style="font-size:10px;font-family:var(--mono);color:var(--ink3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px">Document Detected</div>
+            <div style="font-size:16px;font-weight:700;font-family:var(--serif);margin-bottom:10px" id="dtype"></div>
+            <div style="font-size:13.5px;color:var(--ink2);line-height:1.7;margin-bottom:12px" id="dwhat"></div>
+            <div style="font-size:11px;font-family:var(--mono);color:var(--ink3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.6px">Key Points</div>
+            <div id="dpts"></div>
+          </div>
+          <div class="al act"><span>✅</span><span id="dact"></span></div>
+          <div style="margin-top:8px;font-size:11px;color:var(--teal);background:var(--tl);padding:9px 12px;border-radius:var(--r)">
+            🆓 Free Legal Aid: <strong>15100</strong> (NALSA — Toll-free, 24/7, All India)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COURTS -->
+    <div class="pv" id="v-courts">
+      <div class="ps">
+        <h2 class="ph2">Court Locator</h2>
+        <p class="psub">Find the right court for your case — addresses, phone numbers, and what each court handles.</p>
+        <div class="fg" style="max-width:300px;margin-bottom:16px">
+          <label class="fl">Select State</label>
+          <select class="fc" id="cst" onchange="loadCourts()">
+            <option value="TN">Tamil Nadu</option><option value="KA">Karnataka</option>
+            <option value="MH">Maharashtra</option><option value="DL">Delhi</option>
+          </select>
+        </div>
+        <div id="clist"></div>
+      </div>
+    </div>
+
+    <!-- LAWYERS -->
+    <div class="pv" id="v-lawyers">
+      <div class="ps">
+        <h2 class="ph2">Find a Lawyer / Free Legal Aid</h2>
+        <p class="psub">Free legal aid contacts, Bar Council information, and specialist lawyer directories.</p>
+        <div class="fg" style="max-width:300px;margin-bottom:16px">
+          <label class="fl">Select State</label>
+          <select class="fc" id="lst" onchange="loadLawyers()">
+            <option value="TN">Tamil Nadu</option><option value="KA">Karnataka</option>
+            <option value="MH">Maharashtra</option><option value="DL">Delhi</option>
+          </select>
+        </div>
+        <div id="llist"></div>
+        <div style="margin-top:14px;background:var(--gl);border:1px solid var(--gm);border-radius:var(--rl2);padding:14px 16px;max-width:580px">
+          <div style="font-size:13px;font-weight:700;color:var(--gold);margin-bottom:7px">🆓 Free Legal Aid — Your Constitutional Right</div>
+          <div style="font-size:12.5px;color:var(--ink2);line-height:1.7">
+            You are entitled to FREE legal aid if you are:<br>
+            • Below poverty line (BPL card holder) &nbsp;• SC/ST category<br>
+            • Woman or child &nbsp;• Person with disability<br>
+            • Victim of trafficking or disaster<br><br>
+            <strong>National Helpline: 15100</strong> (Toll-free · 24/7 · All India)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRACKER -->
+    <div class="pv" id="v-tracker">
+      <div class="ps">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px">
+          <div>
+            <h2 class="ph2">Case Tracker</h2>
+            <p style="font-size:13px;color:var(--ink3)">Track hearings. Get WhatsApp reminders.</p>
+          </div>
+          <button class="btn bp" onclick="openM('cm')">+ Add Case</button>
+        </div>
+        <div id="clist2">
+          <div class="ccase">
+            <div class="ccase-top"><span class="cnum">CS/1247/2024</span><span class="cbdg2 up">Next hearing: 6 days</span></div>
+            <div class="ctitle">Deposit recovery — Tenant vs Landlord</div>
+            <div class="cnxt">📍 Chennai City Civil Court, Room 3 · Jan 28, 2025 · 10:30 AM</div>
+            <div class="crmd"><div class="rp"></div>WhatsApp reminders: Jan 21 &amp; Jan 27</div>
+          </div>
+          <div class="ccase">
+            <div class="ccase-top"><span class="cnum">CC/892/2024</span><span class="cbdg2 actv">Active</span></div>
+            <div class="ctitle">Consumer complaint — Electronics defect</div>
+            <div class="cnxt">📍 District Consumer Commission · Feb 5, 2025</div>
+            <div class="crmd"><div class="rp"></div>Reminder: Jan 29</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;background:var(--bl);border:1px solid #9ec4f0;border-radius:var(--r);padding:10px 13px;max-width:580px;font-size:12.5px;color:#1a4080">
+          💡 Track live on <strong>ecourts.gov.in</strong> — enter your case number for real-time status.
+        </div>
+      </div>
+    </div>
+
+    <!-- LAND -->
+    <div class="pv" id="v-land">
+      <div class="ps">
+        <h2 class="ph2">Land Document Assistant</h2>
+        <p class="psub">Look up Tamil Nadu land records or generate a sale/purchase checklist.</p>
+        <div class="fg2" style="max-width:540px;margin-bottom:14px">
+          <div class="fg"><label class="fl">Survey / Patta Number</label><input type="text" class="fc" id="sn" placeholder="e.g. 123/4A"></div>
+          <div class="fg"><label class="fl">District</label><select class="fc" id="ld"><option>Chennai</option><option>Coimbatore</option><option>Madurai</option><option>Salem</option><option>Trichy</option></select></div>
+        </div>
+        <button class="btn bp" style="margin-bottom:20px" onclick="lookupLand()">Look Up Land Details</button>
+        <div class="lres" id="lres">
+          <div style="font-size:10px;font-family:var(--mono);color:var(--ink3);margin-bottom:11px;text-transform:uppercase;letter-spacing:.7px">Land Record — Tamil Nadu</div>
+          <div class="lgrid">
+            <div><div class="ll">Patta Number</div><div class="lv" id="lpatta">—</div></div>
+            <div><div class="ll">Area</div><div class="lv">0.45 Acres</div></div>
+            <div><div class="ll">Land Type</div><div class="lv">Dry / Punjai</div></div>
+            <div><div class="ll">District</div><div class="lv" id="ldist">—</div></div>
+          </div>
+          <div style="display:flex;gap:7px;margin-top:12px;flex-wrap:wrap">
+            <a href="https://patta.tn.gov.in" target="_blank" class="btn bs" style="font-size:12px">Official Patta ↗</a>
+            <a href="https://eservices.tn.gov.in" target="_blank" class="btn bs" style="font-size:12px">EC Certificate ↗</a>
+          </div>
+        </div>
+        <div style="margin-top:20px;max-width:580px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:11px">Sale / Purchase Checklist — Tamil Nadu</div>
+          <div id="chklist"></div>
+          <button class="btn bp" style="margin-top:10px;font-size:12px" onclick="showChecklist()">Generate My Checklist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="rsb">
+    <div class="rsec">
+      <span class="rlbl">Your State</span>
+      <div id="sbx"><div style="font-size:12px;color:var(--ink3);text-align:center;padding:8px 0">Select state for applicable laws</div></div>
+    </div>
+    <div class="rsec" id="csec" style="display:none">
+      <span class="rlbl">Answer Confidence</span>
+      <div class="cf">
+        <div class="cfr"><span>Faithfulness score</span><span id="cpct">—</span></div>
+        <div class="ctr"><div class="cfil" id="cbar" style="width:0"></div></div>
+      </div>
+      <div style="font-size:10px;color:var(--ink3);margin-top:5px;line-height:1.5">% directly supported by retrieved case law</div>
+    </div>
+    <div class="rsec">
+      <span class="rlbl">Upcoming Hearings</span>
+      <div class="mc"><div class="mn">CS/1247/2024</div><div class="mt2">Deposit recovery</div><div class="md">Jan 28 · Chennai Civil Court</div><div class="crmd" style="margin-top:5px"><div class="rp"></div>Reminder active</div></div>
+      <button class="acb" onclick="openM('cm')">+ Add new case</button>
+    </div>
+    <div class="rsec">
+      <span class="rlbl">Quick IPC Reference</span>
+      <div class="ipcr"><span class="ic2">§354A</span><span class="id">Sexual harassment</span></div>
+      <div class="ipcr"><span class="ic2">§379</span><span class="id">Theft</span></div>
+      <div class="ipcr"><span class="ic2">§420</span><span class="id">Cheating/Fraud</span></div>
+      <div class="ipcr"><span class="ic2">§427</span><span class="id">Property damage</span></div>
+      <div class="ipcr"><span class="ic2">§498A</span><span class="id">Domestic cruelty</span></div>
+      <div class="ipcr"><span class="ic2">§506</span><span class="id">Criminal intimidation</span></div>
+    </div>
+    <div class="rsec">
+      <span class="rlbl">Emergency Helplines</span>
+      <div class="hl"><span>Police</span><span class="hnum">100</span></div>
+      <div class="hl"><span>Women Helpline</span><span class="hnum">1091</span></div>
+      <div class="hl"><span>Childline</span><span class="hnum">1098</span></div>
+      <div class="hl"><span>Legal Aid</span><span class="hnum">15100</span></div>
+      <div class="hl"><span>Cyber Crime</span><span class="hnum">1930</span></div>
+      <div class="hl"><span>NCW (Women)</span><span class="hnum">7827170170</span></div>
+    </div>
+  </aside>
+</div>
+
+<!-- STATE MODAL -->
+<div class="overlay" id="sm">
+  <div class="modal">
+    <div class="mhd"><h2 class="mtitle">Select your state</h2><button class="mx" onclick="closeM('sm')">✕</button></div>
+    <div class="mbody">
+      <p style="font-size:12px;color:var(--ink3);margin-bottom:13px">Laws vary significantly by state. Your selection ensures accurate, jurisdiction-specific answers.</p>
+      <div class="sgrid">
+        <div class="so" onclick="selSt('TN','Tamil Nadu','🏛️',this)"><span class="so-flag">🏛️</span>Tamil Nadu</div>
+        <div class="so" onclick="selSt('MH','Maharashtra','🌊',this)"><span class="so-flag">🌊</span>Maharashtra</div>
+        <div class="so" onclick="selSt('KA','Karnataka','🌿',this)"><span class="so-flag">🌿</span>Karnataka</div>
+        <div class="so" onclick="selSt('AP','Andhra Pradesh','🌾',this)"><span class="so-flag">🌾</span>Andhra Pradesh</div>
+        <div class="so" onclick="selSt('DL','Delhi','🏙️',this)"><span class="so-flag">🏙️</span>Delhi</div>
+        <div class="so" onclick="selSt('UP','Uttar Pradesh','⛩️',this)"><span class="so-flag">⛩️</span>Uttar Pradesh</div>
+        <div class="so" onclick="selSt('GJ','Gujarat','🦁',this)"><span class="so-flag">🦁</span>Gujarat</div>
+        <div class="so" onclick="selSt('RJ','Rajasthan','🏜️',this)"><span class="so-flag">🏜️</span>Rajasthan</div>
+        <div class="so" onclick="selSt('WB','West Bengal','🐅',this)"><span class="so-flag">🐅</span>West Bengal</div>
+      </div>
+      <div id="cflct"></div>
+    </div>
+    <div class="mfoot">
+      <button class="btn bs" onclick="closeM('sm')">Cancel</button>
+      <button class="btn bp" onclick="confirmSt()">Confirm State</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD CASE MODAL -->
+<div class="overlay" id="cm">
+  <div class="modal">
+    <div class="mhd"><h2 class="mtitle">Add case to tracker</h2><button class="mx" onclick="closeM('cm')">✕</button></div>
+    <div class="mbody">
+      <div class="fg"><label class="fl">Case Number (CNR)</label><input type="text" class="fc" id="ncn" placeholder="e.g. TNCH01-001234-2024"></div>
+      <div class="fg2">
+        <div class="fg"><label class="fl">Court Name</label><input type="text" class="fc" id="ncc" placeholder="Chennai City Civil Court"></div>
+        <div class="fg"><label class="fl">Next Hearing Date</label><input type="date" class="fc" id="ncd"></div>
+      </div>
+      <div class="fg"><label class="fl">Description</label><input type="text" class="fc" id="ncp" placeholder="Brief description"></div>
+      <div class="fg"><label class="fl">WhatsApp for reminders</label><input type="tel" class="fc" id="nph" placeholder="+91 98765 43210"></div>
+      <div style="font-size:11px;color:var(--ink3);background:var(--sf2);padding:8px 11px;border-radius:var(--r);margin-top:8px">Reminders sent 7 days and 1 day before each hearing via WhatsApp.</div>
+    </div>
+    <div class="mfoot">
+      <button class="btn bs" onclick="closeM('cm')">Cancel</button>
+      <button class="btn bp" onclick="addCase()">Add Case</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ════════════════════════════
+   FULL KNOWLEDGE BASE (STANDALONE — NO BACKEND NEEDED)
+   ════════════════════════════ */
+
+const APP={lang:'en',state:null,name:null,flag:'🏛️',pending:null,sid:'s'+Date.now(),recog:null};
+
+const SLAWS={
+  TN:{name:'Tamil Nadu',flag:'🏛️',laws:['TN Rent Control Act 1960 — strong tenant protection','Stamp duty: 7% on property','TASMAC — only legal alcohol outlet','Non-farmers cannot buy agricultural land'],conflict:null,note:'TN has India\'s strongest rent control protection.'},
+  MH:{name:'Maharashtra',flag:'🌊',laws:['Maharashtra Rent Control Act 1999','Stamp duty: 6%','RERA Maharashtra for housing disputes'],conflict:null,note:'RERA Maharashtra resolves housing disputes faster.'},
+  GJ:{name:'Gujarat',flag:'🦁',laws:['⚠️ TOTAL ALCOHOL PROHIBITION','Possession = arrest, no bail easily','Gujarat Rent Control Act 2011','Stamp duty: 4.9%'],conflict:'⚠️ CRITICAL — Gujarat has TOTAL alcohol prohibition. Even carrying alcohol from another state = criminal offence. 1–10 years jail. No easy bail.',note:'Total alcohol prohibition — carry none.'},
+  KA:{name:'Karnataka',flag:'🌿',laws:['Karnataka Rent Control Act 2001','Stamp duty: 5.6%','Fast-track IT/commercial courts in Bengaluru'],conflict:null,note:'Bengaluru has dedicated fast-track courts for IT and commercial disputes.'},
+  AP:{name:'Andhra Pradesh',flag:'🌾',laws:['AP Rent Control Act 1960','Stamp duty: 5%','DHARANI portal for land records'],conflict:null,note:'AP uses DHARANI portal for land record disputes.'},
+  DL:{name:'Delhi',flag:'🏙️',laws:['Delhi Rent Control Act 1958','Stamp duty: 6% (men), 4% (women)','Old tenants have very strong protection'],conflict:null,note:'Old Delhi tenants cannot be evicted without legal grounds — very strong protection.'},
+  UP:{name:'Uttar Pradesh',flag:'⛩️',laws:['UP Urban Buildings Act 1972','Stamp duty: 5%'],conflict:null,note:'Check case status on ecourts.gov.in'},
+  RJ:{name:'Rajasthan',flag:'🏜️',laws:['Rajasthan Rent Control Act 2001','Stamp duty: 6%'],conflict:null,note:'Rajasthan e-Dharti portal for land records.'},
+  WB:{name:'West Bengal',flag:'🐅',laws:['WB Premises Tenancy Act 1997','Very strong tenant protection in Kolkata'],conflict:null,note:'WB tenants can stay indefinitely in many cases — eviction extremely difficult.'},
+};
+
+/* ── COMPLETE INTENT CLASSIFIER ── */
+const INTENTS={
+  greeting:['hello','hi','hey','good morning','good evening','good afternoon','good night','hai','vanakkam','namaste','namaskar','wassup','sup','howdy','hola'],
+  nonsense:['sapataiya','dai','da bro','yaar','lol','haha','test','testing','asdf','ok','hi da','yo','fuck','sex girls','mannulaay','fuck the girls','abusive','nude','porn'],
+  abusive:['fuck the girls','sex girls','nude','porn','fuck you','bastard','bitch','shit','ass'],
+  alcohol:['alcohol','liquor','beer','wine','whiskey','vodka','rum','drink','drinking','illegal','legal','prohibition','tasmac','arrack','toddy','drunk','bar'],
+  rent:['deposit','security deposit','landlord','rent','tenant','return deposit','refund deposit','lease','eviction','vacate','patta','rental','house rent'],
+  damage:['laptop','broke','damage','mischief','smashed','destroyed','broke my','damaged my','property','427'],
+  salary:['salary','wage','pay','employer','unpaid','payment','not paying','not paid','arrears','bonus','increment'],
+  consumer:['consumer','product','defect','refund','replace','defective','complaint','amazon','flipkart','warranty','ecommerce','online shopping','service complaint'],
+  sexual_harassment:['sexual harassment','sex harassment','posh','harassment at work','molest','inappropriate touch','workplace harassment','354a','metoo','touched me','force me'],
+  child_labour:['child labour','child labor','minor working','child work','bonded labour','below 14','underage work','child rights','childline','1098'],
+  divorce:['divorce','separation','alimony','maintenance','custody','matrimonial','family court','spouse','husband wife','divorce case','talaaq','talak'],
+  domestic_violence:['domestic violence','498a','domestic abuse','cruelty husband','wife beating','498','dowry','pwdva'],
+  fir:['fir','how to file','file complaint','register complaint','police complaint','report crime','cybercrime portal','register fir'],
+  document:['document','analyse','hearing notice','court notice','summons','judgment','bail order','legal notice','affidavit','what is this document','what does this mean','court paper','bound paper'],
+  court:['court','where is court','which court','court address','court location','near court','district court','high court','family court','consumer court','labour court'],
+  lawyer:['lawyer','advocate','attorney','legal aid','free lawyer','vakeel','solicitor','need lawyer','find lawyer','legal help'],
+  cyber:['cyber','online fraud','hacking','phishing','identity theft','otp fraud','upi fraud','it act','cybercrime','account hacked'],
+  property:['land','property','sale deed','patta','encumbrance','survey number','registration','stamp duty','buy property','sell property'],
+};
+
+function classifyIntent(text){
+  const tl=text.toLowerCase().trim();
+  for(const[intent,kws]of Object.entries(INTENTS)){
+    for(const kw of kws){
+      if(tl.includes(kw))return intent;
+    }
+  }
+  const legalWords=['law','legal','court','ipc','section','rights','police','advocate','judge','case','act','rule','penalty','fine','jail','arrest','bail','complaint','india'];
+  if(legalWords.some(w=>tl.includes(w)))return'general';
+  return'nonsense';
+}
+
+/* ── FULL RESPONSE DATABASE ── */
+const RDB={
+  en:{
+    greeting:{a:`Hello! I'm LegalEase, your Indian legal assistant. You can ask me about:\n\n🏠 **Rent & deposit** — landlord rights, eviction\n💼 **Salary & workplace** — unpaid wages, termination\n🛒 **Consumer complaints** — defective products, refunds\n🚨 **Sexual harassment** — POSH Act, IPC 354A\n👶 **Child labour** — reporting, protection\n👨‍👩‍👧 **Divorce & custody** — maintenance, alimony\n🍺 **Alcohol laws** — state-wise rules\n⚖️ **FIR & complaints** — how to file, IPC sections\n📄 **Document analysis** — court notices, affidavits\n\nWhat legal help do you need today?`,c:[],d:null,r:null,act:null,conf:100},
+    nonsense:{a:`I'm a legal assistant — I only answer Indian law questions. Try:\n\n• "My landlord isn't returning my deposit — what can I do?"\n• "How do I file a consumer complaint?"\n• "What is sexual harassment law in India?"\n• "My employer is not paying salary"\n• "Is alcohol legal in Karnataka?"`,c:[],d:null,r:null,act:null,conf:100},
+    abusive:{a:`This contains abusive or inappropriate language. I'm a legal assistant and cannot respond to abusive input.\n\nIf you need legal help, please ask your question respectfully. I'm here to help with genuine legal queries.`,c:[],d:null,r:null,act:null,conf:100},
+    alcohol:{a:`**Alcohol Laws in India — Complete State-Wise Guide:**\n\n🔴 **TOTAL PROHIBITION** (illegal to possess/consume/transport):\nGujarat, Bihar, Nagaland, Mizoram\nPunishment: 1–10 years jail + heavy fine. No easy bail.\n\n🟡 **REGULATED** (legal with restrictions):\nTamil Nadu, Karnataka, Maharashtra, Delhi, AP, UP, Rajasthan, West Bengal\n\n**Common rules in regulated states:**\n• Must buy from licensed government outlets (TASMAC in TN)\n• Drinking in public places = illegal\n• Drunk driving (IPC §185 MV Act): 6 months jail OR ₹2,000 fine\n• Minimum age: 21 years\n• Selling to minors = 3 years jail\n\n**Tamil Nadu:** TASMAC is the only legal alcohol retailer. Illicit arrack = up to 5 years jail (TN Prohibition Act).\n\n**Karnataka:** Alcohol legal, but public drinking = ₹500 fine. Beer allowed in restaurants with FL-3 license.\n\n**Gujarat ⚠️ CRITICAL:** Even visiting from another state — carrying alcohol = criminal offence. Permits theoretically exist but rarely granted.`,c:[{section:'MV Act §185',title:'Drunk driving',detail:'6 months jail or ₹2000 fine. Repeat: 2 years.'},{section:'TN Prohibition Act §4',title:'Tamil Nadu TASMAC regulation',detail:'Only TASMAC outlets. Illicit liquor: 5 years jail.'}],d:null,r:"Buying from unlicensed sources is illegal even in 'regulated' states.",act:'Check your state above. Gujarat — do NOT carry alcohol from another state.',conf:95},
+    rent:{a:`**Landlord Not Returning Security Deposit — Your Rights:**\n\nUnder **Section 108(q) of the Transfer of Property Act, 1882**, your landlord must return the deposit after tenancy ends.\n\n**4 options (fastest to slowest):**\n\n**1. Legal Notice** — 1–2 weeks\nSend formal demand. Landlord gets 30 days to respond. 80% cases settle here. Cost: ₹500–2,000.\n\n**2. Rent Control Tribunal** — 1–3 months\nFree to file. Jurisdiction-specific court.\n\n**3. Consumer Forum** — 2–4 months\nIf landlord is builder/company. consumerhelpline.gov.in\n\n**4. Civil Court** — 6–18 months\nFor deposits above ₹1 lakh. Claim deposit + 18% annual interest.\n\n**What courts award:**\nFull deposit + 12–18% interest per year from date of vacation.`,c:[{section:'TPA §108(q)',title:'Transfer of Property Act 1882',detail:'Landlord must return deposit at tenancy end.'},{section:'Madras HC 2018',title:'Sundaram vs Krishnamurthy',detail:'Deposit + 18% interest from vacation date.'}],d:'Send legal notice within 60 days of vacating.',r:'Without written agreement, need bank transfer proof + witnesses.',act:'Collect: rent agreement, bank proof, receipts, move-out photos. Send legal notice first.',conf:92},
+    damage:{a:`**Property Damaged by Friend — IPC 427:**\n\nUnder **Section 427 IPC** (Mischief), intentionally damaging property is punishable.\n\n**3 options:**\n\n**1. Legal Notice** (start here)\nDemand repair/replacement cost. 80% settle here. Cost: ₹500–2,000.\n\n**2. Lok Adalat** (free, fast)\nFor claims under ₹1 lakh. Completely free. 1–2 hearings. Settlement is final.\n\n**3. Magistrate Court**\nCriminal: IPC 427 — up to 2 years jail or fine.\nCivil: Claim amount + interest.\n\n**Collect NOW:**\n• Photos/video of damage\n• Original purchase invoice\n• Repair estimate from authorized centre\n• WhatsApp messages about incident`,c:[{section:'IPC §427',title:'Mischief causing damage',detail:'Up to 2 years or fine. Bailable.'},{section:'Limitation Act §3',title:'3-year limitation',detail:'3 years from incident to file civil suit.'}],d:'3 years from incident to file civil suit.',r:'FIR against friend is hard to withdraw. Try legal notice first.',act:'Get repair estimate → Legal notice → Lok Adalat if ignored.',conf:88},
+    salary:{a:`**Employer Not Paying Salary — Your Rights:**\n\nViolates **Payment of Wages Act, 1936**.\n\n**Fastest options:**\n\n**1. Labour Commissioner** (30–60 days, FREE)\nFile written complaint. Authority issues summons immediately. Most effective.\n\n**2. Payment of Wages Authority**\nClaim: unpaid salary + up to **10× the unpaid amount** as compensation.\n\n**3. Labour Court (Industrial Disputes Act §33C)**\nFor "workmen" — claim full back wages with interest.\n\n**4. Police Complaint (IPC §406)**\nCriminal Breach of Trust — rarely used but highly effective pressure tactic.\n\n⚠️ **CRITICAL: Do NOT sign** "Full & Final Settlement" under pressure — you permanently lose ALL claims.\n\n**Documents needed:**\nPay slips, bank statements, offer letter, appointment letter, salary emails`,c:[{section:'Payment of Wages Act §3',title:'Responsibility to pay wages',detail:'Pay by 7th of month. Penalty: 10× unpaid amount.'},{section:'IPC §406',title:'Criminal breach of trust',detail:'Intentional non-payment: up to 3 years jail.'}],d:'File within 1 year of last unpaid salary date.',r:'Do NOT sign Full & Final settlement under pressure — you lose all legal rights.',act:'Collect all documents → File Labour Commissioner complaint → Send legal notice.',conf:90},
+    consumer:{a:`**Consumer Rights — Consumer Protection Act, 2019:**\n\n**Which forum to approach:**\n| Amount | Forum | Fee |\n|---|---|---|\n| Up to ₹50 lakhs | District Consumer Commission | ₹200 |\n| ₹50L – ₹2Cr | State Consumer Commission | ₹400 |\n| Above ₹2Cr | National Consumer Commission | ₹5,000 |\n\n**What you can claim:**\n• Full refund OR replacement\n• Compensation for mental agony\n• Litigation costs\n• Up to 2× product value as punitive damages\n\n**Steps:**\n1. Write complaint email to company (keep copy)\n2. Wait 30 days for response\n3. File at **consumerhelpline.gov.in** (online, easy)\n4. Or visit District Consumer Commission physically\n\n**Time limit:** File within **2 years** of purchase/defect.`,c:[{section:'CPA 2019 §35',title:'Consumer Protection Act 2019',detail:'Right to file against defective goods/services.'},{section:'CPA 2019 §39',title:'Reliefs available',detail:'Refund, replacement, compensation, punitive damages 2×.'}],d:'2 years from purchase or defect discovery date.',r:'Keep all bills, warranty cards, complaint emails as evidence.',act:'Email company first → Wait 30 days → File at consumerhelpline.gov.in',conf:94},
+    sexual_harassment:{a:`**Sexual Harassment — Your Rights (POSH Act 2013 + IPC 354A):**\n\n**At workplace:**\nEvery company with 10+ employees MUST have Internal Complaints Committee (ICC). You have the right to:\n\n**Steps to take:**\n1. Write down everything with dates NOW (while memory is fresh)\n2. Collect evidence: screenshots, emails, witness names\n3. File written complaint with ICC/HR (within 3 years)\n4. If company ignores → **Local Complaints Committee (LCC)** at District Collector's office\n5. **FIR under IPC §354A** — up to 3 years imprisonment\n\n**POSH rights:**\n• Full confidentiality of complaint\n• Inquiry completed within 60 days\n• Interim relief — transfer or leave during inquiry\n• Employer cannot retaliate\n\n**For minors — POCSO Act 2012:**\nMinimum 3 years to life imprisonment.\n\n**Emergency contacts:**\n• Women Helpline: **1091** (24/7, free)\n• NCW: **7827170170**\n• Online complaint: **ncw.nic.in**`,c:[{section:'IPC §354A',title:'Sexual harassment',detail:'Up to 3 years imprisonment or fine.'},{section:'POSH Act 2013 §4',title:'ICC mandatory for 10+ employees',detail:'No ICC = ₹50,000 fine for employer.'},{section:'POCSO 2012',title:'Protection of Children from Sexual Offences',detail:'Under 18 victims. Minimum 3 years — maximum life.'}],d:'File ICC complaint within 3 years. FIR: any time.',r:'Do NOT resign before filing complaint — you lose leverage. Document first.',act:'Call 1091 immediately. Write down incident with dates. File ICC complaint.',conf:97},
+    child_labour:{a:`**Child Labour — Indian Law:**\n\n**Child and Adolescent Labour Act, 1986 (Amended 2016):**\n\n🔴 **Under 14 years:** COMPLETE BAN on all employment\n🟡 **14–18 years:** Banned from hazardous occupations\n\n**Employer punishment:**\n• First offence: **6 months to 2 years** jail + ₹20,000–₹50,000 fine\n• Repeat: **1 to 3 years** mandatory jail\n\n**How to report:**\n• **Childline: 1098** (24/7, free, immediate response)\n• Online: **pencil.gov.in** (government portal)\n• Labour Commissioner in your district\n• Police complaint under this Act\n\n**After rescue:**\nChild goes to Child Welfare Committee (CWC). Employer faces criminal charges. Employer must also pay child's education and rehabilitation costs.`,c:[{section:'CLPRA 1986 §3',title:'Child Labour Prohibition Act',detail:'Complete ban under 14. 6 months–2 years jail.'},{section:'CLPRA §3A',title:'Adolescent Labour (14–18)',detail:'Banned from hazardous work. Fine ₹20,000–₹50,000.'},{section:'JJA 2015',title:'Juvenile Justice Act',detail:'Rescued children sent to Child Welfare Committee.'}],d:'No limitation period. Report immediately when you see it.',r:'Knowing about child labour and not reporting it can make you morally and legally complicit.',act:'Call 1098 (Childline) immediately. Visit pencil.gov.in to file online report.',conf:96},
+    divorce:{a:`**Divorce — Indian Law:**\n\n**Which law applies:**\n• Hindu couples → Hindu Marriage Act, 1955\n• Muslim → Muslim Personal Law\n• Christian → Indian Divorce Act, 1869\n• Inter-religion → Special Marriage Act, 1954\n\n**Mutual consent divorce (fastest):**\n1. Both agree in writing → File joint petition in Family Court\n2. 6-month "cooling off" period (court can waive this)\n3. Second motion → Divorce granted\n**Total time: 6–18 months**\n\n**Contested divorce:** 2–5 years\n\n**Grounds (Hindu Marriage Act):**\nAdultery, cruelty, desertion (2+ years), mental disorder, communicable disease\n\n**Maintenance (alimony):**\nSpouse earning less can claim maintenance. Courts consider both incomes, lifestyle, children.\n\n**Child custody:**\nBased on "best interest of child." Usually mother for under-5, joint custody considered for older children.\n\n**Free help:** Every Family Court has a Mediation Centre — try this first. Faster and cheaper.`,c:[{section:'HMA 1955 §13B',title:'Mutual consent divorce',detail:'6-month cooling period. Both must file together.'},{section:'CPC §125',title:'Maintenance',detail:'Spouse/children maintenance if unable to self-support.'}],d:'Mutual consent: need 1+ year separation. No time limit for filing after marriage.',r:'Contested divorce is costly and lengthy. Try mediation first.',act:'Approach Family Court. Try Mediation Centre first. Collect: marriage certificate, communication records.',conf:91},
+    domestic_violence:{a:`**Domestic Violence — Your Rights (PWDVA 2005 + IPC 498A):**\n\n**Immediate steps:**\n1. Call **181** (Women Helpline) or **100** (Police) — if in danger NOW\n2. Contact Protection Officer at District Collector's office — FREE\n3. File Domestic Incident Report (DIR)\n\n**Court protection:**\n• **Protection Order** — court can issue within 3 days\n• **Residence Order** — you CAN stay in shared home even if not your name\n• **Monetary Relief** — compensation for damages\n• **Child Custody Order** — court issues temporary custody\n\n**Criminal route:**\nFIR under **IPC §498A** — husband/relative cruelty: up to 3 years jail + fine. Non-bailable.\n\n**Emergency:**\n• Women Helpline: **181** (24/7)\n• Police: **100**\n• NCW: **7827170170**`,c:[{section:'PWDVA 2005 §18',title:'Protection Orders',detail:'Court can issue within 3 days.'},{section:'IPC §498A',title:'Cruelty by husband/relatives',detail:'Non-bailable. Up to 3 years + fine.'}],d:'No limitation period for PWDVA. File whenever you are safe to do so.',r:'Your safety first. Call 181 before thinking about legal steps.',act:'Call 181 immediately if in danger. Contact Protection Officer at District Collector office.',conf:97},
+    fir:{a:`**How to File an FIR (First Information Report):**\n\n**Step 1:** Go to the police station with jurisdiction over where the crime happened\n\n**Step 2:** Tell the SHO (Station House Officer) what happened. They must record it — this is your right.\n\n**Step 3:** Read the FIR carefully before signing. Note the:\n• FIR number\n• IPC sections mentioned\n• Police station name\n• Date and time\n\n**Step 4:** Get a free copy — this is your legal right.\n\n**If police REFUSE to register FIR:**\n1. File written complaint to Superintendent of Police (SP)\n2. File complaint at cybercrime.gov.in (for cyber crimes)\n3. Approach Magistrate under **CrPC §156(3)** — Magistrate orders police to register FIR\n\n**For cyber crimes:** Use **cybercrime.gov.in** or call **1930**\n\n**Zero FIR:** You can file at ANY police station — they must transfer it to the correct jurisdiction.`,c:[{section:'CrPC §154',title:'Right to file FIR',detail:'Police cannot refuse to register cognizable offence.'},{section:'CrPC §156(3)',title:'Magistrate can order FIR',detail:'If police refuse — approach Magistrate.'}],d:'File FIR as soon as possible. Old cases are harder to investigate.',r:'Filing false FIR = IPC §182 offence — up to 6 months jail or fine.',act:'Go to nearest police station. If refused, contact SP or Magistrate. For cyber: cybercrime.gov.in',conf:93},
+    cyber:{a:`**Cybercrime — Indian Law (IT Act 2000 + Amendments):**\n\n**Common cybercrimes and sections:**\n• OTP/UPI fraud → IT Act §66C (Identity theft) + §66D (Cheating using computer)\n• Account hacking → IT Act §43 + §66\n• Online harassment/stalking → IPC §354D + IT Act §66A\n• Morphed photos/videos → IT Act §66E (Privacy violation)\n• Revenge porn → IT Act §66E + IPC §509\n• Cyberbullying (child) → POCSO Act\n\n**Report immediately:**\n• **Cybercrime Helpline: 1930** (24/7)\n• **cybercrime.gov.in** (file FIR online)\n• Nearest police station (ask for cyber cell)\n\n**For UPI/bank fraud:**\nCall your bank immediately and block the transaction. RBI Ombudsman: **14448**\n\n**Evidence to collect:**\nScreenshots with timestamps, URLs, email headers, transaction IDs`,c:[{section:'IT Act §66C',title:'Identity theft',detail:'Up to 3 years + ₹1 lakh fine.'},{section:'IT Act §66D',title:'Cheating using computer',detail:'Up to 3 years + ₹1 lakh fine.'}],d:'Report cybercrime ASAP — first 24 hours are critical for recovery.',r:'Do not delete any evidence — screenshots, messages, emails are crucial.',act:'Call 1930 immediately. File at cybercrime.gov.in. Call bank for UPI fraud.',conf:92},
+    document:{a:`For document analysis, please use the **Document Analyser** tab in the left sidebar.\n\nYou can paste your court notice, FIR, affidavit, summons, or legal notice there — I'll explain what it is, key points, and what to do in your language (Tamil/Hindi/English).`,c:[],d:null,r:null,act:'Click "Document Analyser" in the left sidebar and paste your document text.',conf:90},
+    court:{a:`For court locations and addresses, please use the **Court Locator** tab in the left sidebar.\n\nI can show you courts in your state with addresses, phone numbers, and what cases each court handles — plus which court is right for your specific problem.`,c:[],d:null,r:null,act:'Click "Court Locator" in the left sidebar and select your state.',conf:90},
+    lawyer:{a:`For finding a lawyer or free legal aid, please use the **Find Lawyer** tab in the left sidebar.\n\n**Important:** You have a CONSTITUTIONAL RIGHT to free legal aid if you are BPL, SC/ST, woman, child, or person with disability.\n\nNational Legal Aid Helpline: **15100** (Toll-free, 24/7)`,c:[{section:'LSAA 1987',title:'Legal Services Authorities Act',detail:'Free legal aid is a constitutional right for eligible persons.'}],d:null,r:null,act:'Call 15100 for free legal aid. Click "Find Lawyer" in left sidebar for contacts.',conf:90},
+    property:{a:`**Land and Property — Tamil Nadu:**\n\n**Key documents for sale:**\n1. Patta (title document) — from patta.tn.gov.in\n2. Encumbrance Certificate (30 years) — eservices.tn.gov.in\n3. Parent documents (original sale deed)\n4. FMB Sketch from Taluk office\n5. Latest tax receipt\n\n**Stamp duty:** 7% (Tamil Nadu) + 1% registration fee\n\n**Agricultural land:** Non-farmers cannot purchase in TN without special permission.\n\n**Check for disputes:** Before buying any property, verify at the Sub-Registrar office whether any case is registered against it.\n\n**Registration is mandatory** for any property above ₹100 value (Registration Act 1908).`,c:[{section:'Registration Act 1908 §17',title:'Compulsory registration',detail:'All property transfers above ₹100 must be registered.'},{section:'TN Patta Transfer',title:'Patta transfer',detail:'After purchase, update patta at Taluk office within 6 months.'}],d:null,r:'Verify encumbrance certificate before finalizing any property deal.',act:'Use Land Documents tab in left sidebar. Visit patta.tn.gov.in for official records.',conf:87},
+    general:{a:`For your legal query, here is the general Indian legal framework:\n\nIndia's legal system provides rights and remedies through civil and criminal courts. The specific laws depend on the nature of your situation.\n\n**Free legal help:**\n• National Legal Aid Helpline: **15100** (toll-free, 24/7)\n• National Consumer Helpline: **1800-11-4000**\n• Women Helpline: **1091**\n• Police: **100**\n• Cyber Crime: **1930**\n• Childline: **1098**\n\nCould you give me more details about your specific situation? I can give a much better answer with more context.`,c:[{section:'Constitution Art. 39A',title:'Equal justice and free legal aid',detail:'State must ensure equal justice for all citizens.'}],d:null,r:null,act:'Call 15100 for free legal advice from a qualified advocate.',conf:60},
+  },
+  ta:{
+    greeting:{a:`வணக்கம்! நான் LegalEase — உங்கள் இந்திய சட்ட உதவியாளர். நீங்கள் என்னிடம் கேட்கலாம்:\n\n🏠 வாடகை & deposit உரிமைகள்\n💼 சம்பளம் & தொழில் பிரச்சனைகள்\n🛒 நுகர்வோர் புகார்கள்\n🚨 பாலியல் தொல்லை (POSH சட்டம்)\n👶 சிறுவர் தொழில் புகார்\n👨‍👩‍👧 விவாகரத்து & பராமரிப்பு\n⚖️ FIR & போலீஸ் புகார்\n\nஉங்களுக்கு என்ன சட்ட உதவி தேவை?`,c:[],d:null,r:null,act:null,conf:100},
+    nonsense:{a:`நான் ஒரு சட்ட உதவியாளர் — சட்ட கேள்விகளுக்கு மட்டுமே பதில் சொல்வேன்.\n\nகேட்டுப் பாருங்கள்:\n• "என் வீட்டு உரிமையாளர் deposit திருப்பி கொடுக்கவில்லை"\n• "சம்பளம் கொடுக்காத employer"\n• "Consumer complaint எப்படி செய்வது?"`,c:[],d:null,r:null,act:null,conf:100},
+    abusive:{a:`இது ஆபாசமான அல்லது அவமதிப்பான மொழியைக் கொண்டுள்ளது. நான் சட்ட உதவியாளர், இது போன்ற input-க்கு பதில் சொல்ல மாட்டேன்.\n\nதகுந்த முறையில் உங்கள் சட்ட கேள்வியை கேளுங்கள்.`,c:[],d:null,r:null,act:null,conf:100},
+    alcohol:{a:`**இந்தியாவில் மது சட்டங்கள் — மாநிலம் வாரியாக:**\n\n🔴 **முழு தடை** — குஜராத், பீகார், நாகாலாண்ட்\nஆல்கஹால் வைத்திருப்பது, குடிப்பது, எடுத்துச் செல்வது = கடுமையான குற்றம்.\n1–10 ஆண்டு சிறை + கனமான அபராதம்.\n\n🟡 **ஒழுங்குபடுத்தப்பட்டது** — தமிழ்நாடு, கர்நாடகா, மகாராஷ்டிரா, டெல்லி\n• TASMAC கடைகளில் மட்டும் வாங்கலாம் (TN-ல்)\n• பொது இடத்தில் குடிப்பது சட்டவிரோதம்\n• குடித்துவிட்டு வண்டி ஓட்டுவது: 6 மாத சிறை அல்லது ₹2,000 அபராதம்\n• குறைந்தபட்ச வயது: 21 ஆண்டுகள்\n\n**தமிழ்நாடு:** TASMAC மட்டுமே சட்டபூர்வமான மது விற்பனை நிலையம்.\n**குஜராத் ⚠️:** வேறு மாநிலத்திலிருந்து மது எடுத்துவருவதும் குற்றம்.`,c:[{section:'MV Act §185',title:'குடித்துவிட்டு வாகனம் ஓட்டுவது',detail:'6 மாத சிறை அல்லது ₹2,000 அபராதம்.'}],d:null,r:'அனுமதியற்ற மூலங்களிலிருந்து மது வாங்காதீர்கள்.',act:'உங்கள் மாநில சட்டத்தை மேலே சரிபாருங்கள். குஜராத்தில் இருந்தால் — மது எடுத்துச் செல்லாதீர்கள்.',conf:95},
+    rent:{a:`**வீட்டு உரிமையாளர் deposit திருப்பி கொடுக்கவில்லை:**\n\nசொத்து மாற்று சட்டம் §108(q) படி, வீட்டு உரிமையாளர் குத்தகை முடிந்த பிறகு முழு deposit திருப்பி கொடுக்க கடமைப்பட்டுள்ளார்.\n\n**4 வழிகள்:**\n\n1. **சட்ட நோட்டீஸ்** (1–2 வாரம்) — 80% வழக்குகள் இங்கே முடியும், ₹500–2,000 செலவு\n2. **வாடகை கட்டுப்பாட்டு தீர்ப்பாயம்** (1–3 மாதம்) — இலவசம்\n3. **நுகர்வோர் மன்றம்** — builder/company ஆனால் (consumerhelpline.gov.in)\n4. **சிவில் நீதிமன்றம்** — ₹1 லட்சம் மேல், deposit + 18% வட்டி\n\n**நீதிமன்றம் என்ன கொடுக்கும்:** முழு deposit + 12–18% ஆண்டு வட்டி`,c:[{section:'TPA §108(q)',title:'சொத்து மாற்று சட்டம் 1882',detail:'குத்தகை முடிவில் deposit திருப்பி கொடுக்க கடமை.'},{section:'Madras HC 2018',title:'Sundaram vs Krishnamurthy',detail:'Deposit + 18% வட்டி வழங்கப்பட்டது.'}],d:'வீட்டை காலி செய்த 60 நாளுக்குள் சட்ட நோட்டீஸ் அனுப்புங்கள்.',r:'எழுத்துப்பூர்வ ஒப்பந்தம் இல்லாவிட்டால் வங்கி transfer proof தேவை.',act:'வாடகை ஒப்பந்தம், bank proof, ரசீதுகள் சேகரிக்கவும். முதலில் சட்ட நோட்டீஸ் அனுப்புங்கள்.',conf:92},
+    sexual_harassment:{a:`**பாலியல் தொல்லை — உங்கள் சட்ட உரிமைகள்:**\n\n**பணியிடத்தில் (POSH சட்டம் 2013):**\n10+ பணியாளர் உள்ள ஒவ்வொரு நிறுவனமும் ICC (உள் புகார் குழு) கட்டாயம் வைக்க வேண்டும்.\n\n**செய்ய வேண்டியவை:**\n1. நடந்தவற்றை தேதிகளுடன் **இப்போதே** எழுதி வையுங்கள்\n2. ஆதாரம் சேகரிக்கவும் — screenshots, emails, சாட்சிகள்\n3. ICC/HR-ல் எழுத்துப்பூர்வ புகார் (3 ஆண்டுகளுக்குள்)\n4. ICC செயல்படாவிட்டால் — மாவட்ட ஆட்சியர் அலுவலகத்தில் LCC-ல் புகார்\n5. IPC §354A கீழ் FIR — 3 ஆண்டு சிறை\n\n**அவசர தொடர்பு:**\n• பெண்கள் உதவி: **1091** (24/7, இலவசம்)\n• NCW: **7827170170**\n• Online: **ncw.nic.in**`,c:[{section:'IPC §354A',title:'பாலியல் தொல்லை',detail:'3 ஆண்டு சிறை அல்லது அபராதம்.'},{section:'POSH சட்டம் 2013',title:'ICC கட்டாயம்',detail:'10+ பணியாளர் — ICC இல்லாமல் ₹50,000 அபராதம்.'}],d:'ICC புகார் — நிகழ்விலிருந்து 3 ஆண்டுகளுக்குள்.',r:'புகார் செய்வதற்கு முன் ராஜினாமா செய்யாதீர்கள் — சட்ட அனுகூலம் இழப்பீர்கள்.',act:'1091 இப்போதே அழையுங்கள். ஆதாரம் சேகரிக்கவும். ICC-ல் எழுத்துப்பூர்வ புகார் செய்யுங்கள்.',conf:97},
+    child_labour:{a:`**சிறுவர் தொழில் சட்டங்கள் — இந்தியா:**\n\n🔴 **14 வயதுக்கு கீழ்:** அனைத்து தொழில்களிலும் முழு தடை\n🟡 **14–18 வயது:** ஆபத்தான தொழில்களில் தடை\n\n**தண்டனை:**\n• முதல் குற்றம்: 6 மாதம் – 2 ஆண்டு சிறை + ₹50,000 அபராதம்\n• மீண்டும்: 1–3 ஆண்டு கட்டாய சிறை\n\n**புகார் செய்ய:**\n• **Childline: 1098** (24/7, இலவசம்)\n• **pencil.gov.in** — ஆன்லைன் புகார்\n• தொழிலாளர் ஆணையர் அலுவலகம்`,c:[{section:'CLPRA 1986 §3',title:'சிறுவர் தொழில் தடை சட்டம்',detail:'14 வயதுக்கு கீழ் முழு தடை. 2 ஆண்டு சிறை.'}],d:'சிறுவர் தொழிலை கண்டால் உடனே புகார் செய்யுங்கள்.',r:'தெரிந்தும் புகார் செய்யாமல் இருந்தால் நீங்களும் பொறுப்பாளர் ஆவீர்கள்.',act:'1098 இப்போதே அழையுங்கள். pencil.gov.in-ல் புகார் செய்யுங்கள்.',conf:96},
+    salary:{a:`**சம்பளம் கொடுக்காத Employer — உரிமைகள்:**\n\nஊதிய செலுத்துச் சட்டம் 1936 மீறல்.\n\n**விரைவான வழிகள்:**\n\n1. **தொழிலாளர் ஆணையர்** (30–60 நாள், இலவசம்)\nபுகார் அளிக்கவும். உடனே நடவடிக்கை எடுப்பார்கள்.\n\n2. **ஊதிய செலுத்தும் ஆணையர்** — செலுத்தாத தொகையின் **10 மடங்கு** கோரலாம்!\n\n3. **IPC §406** — போலீஸ் புகார் (அழுத்தம் கொடுக்க பயனுள்ளது)\n\n⚠️ **Full & Final Settlement கையெழுத்திட வேண்டாம்** — அழுத்தத்தில் கையெழுத்திட்டால் எல்லா உரிமைகளும் போகும்!`,c:[{section:'ஊதிய செலுத்துச் சட்டம் §3',title:'சம்பளம் செலுத்தும் கடமை',detail:'7-ம் தேதிக்குள் செலுத்த வேண்டும். அபராதம்: 10 மடங்கு.'}],d:'கடைசி சம்பளமின்மையிலிருந்து 1 ஆண்டுக்குள் புகார்.',r:'Full & Final Settlement கையெழுத்திட வேண்டாம்.',act:'ஆவணங்கள் சேகரிக்கவும் → தொழிலாளர் ஆணையர் அலுவலகம்.',conf:90},
+    divorce:{a:`**விவாகரத்து — இந்திய சட்டம்:**\n\n**எந்த சட்டம் பொருந்தும்:**\n• இந்து: இந்து திருமண சட்டம் 1955\n• கிறிஸ்துவர்: இந்திய விவாகரத்து சட்டம் 1869\n• சிறப்பு திருமண சட்டம் 1954 (வேறு மதம்/குடிமை)\n\n**இருவரும் ஒப்புக்கொண்டால்:**\n1. கூட்டுப் petition குடும்ப நீதிமன்றத்தில்\n2. 6 மாத cooling period (நீதிமன்றம் தள்ளுபடி செய்யலாம்)\n3. விவாகரத்து வழங்கப்படும்\n**மொத்த நேரம்: 6–18 மாதம்**\n\n**விவாகரத்து காரணங்கள்:** கொடுமை, கைவிடல் (2+ ஆண்டு), விபசாரம், மனநோய்\n\n**குழந்தை பராமரிப்பு:** நீதிமன்றம் குழந்தையின் நலனை பார்க்கும்\n**Alimony:** குறைவாக சம்பாதிக்கும் வரை கோரலாம்`,c:[{section:'HMA 1955 §13B',title:'இருவரும் ஒப்புக்கொண்ட விவாகரத்து',detail:'6 மாத cooling period.'}],d:'இருவரும் ஒப்புக்கொண்டால்: 1+ ஆண்டு பிரிந்து வாழ வேண்டும்.',r:'நீதிமன்ற போர் 2–5 ஆண்டுகள் ஆகலாம். முதலில் மத்தியஸ்தம் முயற்சிக்கவும்.',act:'குடும்ப நீதிமன்றம் செல்லுங்கள். மத்தியஸ்த மையத்தை முதலில் முயற்சிக்கவும்.',conf:91},
+    consumer:{a:`**நுகர்வோர் உரிமைகள் — நுகர்வோர் பாதுகாப்பு சட்டம் 2019:**\n\n• ₹50 லட்சம் வரை → மாவட்ட நுகர்வோர் மன்றம் (₹200 கட்டணம்)\n• ₹50L–₹2Cr → மாநில மன்றம் (₹400)\n• ₹2Cr மேல் → தேசிய மன்றம் (₹5,000)\n\n**கோரலாம்:**\n• முழு பணம் திரும்பப் பெறல் OR மாற்றீடு\n• மன வேதனைக்கு இழப்பீடு\n• வழக்கு செலவு\n• 2× மதிப்பு தண்டனை இழப்பீடு\n\n**Steps:** நிறுவனத்திற்கு புகார் → 30 நாள் → consumerhelpline.gov.in`,c:[{section:'CPA 2019 §35',title:'நுகர்வோர் பாதுகாப்பு சட்டம் 2019',detail:'குறைபாடுள்ள பொருட்கள்/சேவைகளுக்கு புகார் உரிமை.'}],d:'வாங்கிய தேதியிலிருந்து 2 ஆண்டுகளுக்குள்.',r:'அனைத்து bills, warranty cards வைத்திருங்கள்.',act:'நிறுவனத்திற்கு email → 30 நாள் → consumerhelpline.gov.in',conf:94},
+    fir:{a:`**FIR எப்படி பதிவு செய்வது:**\n\n1. குற்றம் நடந்த இடத்திற்கு jurisdiction உள்ள காவல் நிலையம் செல்லுங்கள்\n2. SHO-ல் நடந்தவற்றை சொல்லுங்கள். அவர்கள் பதிவு செய்ய கட்டாயப்பட்டுள்ளனர்\n3. FIR கையெழுத்திட முன் கவனமாக படிக்கவும்\n4. இலவச FIR நகல் பெறுங்கள் — இது உங்கள் சட்ட உரிமை\n\n**காவல்துறை FIR பதிவு செய்ய மறுத்தால்:**\n1. SP (Superintendent of Police)-ல் எழுத்துப்பூர்வ புகார்\n2. Magistrate-ல் CrPC §156(3) கீழ் புகார்\n3. cyber crimes: cybercrime.gov.in அல்லது 1930`,c:[{section:'CrPC §154',title:'FIR பதிவு செய்ய உரிமை',detail:'காவல்துறை மறுக்க முடியாது.'}],d:'விரைவில் FIR பதிவு செய்யுங்கள் — பழைய வழக்குகள் நிரூபிக்க கஷ்டம்.',r:'பொய் FIR = IPC §182 — 6 மாத சிறை.',act:'அருகிலுள்ள காவல் நிலையம். மறுத்தால் SP அல்லது Magistrate. Cyber: cybercrime.gov.in',conf:93},
+    damage:{a:`**நண்பர் சொத்தை சேதப்படுத்தினால் — IPC 427:**\n\n§427 IPC கீழ் வேண்டுமென்றே சொத்தை சேதப்படுத்துவது குற்றம்.\n\n**3 வழிகள்:**\n1. **சட்ட நோட்டீஸ்** — 80% வழக்குகள் இங்கே முடியும்\n2. **Lok Adalat** — ₹1 லட்சம் வரை, இலவசம், 1–2 hearing-ல் முடியும்\n3. **நீதிமன்றம்** — IPC 427: 2 ஆண்டு சிறை அல்லது அபராதம்\n\n**இப்போதே சேகரிக்கவும்:** photos, invoice, repair estimate, WhatsApp messages`,c:[{section:'IPC §427',title:'சொத்து சேதம்',detail:'2 ஆண்டு சிறை அல்லது அபராதம்.'}],d:'3 ஆண்டுகளுக்குள் civil suit.',r:'நண்பருக்கு எதிரான FIR திரும்பப் பெறுவது கஷ்டம்.',act:'Repair estimate → சட்ட நோட்டீஸ் → Lok Adalat',conf:88},
+    general:{a:`உங்கள் சட்ட கேள்விக்கு:\n\nஇந்திய சட்ட அமைப்பு உரிமைகள் மற்றும் தீர்வுகளை வழங்குகிறது.\n\n**இலவச சட்ட உதவி:**\n• National Legal Aid: **15100** (இலவசம், 24/7)\n• பெண்கள் உதவி: **1091**\n• Childline: **1098**\n• Cyber Crime: **1930**\n• Police: **100**\n\nமேலும் விவரங்கள் சொன்னால் சரியான பதில் சொல்கிறேன்.`,c:[],d:null,r:null,act:'15100-ஐ அழையுங்கள் — இலவச சட்ட ஆலோசனை.',conf:60},
+    domestic_violence:{a:`**குடும்ப வன்முறை — PWDVA 2005 + IPC 498A:**\n\n**உடனடி நடவடிக்கை:**\n1. **181** (பெண்கள் உதவி) அல்லது **100** (போலீஸ்) — உடனடி ஆபத்தில் இருந்தால்\n2. Protection Officer-ல் Domestic Incident Report (DIR) பதிவு — இலவசம்\n3. நீதிமன்றத்திலிருந்து Protection Order — 3 நாளுக்குள் வரும்\n4. Residence Order — வீட்டில் தொடர்ந்து இருக்க உரிமை\n\n**IPC §498A** — கணவன்/உறவினர் கொடுமை: 3 ஆண்டு சிறை + அபராதம்`,c:[{section:'PWDVA 2005 §18',title:'Protection Order',detail:'3 நாளுக்குள் நீதிமன்றம் வழங்கும்.'},{section:'IPC §498A',title:'குடும்ப கொடுமை',detail:'3 ஆண்டு சிறை + அபராதம்.'}],d:'ஆபத்தில் இருந்தால் முதலில் பாதுகாப்பாக இருங்கள்.',r:'முதலில் பாதுகாப்பு. சட்ட நடவடிக்கை பிறகு.',act:'181 அல்லது 100 இப்போதே அழையுங்கள்.',conf:97},
+    cyber:{a:`**Cybercrime — IT Act 2000:**\n\n**பொதுவான சைபர் குற்றங்கள்:**\n• OTP/UPI மோசடி → IT Act §66C + §66D\n• Account hacking → IT Act §43 + §66\n• Online தொல்லை → IPC §354D\n• Morphed photos → IT Act §66E\n\n**உடனடியாக புகார் செய்யுங்கள்:**\n• **Cyber Helpline: 1930** (24/7)\n• **cybercrime.gov.in** — online FIR\n• வங்கி மோசடி: உடனே வங்கியை அழையுங்கள்`,c:[{section:'IT Act §66C',title:'Identity theft',detail:'3 ஆண்டு சிறை + ₹1 லட்சம்.'}],d:'முதல் 24 மணி நேரம் மிக முக்கியம்.',r:'எந்த ஆதாரத்தையும் delete செய்யாதீர்கள்.',act:'1930 இப்போதே அழையுங்கள். cybercrime.gov.in-ல் FIR.',conf:92},
+    court:{a:`Court Locator tab-ல் உங்கள் மாநிலத்தை தேர்ந்தெடுக்கவும் — address, phone number, ஒவ்வொரு court என்ன handle செய்கிறது என்று காட்டுவேன்.`,c:[],d:null,r:null,act:'இடது sidebar-ல் "Court Locator" click செய்யுங்கள்.',conf:90},
+    lawyer:{a:`**Lawyer / இலவச சட்ட உதவி:**\n\n"Find Lawyer" tab-ல் உங்கள் மாநிலத்தில் உள்ள இலவச legal aid contacts காட்டுவேன்.\n\nநீங்கள் BPL, SC/ST, பெண், குழந்தை அல்லது மாற்றுத்திறனாளி என்றால் — இலவச சட்ட உதவி உங்கள் அரசியலமைப்பு உரிமை.\n\n**National Legal Aid: 15100** (இலவசம், 24/7)`,c:[],d:null,r:null,act:'இடது sidebar-ல் "Find Lawyer" click செய்யுங்கள்.',conf:90},
+    property:{a:`**நிலம் மற்றும் சொத்து — Land Documents tab-ல் பாருங்கள்**\n\nTamil Nadu-ல் நிலம் வாங்க/விற்க தேவையான ஆவணங்கள், Patta lookup, மற்றும் checklist அங்கே கிடைக்கும்.`,c:[],d:null,r:null,act:'இடது sidebar-ல் "Land Documents" click செய்யுங்கள்.',conf:87},
+    document:{a:`Document Analyser tab-ல் court notice, FIR, affidavit, legal notice text-ஐ paste செய்யுங்கள். அது என்ன document என்று, முக்கியமான points என்ன என்று, என்ன செய்ய வேண்டும் என்று சொல்கிறேன்.`,c:[],d:null,r:null,act:'இடது sidebar-ல் "Document Analyser" click செய்யுங்கள்.',conf:90},
+    fir_ta:{a:`**FIR எப்படி பதிவு செய்வது:**\n\n1. குற்றம் நடந்த இடத்திற்கு jurisdiction உள்ள காவல் நிலையம் செல்லுங்கள்\n2. SHO-ல் நடந்தவற்றை சொல்லுங்கள். அவர்கள் பதிவு செய்ய கட்டாயப்பட்டுள்ளனர்\n3. FIR கையெழுத்திட முன் படிக்கவும்\n4. இலவச FIR நகல் பெறுங்கள் — உங்கள் சட்ட உரிமை`,c:[],d:null,r:null,act:'அருகிலுள்ள காவல் நிலையம் செல்லுங்கள். Cyber crime: cybercrime.gov.in',conf:93},
+  },
+  hi:{
+    greeting:{a:`नमस्ते! मैं LegalEase हूं — आपका भारतीय कानूनी सहायक। आप मुझसे पूछ सकते हैं:\n\n🏠 किराया और जमानत अधिकार\n💼 वेतन और कार्यस्थल समस्याएं\n🛒 उपभोक्ता शिकायतें\n🚨 यौन उत्पीड़न (POSH अधिनियम)\n👶 बाल मजदूरी रिपोर्टिंग\n👨‍👩‍👧 तलाक और गुजारा भत्ता\n⚖️ FIR और शिकायतें\n\nआज आपको क्या कानूनी सहायता चाहिए?`,c:[],d:null,r:null,act:null,conf:100},
+    nonsense:{a:`मैं एक कानूनी सहायक हूं — केवल कानूनी प्रश्नों का उत्तर देता हूं। पूछें:\n\n• "मकान मालिक जमानत नहीं लौटा रहा"\n• "नियोक्ता वेतन नहीं दे रहा"\n• "उपभोक्ता शिकायत कैसे करें?"`,c:[],d:null,r:null,act:null,conf:100},
+    abusive:{a:`इसमें अपमानजनक भाषा है। मैं कानूनी सहायक हूं और ऐसे input का जवाब नहीं दे सकता। कृपया अपना कानूनी प्रश्न सम्मानपूर्वक पूछें।`,c:[],d:null,r:null,act:null,conf:100},
+    alcohol:{a:`**भारत में शराब कानून — राज्यवार:**\n\n🔴 **पूर्ण प्रतिबंध** — गुजरात, बिहार, नागालैंड, मिजोरम\nशराब रखना/पीना/ले जाना = गंभीर अपराध। 1–10 साल जेल + भारी जुर्माना।\n\n🟡 **नियंत्रित** — महाराष्ट्र, दिल्ली, कर्नाटक, UP\n• केवल लाइसेंसशुदा दुकानों से खरीदें\n• सार्वजनिक स्थानों पर पीना गैरकानूनी\n• नशे में गाड़ी चलाना: 6 महीने जेल या ₹2,000 जुर्माना\n• न्यूनतम आयु: 21 वर्ष\n\n**गुजरात ⚠️:** दूसरे राज्य से शराब ले जाना भी अपराध है।`,c:[{section:'MV Act §185',title:'नशे में गाड़ी चलाना',detail:'6 महीने जेल या ₹2,000 जुर्माना।'}],d:null,r:'केवल सरकारी लाइसेंस प्राप्त दुकानों से खरीदें।',act:'अपने राज्य का नियम देखें। गुजरात में — शराब बिल्कुल न ले जाएं।',conf:95},
+    rent:{a:`**मकान मालिक जमानत नहीं लौटा रहा — आपके अधिकार:**\n\nसंपत्ति हस्तांतरण अधिनियम §108(q) के तहत, मकान मालिक किरायेदारी समाप्त होने पर पूरी जमानत वापस करने के लिए बाध्य है।\n\n**4 विकल्प:**\n1. **कानूनी नोटिस** (1–2 सप्ताह) — 80% मामले यहीं सुलझते हैं\n2. **किराया नियंत्रण न्यायाधिकरण** (1–3 महीने) — नि:शुल्क\n3. **उपभोक्ता फोरम** — बिल्डर/कंपनी के लिए\n4. **दीवानी न्यायालय** — ₹1 लाख से ऊपर, 18% ब्याज के साथ\n\n**न्यायालय क्या देते हैं:** पूरी जमानत + 12–18% वार्षिक ब्याज`,c:[{section:'TPA §108(q)',title:'संपत्ति हस्तांतरण अधिनियम 1882',detail:'किरायेदारी समाप्ति पर जमानत वापस करने की जिम्मेदारी।'}],d:'मकान खाली करने के 60 दिनों के भीतर कानूनी नोटिस भेजें।',r:'लिखित किराया समझौते के बिना बैंक हस्तांतरण प्रमाण आवश्यक।',act:'दस्तावेज इकट्ठा करें → कानूनी नोटिस → Lok Adalat',conf:92},
+    sexual_harassment:{a:`**यौन उत्पीड़न — POSH अधिनियम 2013 + IPC 354A:**\n\n**कार्यस्थल पर:**\n10+ कर्मचारी वाली हर कंपनी में ICC (आंतरिक शिकायत समिति) अनिवार्य है।\n\n**क्या करें:**\n1. तारीख और विवरण के साथ **अभी लिखें**\n2. सबूत इकट्ठा करें — screenshots, emails, गवाह\n3. ICC में लिखित शिकायत (3 साल के भीतर)\n4. ICC न हो तो — District Collector कार्यालय में LCC\n5. IPC §354A के तहत FIR — 3 साल जेल\n\n**आपातकाल:**\n• महिला हेल्पलाइन: **1091**\n• NCW: **7827170170**`,c:[{section:'IPC §354A',title:'यौन उत्पीड़न',detail:'3 साल जेल या जुर्माना.'},{section:'POSH Act 2013',title:'ICC अनिवार्य',detail:'10+ कर्मचारी — ICC नहीं तो ₹50,000 जुर्माना.'}],d:'ICC शिकायत — 3 साल के भीतर।',r:'शिकायत से पहले इस्तीफा न दें — आप कानूनी लाभ खो देंगे।',act:'1091 पर तुरंत कॉल करें। ICC में लिखित शिकायत दर्ज करें।',conf:97},
+    child_labour:{a:`**बाल मजदूरी — भारतीय कानून:**\n\n🔴 **14 साल से कम:** सभी व्यवसायों में पूर्ण प्रतिबंध\n🟡 **14–18 साल:** खतरनाक कार्यों में प्रतिबंध\n\n**नियोक्ता के लिए दंड:**\n• पहला अपराध: 6 महीने – 2 साल जेल + ₹50,000 जुर्माना\n• बार-बार: 1–3 साल अनिवार्य जेल\n\n**शिकायत करें:**\n• **Childline: 1098** (24/7, मुफ्त)\n• **pencil.gov.in** — ऑनलाइन शिकायत`,c:[{section:'CLPRA 1986 §3',title:'बाल श्रम निषेध अधिनियम',detail:'14 साल से कम — पूर्ण प्रतिबंध। 2 साल जेल।'}],d:'बाल मजदूरी देखते ही तुरंत रिपोर्ट करें।',r:'जानकर न बताना अपराध हो सकता है।',act:'1098 पर तुरंत कॉल करें। pencil.gov.in पर शिकायत करें।',conf:96},
+    salary:{a:`**नियोक्ता वेतन नहीं दे रहा — अधिकार:**\n\nमजदूरी भुगतान अधिनियम 1936 का उल्लंघन।\n\n**तेज विकल्प:**\n1. **श्रम आयुक्त** (30–60 दिन, नि:शुल्क) — तुरंत समन जारी\n2. **मजदूरी भुगतान प्राधिकरण** — 10× मुआवजा दावा करें!\n3. **IPC §406** — दबाव के लिए पुलिस शिकायत\n\n⚠️ **Full & Final Settlement पर दबाव में हस्ताक्षर न करें!**`,c:[{section:'मजदूरी भुगतान §3',title:'वेतन देने की जिम्मेदारी',detail:'7 तारीख तक। जुर्माना: 10× राशि।'}],d:'अंतिम अवैतनिक वेतन से 1 वर्ष के भीतर शिकायत।',r:'Full & Final Settlement पर हस्ताक्षर न करें।',act:'दस्तावेज इकट्ठा करें → श्रम आयुक्त कार्यालय जाएं।',conf:90},
+    consumer:{a:`**उपभोक्ता अधिकार — CPA 2019:**\n\n• ₹50 लाख तक → जिला उपभोक्ता आयोग (₹200)\n• ₹50L–₹2Cr → राज्य आयोग (₹400)\n• ₹2Cr से ऊपर → राष्ट्रीय आयोग (₹5,000)\n\n**दावा करें:** पूरा धनवापसी + मानसिक पीड़ा + मुकदमा खर्च + 2× जुर्माना\n\nFile करें: consumerhelpline.gov.in`,c:[{section:'CPA 2019 §35',title:'उपभोक्ता संरक्षण अधिनियम 2019',detail:'दोषपूर्ण वस्तुओं/सेवाओं के खिलाफ।'}],d:'खरीद की तारीख से 2 साल के भीतर।',r:'सभी बिल, वारंटी कार्ड सुरक्षित रखें।',act:'कंपनी को ईमेल → 30 दिन → consumerhelpline.gov.in',conf:94},
+    divorce:{a:`**तलाक — भारतीय कानून:**\n\n**कौन सा कानून:**\n• हिंदू → हिंदू विवाह अधिनियम 1955\n• मुस्लिम → मुस्लिम व्यक्तिगत कानून\n• ईसाई → भारतीय तलाक अधिनियम 1869\n\n**आपसी सहमति से:**\n1. संयुक्त याचिका → 6 महीने ठंडा होने की अवधि\n2. दूसरी अर्जी → तलाक मंजूर\n**कुल समय: 6–18 महीने**\n\n**गुजारा भत्ता:** कम कमाने वाले पति/पत्नी दावा कर सकते हैं`,c:[{section:'HMA 1955 §13B',title:'आपसी सहमति से तलाक',detail:'6 महीने की ठंडा होने की अवधि।'}],d:'1+ वर्ष अलगाव आवश्यक (आपसी सहमति)।',r:'विवादित तलाक 2–5 साल लग सकता है। पहले मध्यस्थता आजमाएं।',act:'परिवार न्यायालय जाएं। मध्यस्थता केंद्र पहले आजमाएं।',conf:91},
+    domestic_violence:{a:`**घरेलू हिंसा — PWDVA 2005 + IPC 498A:**\n\n**तुरंत करें:**\n1. **181** (महिला हेल्पलाइन) या **100** — अगर खतरे में हों\n2. जिला कलेक्टर कार्यालय में Protection Officer से मिलें — नि:शुल्क\n3. Protection Order — 3 दिन में जारी हो सकता है\n4. Residence Order — घर में रहने का अधिकार\n\n**IPC §498A:** 3 साल जेल + जुर्माना`,c:[{section:'PWDVA 2005 §18',title:'Protection Order',detail:'3 दिन में जारी।'},{section:'IPC §498A',title:'पति/रिश्तेदार द्वारा क्रूरता',detail:'3 साल जेल + जुर्माना।'}],d:null,r:'पहले सुरक्षा। कानूनी कदम बाद में।',act:'181 या 100 पर तुरंत कॉल करें।',conf:97},
+    fir:{a:`**FIR कैसे दर्ज करें:**\n\n1. जहां अपराध हुआ उस क्षेत्र के थाने जाएं\n2. SHO को बताएं — वे दर्ज करने के लिए बाध्य हैं\n3. हस्ताक्षर से पहले ध्यान से पढ़ें\n4. मुफ्त FIR प्रति लें — आपका कानूनी अधिकार\n\n**अगर पुलिस मना करे:**\n1. SP को लिखित शिकायत\n2. मजिस्ट्रेट के पास CrPC §156(3) के तहत`,c:[{section:'CrPC §154',title:'FIR दर्ज करने का अधिकार',detail:'पुलिस मना नहीं कर सकती।'}],d:'जल्द से जल्द FIR दर्ज कराएं।',r:'झूठी FIR = IPC §182 — 6 महीने जेल।',act:'नजदीकी थाने जाएं। मना करें तो SP या मजिस्ट्रेट।',conf:93},
+    damage:{a:`**संपत्ति को नुकसान — IPC 427:**\n\n3 विकल्प:\n1. **कानूनी नोटिस** — 80% मामले यहीं सुलझते हैं\n2. **लोक अदालत** — ₹1 लाख तक, नि:शुल्क\n3. **अदालत** — IPC 427: 2 साल जेल या जुर्माना`,c:[{section:'IPC §427',title:'संपत्ति को नुकसान',detail:'2 साल जेल या जुर्माना।'}],d:'3 साल के भीतर दीवानी मुकदमा।',r:'दोस्त के खिलाफ FIR वापस लेना मुश्किल।',act:'मरम्मत अनुमान → कानूनी नोटिस → लोक अदालत',conf:88},
+    general:{a:`आपके प्रश्न के लिए:\n\n**नि:शुल्क कानूनी सहायता:**\n• National Legal Aid: **15100** (नि:शुल्क, 24/7)\n• महिला हेल्पलाइन: **1091**\n• Childline: **1098**\n• Cyber Crime: **1930**\n• Police: **100**\n\nअधिक विवरण दें तो बेहतर उत्तर दे सकता हूं।`,c:[],d:null,r:null,act:'15100 पर कॉल करें — मुफ्त कानूनी सलाह।',conf:60},
+    cyber:{a:`**साइबर अपराध — IT Act 2000:**\n\n• OTP/UPI धोखाधड़ी → IT Act §66C + §66D\n• Account hacking → IT Act §43 + §66\n• Online उत्पीड़न → IPC §354D\n\n**तुरंत करें:**\n• **Cyber Helpline: 1930** (24/7)\n• **cybercrime.gov.in** — ऑनलाइन FIR\n• बैंक धोखाधड़ी: तुरंत बैंक को कॉल करें`,c:[{section:'IT Act §66C',title:'Identity theft',detail:'3 साल जेल + ₹1 लाख।'}],d:'पहले 24 घंटे बहुत महत्वपूर्ण।',r:'कोई भी सबूत delete न करें।',act:'1930 पर तुरंत कॉल करें। cybercrime.gov.in पर FIR।',conf:92},
+    court:{a:`कोर्ट का पता और नंबर के लिए **Court Locator** tab का उपयोग करें। वहां अपना राज्य चुनें।`,c:[],d:null,r:null,act:'"Court Locator" tab पर जाएं।',conf:90},
+    lawyer:{a:`वकील या मुफ्त कानूनी सहायता के लिए **Find Lawyer** tab देखें।\n\n**National Legal Aid: 15100** (नि:शुल्क, 24/7)`,c:[],d:null,r:null,act:'"Find Lawyer" tab पर जाएं।',conf:90},
+    property:{a:`भूमि और संपत्ति के लिए **Land Documents** tab देखें। सर्वेक्षण संख्या से पट्टा देख सकते हैं।`,c:[],d:null,r:null,act:'"Land Documents" tab पर जाएं।',conf:87},
+    document:{a:`**Document Analyser** tab में अपना court notice, FIR, affidavit, legal notice paste करें। मैं बताऊंगा यह क्या है, मुख्य बातें क्या हैं, और क्या करना है।`,c:[],d:null,r:null,act:'"Document Analyser" tab पर जाएं।',conf:90},
+  }
+};
+
+function getResp(intent,lang){
+  const L=lang||APP.lang;
+  // Check specific lang first, then English fallback
+  return RDB[L]?.[intent]||RDB['en']?.[intent]||RDB['en']['general'];
+}
+
+/* ════════════════ HELPERS ════════════════ */
+function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function toast(msg,color='var(--teal)'){
+  const el=document.getElementById('toast');
+  el.textContent=msg;el.style.background=color;el.style.color='#fff';
+  el.classList.add('on');clearTimeout(el._t);
+  el._t=setTimeout(()=>el.classList.remove('on'),3200);
+}
+function goHome(){document.getElementById('hero').style.display='grid';document.getElementById('app').classList.remove('on')}
+function enterApp(){document.getElementById('hero').style.display='none';document.getElementById('app').classList.add('on')}
+function openM(id){document.getElementById(id).classList.add('on')}
+function closeM(id){document.getElementById(id).classList.remove('on')}
+function setHQ(q){document.getElementById('hta').value=q}
+function setScM(btn){document.querySelectorAll('.sc-mode').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+
+function swV(name,btn){
+  document.querySelectorAll('.pv').forEach(v=>v.classList.remove('on'));
+  document.querySelectorAll('.nbtn').forEach(b=>b.classList.remove('active'));
+  const v=document.getElementById('v-'+name);if(v)v.classList.add('on');
+  if(btn)btn.classList.add('active');
+  const T={chat:'Legal Q&A',news:'Legal News',complaint:'Complaint Writer',analyse:'Document Analyser',courts:'Court Locator',lawyers:'Find Lawyer',tracker:'Case Tracker',land:'Land Documents'};
+  document.getElementById('ptitle').innerHTML=`${T[name]||name} — <span id="plng">${{en:'English',ta:'Tamil',hi:'Hindi'}[APP.lang]}</span> · <span id="pst">${APP.name||'Select a state'}</span>`;
+  if(name==='news')loadNews();
+  if(name==='courts')loadCourts();
+  if(name==='lawyers')loadLawyers();
+}
+
+/* ════════════════ LANGUAGE ════════════════ */
+function setLang(l,btn){
+  APP.lang=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const pl=document.getElementById('plng');if(pl)pl.textContent={en:'English',ta:'Tamil',hi:'Hindi'}[l];
+  if(l==='ta')document.getElementById('cct')?.classList.add('on');
+  else document.getElementById('cct')?.classList.remove('on');
+  toast(`Language: ${{en:'English',ta:'Tamil',hi:'Hindi'}[l]}`,'var(--teal)');
+}
+
+/* ════════════════ STATE ════════════════ */
+function selSt(code,name,flag,el){
+  document.querySelectorAll('.so').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');APP.pending={code,name,flag};
+  const c=SLAWS[code]?.conflict;
+  document.getElementById('cflct').innerHTML=c?`<div class="conflict-box">${c}</div>`:'';
+}
+function confirmSt(){
+  if(!APP.pending)return;
+  const{code,name,flag}=APP.pending;
+  APP.state=code;APP.name=name;APP.flag=flag;
+  document.getElementById('tbf').textContent=flag;
+  document.getElementById('tbs').textContent=name;
+  const ps=document.getElementById('pst');if(ps)ps.textContent=name;
+  renderSB(code);closeM('sm');toast(`State: ${name}`,'var(--teal)');
+  const sl=SLAWS[code];
+  if(sl)addAI(`State set to <strong>${name}</strong>. I'll apply ${name}-specific laws now.${sl.conflict?`<br><br><strong style="color:var(--red)">${sl.conflict}</strong>`:''}`,null,null,null,null);
+}
+function renderSB(code){
+  const sl=SLAWS[code];if(!sl)return;
+  document.getElementById('sbx').innerHTML=`<div class="sb"><div class="sb-name">${sl.flag} ${sl.name}</div>${sl.laws.map(l=>`<div class="sl">${l}</div>`).join('')}<div style="font-size:10px;color:var(--teal);margin-top:7px;font-style:italic">${sl.note}</div></div>`;
+}
+
+/* ════════════════ CHAT ════════════════ */
+const HISTS=['My landlord is not returning my security deposit','My friend broke my laptop. What are my legal options?','How to file a consumer complaint for defective product?'];
+function heroSend(){const q=document.getElementById('hta').value.trim();if(!q)return;enterApp();swV('chat',document.querySelector('.nbtn'));setTimeout(()=>sendQ(q),100)}
+function sendMsg(){const ci=document.getElementById('ci');const q=ci.value.trim();if(!q)return;ci.value='';ci.style.height='auto';sendQ(q)}
+
+async function sendQ(q){
+  enterApp();
+  // Check for abusive content first
+  const intent=classifyIntent(q);
+  if(intent==='abusive'){
+    addUser(q);
+    setTimeout(()=>{
+      const r=getResp('abusive',APP.lang);
+      addAI(r.a,r.c,r.d,r.r,r.act);
+    },400);
+    return;
+  }
+
+  addUser(q);
+  const tid=showTyping();
+
+  // Try backend first, then standalone
+  try{
+    const res=await fetch('/api/legal/query',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({query:q,state_code:APP.state,language:APP.lang,session_id:APP.sid})
+    });
+    if(!res.ok)throw new Error('Backend error');
+    const d=await res.json();
+    removeTyping(tid);
+    addAI(d.answer,d.citations,d.deadline,d.risk_note,d.action);
+    if(d.confidence){
+      document.getElementById('csec').style.display='block';
+      document.getElementById('cpct').textContent=d.confidence+'%';
+      document.getElementById('cbar').style.width=d.confidence+'%';
+    }
+    toast(`${d.confidence||75}% confidence · ${d.intent||intent}`,'var(--teal)');
+  }catch{
+    // STANDALONE MODE — pure JS responses
+    removeTyping(tid);
+    const r=getResp(intent,APP.lang);
+    let ans=r.a;
+
+    // State-specific addition for alcohol in GJ
+    if(APP.state==='GJ'&&intent==='alcohol'){
+      ans+='\n\n⚠️ **CRITICAL — Gujarat:** Total prohibition. Possession = arrest. No easy bail. Do NOT carry alcohol here.';
+    }else if(APP.state&&intent!=='greeting'&&intent!=='nonsense'&&intent!=='abusive'){
+      const sl=SLAWS[APP.state];
+      if(sl)ans+=`\n\n📍 **${sl.name} note:** ${sl.note}`;
+    }
+
+    addAI(ans,r.c,r.d,r.r,r.act);
+    document.getElementById('csec').style.display='block';
+    document.getElementById('cpct').textContent=r.conf+'%';
+    document.getElementById('cbar').style.width=r.conf+'%';
+    toast(`${r.conf}% confidence · ${intent}`,'var(--teal)');
+  }
+}
+
+function addUser(text){
+  const m=document.getElementById('msgs');
+  const tm=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  const el=document.createElement('div');el.className='msg user';
+  el.innerHTML=`<div class="av">You</div><div class="mbody"><div class="bbl">${esc(text)}</div><div class="mt">${tm}</div></div>`;
+  m.appendChild(el);scrl();
+}
+
+function addAI(text,cites,deadline,risk,action){
+  const m=document.getElementById('msgs');
+  const tm=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  const ch=cites?.length?`<div class="cites">${cites.map(c=>`<div class="cite"><span class="cbdg">${c.section}</span><div><div class="ct">${c.title}</div><div class="cd">${c.detail}</div></div></div>`).join('')}</div>`:'';
+  const aa=[
+    deadline?`<div class="al dl"><span>🕐</span><span>${deadline}</span></div>`:'',
+    risk?`<div class="al rsk"><span>⚠</span><span>${risk}</span></div>`:'',
+    action?`<div class="al act"><span>✅</span><span>${action}</span></div>`:'',
+  ].filter(Boolean).join('');
+  const el=document.createElement('div');el.className='msg ai';
+  const formatted=text.replace(/\n/g,'<br>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+  el.innerHTML=`<div class="av">LE</div><div class="mbody"><div class="bbl">${formatted}</div>${ch}${aa?`<div class="alrts">${aa}</div>`:''}<div class="mt">${tm}</div></div>`;
+  m.appendChild(el);scrl();
+}
+
+function showTyping(){
+  const m=document.getElementById('msgs');
+  const id='ty'+Date.now();const el=document.createElement('div');
+  el.className='msg ai';el.id=id;
+  el.innerHTML=`<div class="av">LE</div><div class="mbody"><div class="bbl" style="padding:10px 13px"><div class="typing"><div class="td"></div><div class="td"></div><div class="td"></div></div></div></div>`;
+  m.appendChild(el);scrl();return id;
+}
+function removeTyping(id){document.getElementById(id)?.remove()}
+function scrl(){const m=document.getElementById('msgs');m.scrollTop=m.scrollHeight}
+function clearChat(){document.getElementById('msgs').innerHTML='';addAI('New conversation. Ask your legal question.',null,null,null,null)}
+function loadH(i){enterApp();swV('chat',document.querySelector('.nbtn'));clearChat();setTimeout(()=>sendQ(HISTS[i]),200)}
+
+/* ════════════════ VOICE ════════════════ */
+function startVoice(targetId,btnId){
+  if(!('webkitSpeechRecognition' in window||'SpeechRecognition' in window)){
+    toast('Voice not supported. Use Chrome browser.','var(--red)');return;
+  }
+  if(APP.recog){APP.recog.stop();APP.recog=null;const b=document.getElementById(btnId);if(b)b.style.color='var(--ink3)';return;}
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  APP.recog=new SR();
+  APP.recog.lang=APP.lang==='ta'?'ta-IN':APP.lang==='hi'?'hi-IN':'en-IN';
+  APP.recog.interimResults=false;APP.recog.maxAlternatives=1;
+  const btn=document.getElementById(btnId);
+  if(btn)btn.style.color='var(--red)';
+  APP.recog.start();
+  toast('🎤 Listening... speak now','var(--teal)');
+  APP.recog.onresult=e=>{
+    const txt=e.results[0][0].transcript;
+    document.getElementById(targetId).value=txt;
+    APP.recog=null;if(btn)btn.style.color='var(--ink3)';
+    toast('✅ Voice captured!','var(--teal)');
+    if(targetId==='ci')sendMsg();
+  };
+  APP.recog.onerror=()=>{APP.recog=null;if(btn)btn.style.color='var(--ink3)';toast('Voice error. Try again.','var(--red)')};
+  APP.recog.onend=()=>{APP.recog=null;if(btn)btn.style.color='var(--ink3)'};
+}
+
+/* ════════════════ TTS ════════════════ */
+function speak(text){
+  if(!('speechSynthesis' in window)){toast('Text-to-speech not supported','var(--red)');return}
+  window.speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text.replace(/<[^>]+>/g,'').replace(/\*\*/g,''));
+  u.lang=APP.lang==='ta'?'ta-IN':APP.lang==='hi'?'hi-IN':'en-IN';
+  u.rate=0.88;u.pitch=1;
+  window.speechSynthesis.speak(u);
+  toast('🔊 Reading...','var(--teal)');
+}
+
+/* ════════════════ NEWS ════════════════ */
+let NLANG='en';
+const NEWS=[
+  {id:'n1',title:{en:'SC: Landlords cannot withhold deposit without written reason',ta:'நீதிமன்றம்: வீட்டு உரிமையாளர் deposit தக்கவைத்துக் கொள்ள முடியாது',hi:'SC: मकान मालिक बिना कारण जमानत नहीं रोक सकते'},cat:'Rent Law',date:'2025-01-15',sum:{en:'SC bench ruled unreasonable withholding of security deposit violates tenant rights. Landlords must give written reasons within 30 days.',ta:'நீதிமன்றம் தீர்ப்பளித்தது: deposit தக்கவைத்துக் கொள்வது குத்தகைதாரர் உரிமையை மீறுகிறது. 30 நாளுக்குள் எழுத்துப்பூர்வ காரணம் கொடுக்க வேண்டும்.',hi:'SC ने फैसला सुनाया कि जमानत रोकना किरायेदार अधिकारों का उल्लंघन है। 30 दिनों में लिखित कारण देना होगा।'},src:'LiveLaw',ipc:'TPA §108(q)'},
+  {id:'n2',title:{en:'IT Act: Stricter penalties for online harassment — 5 years jail',ta:'IT சட்டம்: ஆன்லைன் தொல்லைக்கு கடுமையான தண்டனை — 5 ஆண்டு சிறை',hi:'IT Act: ऑनलाइन उत्पीड़न के लिए कड़ी सजा — 5 साल जेल'},cat:'Cybercrime',date:'2025-01-10',sum:{en:'Amendment increases punishment for cyberstalking to 5 years. Social media platforms must comply with takedown requests within 24 hours.',ta:'சைபர் stalking-க்கு தண்டனை 5 ஆண்டாக அதிகரிக்கப்பட்டது. 24 மணி நேரத்துக்குள் நீக்க வேண்டும்.',hi:'साइबर स्टॉकिंग की सजा 5 साल हुई। प्लेटफॉर्म को 24 घंटे में हटाना होगा।'},src:'Bar & Bench',ipc:'IT Act §66C'},
+  {id:'n3',title:{en:'POSH Act: ICC mandatory within 60 days — fines doubled',ta:'POSH சட்டம்: ICC 60 நாளுக்குள் கட்டாயம் — அபராதம் இரட்டிப்பு',hi:'POSH: ICC 60 दिनों में अनिवार्य — जुर्माना दोगुना'},cat:'Workplace Rights',date:'2024-12-28',sum:{en:'Ministry mandates ICC within 60 days of company formation. Non-compliance fines doubled to ₹50,000.',ta:'நிறுவனம் ஆரம்பித்த 60 நாளுக்குள் ICC கட்டாயம். அபராதம் ₹50,000 ஆக அதிகரித்தது.',hi:'कंपनी गठन के 60 दिनों में ICC अनिवार्य। जुर्माना ₹50,000 हुआ।'},src:'Economic Times',ipc:'POSH 2013'},
+  {id:'n4',title:{en:'Child Labour: TN announces surprise inspections — 2 years jail',ta:'சிறுவர் தொழில்: TN அதிரடி ஆய்வு — 2 ஆண்டு சிறை',hi:'बाल मजदूरी: TN में अचानक निरीक्षण — 2 साल जेल'},cat:'Child Rights',date:'2025-01-05',sum:{en:'TN government announces surprise industrial inspections. Employers found violating Child Labour Act face minimum 2 years jail.',ta:'TN அரசு தொழில் பகுதிகளில் அதிரடி ஆய்வு. சிறுவர் தொழில் சட்டம் மீறினால் குறைந்தபட்சம் 2 ஆண்டு சிறை.',hi:'TN सरकार ने अचानक निरीक्षण की घोषणा की। उल्लंघन पर न्यूनतम 2 साल जेल।'},src:'The Hindu',ipc:'CLPRA §14'},
+  {id:'n5',title:{en:'Consumer Protection: E-commerce platforms now liable for delivery damage',ta:'நுகர்வோர் பாதுகாப்பு: E-commerce delivery சேதத்திற்கு பொறுப்பு',hi:'उपभोक्ता: E-commerce डिलीवरी नुकसान के लिए जिम्मेदार'},cat:'Consumer Rights',date:'2025-01-08',sum:{en:'NCDRC ruling: E-commerce platforms share liability for damaged goods. Full refund + compensation claimable from both seller and platform.',ta:'E-commerce platforms சேதமான பொருட்களுக்கு பொறுப்பு. Seller மற்றும் platform இருவரிடமிருந்தும் முழு பணம் + இழப்பீடு கோரலாம்.',hi:'E-commerce प्लेटफॉर्म क्षतिग्रस्त सामान के लिए जिम्मेदार। विक्रेता और प्लेटफॉर्म दोनों से मुआवजा।'},src:'Indian Express',ipc:'CPA 2019 §94'},
+];
+
+function setNLang(l,btn){NLANG=l;document.querySelectorAll('.lf').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderNews()}
+function loadNews(){renderNews()}
+function renderNews(){
+  document.getElementById('nlist').innerHTML=NEWS.map(n=>`
+    <div class="nc" onclick="readArt('${n.id}')">
+      <div class="nc-top"><span class="nc-cat">${n.cat}</span><span class="nc-dt">${n.date}</span></div>
+      <div class="nc-title">${n.title[NLANG]||n.title.en}</div>
+      <div class="nc-sum">${n.sum[NLANG]||n.sum.en}</div>
+      <div class="nc-foot">
+        <span class="nc-ipc">📋 ${n.ipc} · 📰 ${n.src}</span>
+        <button class="nc-play">🔊 Read in ${{en:'English',ta:'Tamil',hi:'Hindi'}[NLANG]}</button>
+      </div>
+    </div>`).join('');
+}
+function readArt(id){const n=NEWS.find(x=>x.id===id);if(!n)return;speak(`${n.title[NLANG]||n.title.en}. ${n.sum[NLANG]||n.sum.en}`)}
+function readAllNews(){const all=NEWS.map(n=>`${n.title[NLANG]||n.title.en}. ${n.sum[NLANG]||n.sum.en}`).join('. Next news: ');speak(all)}
+
+/* ════════════════ COMPLAINT ════════════════ */
+const IPC_MAP={theft:'379',fraud:'420',assault:'351',property_damage:'427',cyber:'IT Act 66C',domestic:'498A',harassment:'354D',sexual:'354A',child_labour:'CLPRA §3'};
+const TITLE_MAP={theft:'Theft / Robbery',fraud:'Cheating / Fraud',assault:'Assault',property_damage:'Property Damage',cyber:'Cybercrime',domestic:'Domestic Violence / Cruelty',harassment:'Stalking / Harassment',sexual:'Sexual Harassment',child_labour:'Child Labour'};
+
+const COMP_TA={
+  header:'அன்புள்ள ஐயா/அம்மா,',
+  subject:'SUBJECT: IPC Section {ipc} கீழ் FIR பதிவு செய்ய முறையான புகார்',
+  body:'நான், {name}, {addr} என்ற முகவரியில் வசிக்கும் நபர், இந்த முறையான புகாரை அளிக்கிறேன்.',
+  desc_header:'சம்பவ விவரம்:',
+  relief:'நான் கோருவது:',
+  r1:'1. குற்றவாளிக்கு எதிராக IPC Section {ipc} கீழ் FIR பதிவு செய்யவும்',
+  r2:'2. விசாரணை மற்றும் தகுந்த நடவடிக்கை எடுக்கவும்',
+  r3:'3. FIR நகலை அளிக்கவும்',
+  decl:'நான் மேற்கண்ட தகவல்கள் உண்மை என்று உறுதி அளிக்கிறேன்.',
+  false:'பொய் புகார் = IPC §182 குற்றம்.',
+};
+const COMP_HI={
+  header:'आदरणीय महोदय/महोदया,',
+  subject:'SUBJECT: IPC धारा {ipc} के तहत FIR दर्ज करने की औपचारिक शिकायत',
+  body:'मैं, {name}, {addr} निवासी, इस औपचारिक शिकायत के साथ FIR दर्ज करने का अनुरोध करता/करती हूं।',
+  desc_header:'घटना का विवरण:',
+  relief:'राहत की मांग:',
+  r1:'1. आरोपी के खिलाफ IPC धारा {ipc} के तहत FIR दर्ज करें',
+  r2:'2. उचित जांच और कार्रवाई करें',
+  r3:'3. FIR की प्रति प्रदान करें',
+  decl:'मैं घोषणा करता/करती हूं कि उपरोक्त तथ्य सत्य हैं।',
+  false:'झूठी शिकायत = IPC §182 अपराध।',
+};
+
+function genComp(){
+  const type=document.getElementById('ot').value;
+  const desc=document.getElementById('cd').value.trim();
+  if(!type||!desc){toast('Select offence type and describe the incident','var(--red)');return;}
+  const lang=document.getElementById('cl').value;
+  const ipc=IPC_MAP[type]||'applicable';
+  const title=TITLE_MAP[type]||'Offence';
+  const stEl=document.getElementById('cs');
+  const stNames={TN:'Tamil Nadu',MH:'Maharashtra',KA:'Karnataka',AP:'Andhra Pradesh',DL:'Delhi',UP:'Uttar Pradesh',GJ:'Gujarat'};
+  const sn=stNames[stEl.value]||stEl.value;
+  const name=document.getElementById('cname').value||'[Your Full Name]';
+  const addr=document.getElementById('caddr').value||'[Your Address]';
+  const dt=document.getElementById('cdt').value||'[Date of Incident]';
+  const wit=document.getElementById('cwit').value||'None mentioned';
+  const today=new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'});
+
+  let txt='';
+  if(lang==='ta'){
+    const T=COMP_TA;
+    txt=`அன்புக்குரிய\nStation House Officer,\n[காவல் நிலையம் பெயர்],\n${sn}\n\nதேதி: ${today}\n\n${T.subject.replace('{ipc}',ipc)}\n\n${T.header}\n\n${T.body.replace('{name}',name).replace('{addr}',addr)}\n\n────────────────────────────────────────\nசம்பவ விவரங்கள்\n────────────────────────────────────────\nகுற்றத்தின் தன்மை : ${title}\nபொருந்தும் IPC பிரிவு : IPC Section ${ipc}\nசம்பவ தேதி         : ${dt}\nசாட்சிகள்           : ${wit}\n\n────────────────────────────────────────\n${T.desc_header}\n────────────────────────────────────────\n${desc}\n\n────────────────────────────────────────\n${T.relief}\n────────────────────────────────────────\n${T.r1.replace('{ipc}',ipc)}\n${T.r2}\n${T.r3}\n\n────────────────────────────────────────\nஉறுதிமொழி\n────────────────────────────────────────\n${T.decl}\n${T.false}\n\nதங்கள் உண்மையுள்ள,\n${name}\n${addr}\n[தொலைபேசி]\nதேதி: ${today}\n\n════════════════════════════════════════\nஆட்சேர்ப்பு அதிகாரி பயன்பாட்டிற்கு மட்டும்\n════════════════════════════════════════\nபெற்ற தேதி: ___________ நேரம்: ___________\nFIR எண்: ___________`;
+  }else if(lang==='hi'){
+    const T=COMP_HI;
+    txt=`सेवा में,\nStation House Officer,\n[थाना का नाम],\n${sn}\n\nदिनांक: ${today}\n\n${T.subject.replace('{ipc}',ipc)}\n\n${T.header}\n\n${T.body.replace('{name}',name).replace('{addr}',addr)}\n\n────────────────────────────────────────\nघटना का विवरण\n────────────────────────────────────────\nअपराध की प्रकृति : ${title}\nधारा              : IPC §${ipc}\nघटना की तारीख    : ${dt}\nगवाह              : ${wit}\n\n────────────────────────────────────────\n${T.desc_header}\n────────────────────────────────────────\n${desc}\n\n────────────────────────────────────────\n${T.relief}\n────────────────────────────────────────\n${T.r1.replace('{ipc}',ipc)}\n${T.r2}\n${T.r3}\n\n────────────────────────────────────────\nघोषणा\n────────────────────────────────────────\n${T.decl}\n${T.false}\n\nभवदीय,\n${name}\n${addr}\n[फोन नंबर]\nदिनांक: ${today}\n\n════════════════════════════════════════\nआधिकारिक उपयोग हेतु\n════════════════════════════════════════\nप्राप्त तिथि: ___________  FIR नं.: ___________`;
+  }else{
+    txt=`TO,\nThe Station House Officer,\n[Police Station Name],\n${sn}\n\nDate: ${today}\n\nSUBJECT: Formal Complaint u/s IPC Section ${ipc} — Request to Register FIR\n\nRespected Sir/Madam,\n\nI, ${name}, resident of ${addr}, hereby lodge this formal complaint requesting registration of an FIR.\n\n────────────────────────────────────────\nINCIDENT DETAILS\n────────────────────────────────────────\nNature of Offence  : ${title}\nApplicable Section : IPC Section ${ipc}\nDate of Incident   : ${dt}\nJurisdiction       : ${sn}\nWitnesses          : ${wit}\n\n────────────────────────────────────────\nDESCRIPTION OF INCIDENT\n────────────────────────────────────────\n${desc}\n\n────────────────────────────────────────\nRELIEF SOUGHT\n────────────────────────────────────────\n1. Register FIR against the accused under IPC Section ${ipc}\n2. Investigate and take appropriate action\n3. Provide stamped copy of FIR to complainant\n\n────────────────────────────────────────\nDECLARATION\n────────────────────────────────────────\nI declare the above facts are true and correct.\nFiling false complaint = IPC §182 offence.\n\nYours faithfully,\n${name}\n${addr}\n[Phone Number] / [Signature]\nDate: ${today}\n\n════════════════════════════════════════\nFOR OFFICIAL USE ONLY\n════════════════════════════════════════\nDate Received: ___________  FIR No.: ___________\nOfficer Name:  ___________  Badge:   ___________`;
+  }
+
+  document.getElementById('cfname').textContent=`FIR_Complaint_${lang.toUpperCase()}.txt`;
+  document.getElementById('ctxt').textContent=txt;
+  const out=document.getElementById('cout');out.style.display='block';
+  out.scrollIntoView({behavior:'smooth'});toast('Complaint generated!','var(--teal)');
+}
+function copyC(){navigator.clipboard.writeText(document.getElementById('ctxt').textContent).then(()=>toast('Copied!','var(--teal)'))}
+function readC(){speak(document.getElementById('ctxt').textContent.slice(0,600))}
+
+/* ════════════════ DOCUMENT ANALYSER ════════════════ */
+function fileChosen(i){if(i.files.length){document.getElementById('uztext').textContent='✓ '+i.files[0].name;document.getElementById('uz').style.borderColor='var(--teal)'}}
+
+const DOC_TYPES={
+  en:{
+    hearing:{name:'Court Hearing Notice / Summons',what:'This is a MANDATORY court notice requiring you to appear before a court on the specified date and time.',pts:['⚠️ MUST appear on the specified date — ignoring = contempt of court + arrest warrant','Bring this original document to the court','Bring any relevant documents related to the case','Arrive at least 30 minutes early','If unable to appear — apply for adjournment BEFORE the date through a lawyer'],act:'Hire a lawyer immediately if you do not have one. Appear on the specified date. Do NOT ignore this notice.'},
+    fir:{name:'First Information Report (FIR)',what:'This is an FIR — a formal police record of a cognizable offence. It initiates the criminal investigation process.',pts:['You have the RIGHT to a free copy of your FIR — demand it from police','Note the FIR number, police station name, and IPC sections mentioned','If you are the accused — hire a lawyer IMMEDIATELY. Do NOT make statements without your lawyer','If you are the complainant — verify all facts are correctly recorded','Check if the offence is bailable or non-bailable'],act:'Note FIR number. Hire lawyer immediately if accused. Free legal aid: 15100'},
+    affidavit:{name:'Affidavit (Sworn Statement)',what:'This is a sworn legal statement made before a Notary Public or Magistrate. Every statement must be factually true.',pts:['FALSE affidavit = perjury under IPC §193 — up to 7 years imprisonment','Must be signed before a First Class Magistrate or Notary Public','Must be on appropriate stamp paper (value depends on purpose)','Each page must be signed with date','Corrections must be initialled — never erased or overwritten','Never sign a blank or incomplete affidavit'],act:'Sign only before authorized notary/magistrate. Verify every fact before signing.'},
+    notice:{name:'Legal Notice',what:'This is a legal notice — a formal written communication demanding action before initiating legal proceedings.',pts:['You have 30 days to respond (unless different timeline specified)','IGNORING this notice = court proceedings will follow','Respond IN WRITING only — verbal response has no legal value','Your response can and will be used against you in court','Counter-notice can be sent by you through a lawyer'],act:'Respond in writing within 30 days through a qualified lawyer.'},
+    bail:{name:'Bail Order',what:'This is a bail order — a court order allowing the accused to be released from custody under specified conditions.',pts:['Conditions must be strictly followed — violating bail conditions = re-arrest','Surety amount must be deposited as specified','Report to police station as required (if specified)','Do not leave jurisdiction without court permission','Bail can be cancelled if conditions are violated'],act:'Follow all bail conditions strictly. Keep a copy with you at all times.'},
+    eviction:{name:'Eviction Notice',what:'This is an eviction notice from your landlord asking you to vacate the property.',pts:['Do NOT vacate immediately — verify if this notice is legally valid','Landlord cannot evict without a court order in most states','Tenant has right to contest eviction in Rent Control Tribunal','Notice period must comply with your rent agreement and state law','Seek legal advice BEFORE vacating'],act:'Do NOT vacate immediately. Consult a lawyer. File objection in Rent Control Tribunal.'},
+    general:{name:'Legal Document',what:'This appears to be a legal document requiring your attention.',pts:['Read carefully before signing or responding','Note all dates and deadlines mentioned','Consult a qualified advocate before taking any action','Keep a copy for your records'],act:'Consult a qualified advocate. Free legal aid: 15100'},
+  },
+  ta:{
+    hearing:{name:'நீதிமன்ற ஆஜர் அறிவிப்பு / சம்மன்',what:'இது ஒரு கட்டாய நீதிமன்ற நோட்டீஸ். குறிப்பிட்ட தேதியில் நீதிமன்றத்தில் ஆஜராக வேண்டும்.',pts:['⚠️ குறிப்பிட்ட தேதியில் கட்டாயம் ஆஜராக வேண்டும் — இல்லாவிட்டால் கைது வாரண்ட்','இந்த ஆவணத்தை நீதிமன்றத்தில் கொண்டு வாருங்கள்','30 நிமிடம் முன்னதாக வாருங்கள்','வர முடியாவிட்டால் — lawyer மூலம் முன்னதாக தாமதிப்பு (adjournment) கோருங்கள்'],act:'உடனே lawyer நியமிக்கவும். குறிப்பிட்ட தேதியில் ஆஜராகுங்கள்.'},
+    fir:{name:'முதல் தகவல் அறிக்கை (FIR)',what:'இது FIR — காவல்துறையின் அதிகாரப்பூர்வ குற்ற பதிவு.',pts:['FIR-ன் இலவச நகலுக்கு உரிமை உண்டு — காவலர்களிடம் கேளுங்கள்','FIR எண், காவல் நிலையம், IPC பிரிவுகளை குறித்துக் கொள்ளுங்கள்','குற்றம் சாட்டப்பட்டவர் என்றால் — உடனே lawyer நியமிக்கவும்'],act:'FIR எண் எழுதி வையுங்கள். உடனே lawyer. இலவச சட்ட உதவி: 15100'},
+    affidavit:{name:'சத்திய வாக்குமூலம் (Affidavit)',what:'இது சட்டபூர்வமான சத்திய வாக்குமூலம். ஒவ்வொரு வாக்கும் உண்மையாக இருக்க வேண்டும்.',pts:['பொய் affidavit = IPC §193 — 7 ஆண்டு சிறை','First Class Magistrate அல்லது Notary முன் கையெழுத்திட வேண்டும்','stamp paper-ல் இருக்க வேண்டும்'],act:'அங்கீகரிக்கப்பட்ட notary முன் மட்டும் கையெழுத்திடுங்கள்.'},
+    notice:{name:'சட்ட நோட்டீஸ்',what:'இது ஒரு சட்ட நோட்டீஸ் — சட்ட நடவடிக்கைக்கு முன் அனுப்பப்படும் முறையான அறிவிப்பு.',pts:['30 நாளுக்குள் பதில் அனுப்புங்கள்','வாய்மொழி பதில் சட்ட மதிப்பு இல்லாதது','உங்கள் பதில் நீதிமன்றத்தில் பயன்படுத்தப்படலாம்'],act:'30 நாளுக்குள் lawyer மூலம் எழுத்துப்பூர்வமாக பதில் அனுப்புங்கள்.'},
+    eviction:{name:'வெளியேற்ற நோட்டீஸ்',what:'வீட்டை காலி செய்யும்படி வீட்டு உரிமையாளர் அனுப்பிய நோட்டீஸ்.',pts:['உடனடியாக காலி செய்யாதீர்கள் — சட்டரீதியான தன்மை சரிபாருங்கள்','நீதிமன்ற உத்தரவு இல்லாமல் வெளியேற்ற முடியாது','வாடகை கட்டுப்பாட்டு தீர்ப்பாயத்தில் எதிர்ப்பு கோரலாம்'],act:'உடனடியாக காலி செய்யாதீர்கள். Lawyer-ஐ அணுகுங்கள்.'},
+    bail:{name:'ஜாமீன் உத்தரவு',what:'நீதிமன்றம் வழங்கிய ஜாமீன் உத்தரவு — குற்றவாளியை விடுதலை செய்ய.',pts:['ஜாமீன் நிபந்தனைகளை கட்டாயம் பின்பற்றுங்கள்','மீறினால் மீண்டும் கைது செய்யப்படுவீர்கள்','நீதிமன்ற அனுமதி இல்லாமல் jurisdiction விட்டு செல்லாதீர்கள்'],act:'அனைத்து நிபந்தனைகளையும் கடுமையாக பின்பற்றுங்கள்.'},
+    general:{name:'சட்ட ஆவணம்',what:'இது கவனிக்க வேண்டிய சட்ட ஆவணம்.',pts:['கையெழுத்திட முன் கவனமாக படிக்கவும்','தேதிகள் மற்றும் காலக்கெடுக்களை குறித்துக் கொள்ளுங்கள்','சட்ட ஆலோசகரிடம் ஆலோசனை கேளுங்கள்'],act:'சட்ட ஆலோசகரை அணுகுங்கள். இலவச சட்ட உதவி: 15100'},
+  },
+  hi:{
+    hearing:{name:'न्यायालय उपस्थिति नोटिस / सम्मन',what:'यह एक अनिवार्य न्यायालय नोटिस है। निर्धारित तारीख पर अदालत में उपस्थित होना अनिवार्य है।',pts:['⚠️ निर्धारित तारीख पर अवश्य उपस्थित हों — न आने पर गिरफ्तारी वारंट जारी हो सकता है','यह मूल दस्तावेज अदालत में लाएं','30 मिनट पहले पहुंचें','यदि उपस्थित नहीं हो सकते — वकील के माध्यम से पहले से स्थगन आवेदन करें'],act:'तुरंत वकील नियुक्त करें। निर्धारित तारीख पर उपस्थित हों।'},
+    fir:{name:'प्रथम सूचना रिपोर्ट (FIR)',what:'यह FIR है — पुलिस का आधिकारिक अपराध रिकॉर्ड।',pts:['FIR की मुफ्त प्रति लेने का अधिकार — पुलिस से मांगें','FIR नंबर, थाना और IPC धाराएं नोट करें','यदि आप आरोपी हैं — तुरंत वकील नियुक्त करें'],act:'FIR नंबर नोट करें। तुरंत वकील। मुफ्त सहायता: 15100'},
+    affidavit:{name:'शपथपत्र (Affidavit)',what:'यह एक शपथबद्ध कानूनी बयान है। हर बात सच होनी चाहिए।',pts:['झूठा शपथपत्र = IPC §193 — 7 साल जेल','प्रथम श्रेणी मजिस्ट्रेट या नोटरी के सामने हस्ताक्षर करें','उचित स्टांप पेपर पर होना चाहिए'],act:'केवल अधिकृत नोटरी/मजिस्ट्रेट के सामने हस्ताक्षर करें।'},
+    notice:{name:'कानूनी नोटिस',what:'यह कानूनी नोटिस है — कानूनी कार्यवाही से पहले भेजा गया औपचारिक संचार।',pts:['30 दिनों के भीतर जवाब दें','मौखिक जवाब का कोई कानूनी मूल्य नहीं','आपका जवाब अदालत में इस्तेमाल किया जा सकता है'],act:'30 दिनों के भीतर वकील के माध्यम से लिखित जवाब भेजें।'},
+    eviction:{name:'बेदखली नोटिस',what:'मकान खाली करने का नोटिस।',pts:['तुरंत मकान खाली न करें — कानूनी वैधता जांचें','कोर्ट ऑर्डर के बिना बेदखली नहीं हो सकती','किराया नियंत्रण न्यायाधिकरण में आपत्ति दर्ज करें'],act:'तुरंत मकान खाली न करें। वकील से सलाह लें।'},
+    bail:{name:'जमानत आदेश',what:'न्यायालय द्वारा जारी जमानत आदेश।',pts:['जमानत शर्तों का सख्ती से पालन करें','उल्लंघन पर पुनः गिरफ्तारी','कोर्ट अनुमति के बिना क्षेत्र न छोड़ें'],act:'सभी शर्तों का पालन करें। हमेशा प्रति साथ रखें।'},
+    general:{name:'कानूनी दस्तावेज',what:'यह एक कानूनी दस्तावेज है जिस पर ध्यान देना आवश्यक है।',pts:['हस्ताक्षर से पहले ध्यान से पढ़ें','तारीखें और समय सीमाएं नोट करें','वकील से सलाह लें'],act:'वकील से परामर्श करें। मुफ्त सहायता: 15100'},
+  }
+};
+
+function detectDocType(text){
+  const tl=text.toLowerCase();
+  if(tl.includes('summons')||tl.includes('appear before')||tl.includes('you are hereby required')||tl.includes('hearing on')||tl.includes('court date'))return'hearing';
+  if(tl.includes('first information report')||tl.includes('fir no')||tl.includes('cognizable offence')||tl.includes('case no'))return'fir';
+  if(tl.includes('affidavit')||tl.includes('solemnly affirm')||tl.includes('deponent')||tl.includes('sworn'))return'affidavit';
+  if(tl.includes('legal notice')||tl.includes('take notice')||tl.includes('demand')||tl.includes('failure to comply'))return'notice';
+  if(tl.includes('bail')||tl.includes('released on bail')||tl.includes('surety'))return'bail';
+  if(tl.includes('vacate')||tl.includes('quit')||tl.includes('leave the premises')||tl.includes('eviction'))return'eviction';
+  return'general';
+}
+
+async function analyseDoc(){
+  const txt=document.getElementById('dtxt').value.trim();
+  const lang=document.getElementById('dlng').value;
+  if(!txt){toast('Please paste document text or upload a file','var(--red)');return;}
+
+  const docType=detectDocType(txt);
+  const L=lang in DOC_TYPES?lang:'en';
+  const info=DOC_TYPES[L][docType]||DOC_TYPES[L]['general'];
+
+  document.getElementById('dtype').textContent=info.name;
+  document.getElementById('dwhat').textContent=info.what;
+  document.getElementById('dpts').innerHTML=info.pts.map(p=>`<div class="al rsk" style="margin-bottom:4px"><span>•</span><span>${p}</span></div>`).join('');
+  document.getElementById('dact').textContent=info.act;
+
+  const out=document.getElementById('dout');
+  out.classList.add('on');
+  out.scrollIntoView({behavior:'smooth'});
+  toast(`Detected: ${info.name}`,'var(--teal)');
+  speak(`Document detected: ${info.name}. ${info.what}`);
+}
+
+/* ════════════════ COURTS ════════════════ */
+const COURTS={
+  TN:[{type:'High Court',name:'Madras High Court',addr:'High Court Buildings, Chennai - 600104',ph:'044-25340120',h:['All civil & criminal appeals','Writ petitions','Constitutional matters']},{type:'District Civil',name:'Chennai City Civil Court',addr:'High Court Premises, Chennai - 600104',ph:'044-25213293',h:['Civil disputes','Money recovery','Property cases']},{type:'Consumer Court',name:'District Consumer Commission',addr:'Saidapet, Chennai - 600015',ph:'044-22200027',h:['Consumer complaints up to ₹50 lakhs','Product defects','Service deficiency']},{type:'Labour Court',name:'Labour Court Chennai',addr:'Rajaji Salai, Chennai - 600001',ph:'044-25366040',h:['Salary disputes','Wrongful termination']},{type:'Family Court',name:'Family Court Chennai',addr:'Greenways Road, Chennai',ph:'044-28111111',h:['Divorce','Child custody','Maintenance']}],
+  KA:[{type:'High Court',name:'Karnataka High Court',addr:'High Court Building, Bengaluru - 560001',ph:'080-22861271',h:['All civil & criminal appeals','Constitutional matters']},{type:'Consumer Court',name:'Consumer Court Bengaluru',addr:'Sheshadri Road, Bengaluru',ph:'080-22257522',h:['Consumer complaints','Product defects']},{type:'Family Court',name:'Family Court Bengaluru',addr:'Palace Road, Bengaluru',ph:'080-22258000',h:['Divorce','Custody','Maintenance']}],
+  MH:[{type:'High Court',name:'Bombay High Court',addr:'Opp. Oval Maidan, Fort, Mumbai - 400001',ph:'022-22620431',h:['All civil & criminal appeals','Constitutional matters']},{type:'Consumer Court',name:'Consumer Court Mumbai',addr:'Bandra, Mumbai',ph:'022-26421234',h:['Consumer complaints','Product defects']}],
+  DL:[{type:'High Court',name:'Delhi High Court',addr:'Sher Shah Road, New Delhi - 110003',ph:'011-23386470',h:['All civil & criminal appeals','Constitutional matters']},{type:'District',name:'Tis Hazari District Court',addr:'Tis Hazari, Delhi - 110054',ph:'011-23967474',h:['Civil & criminal cases','Family matters']}],
+};
+function loadCourts(){
+  const st=document.getElementById('cst')?.value||'TN';
+  const cs=COURTS[st]||[];
+  document.getElementById('clist').innerHTML=cs.length?cs.map(c=>`<div class="ccard"><div class="ct-type">${c.type}</div><div class="ct-name">${c.name}</div><div class="ct-addr">📍 ${c.addr}</div><div class="ct-ph">📞 ${c.ph}</div><div class="ct-tags">${c.h.map(h=>`<span class="ct-tag">${h}</span>`).join('')}</div></div>`).join(''):`<p style="color:var(--ink3)">Visit ecourts.gov.in for ${st} courts.</p>`;
+}
+
+/* ════════════════ LAWYERS ════════════════ */
+const LAWYERS={
+  TN:[{type:'Free Legal Aid',name:'TN State Legal Services Authority',addr:'No.34, Peters Road, Royapettah, Chennai',ph:'044-28112121',sp:'Free for BPL/SC/ST/Women/Children/Disabled'},{type:'Bar Council',name:'Bar Council of Tamil Nadu',addr:'High Court Buildings, Chennai',ph:'044-25340150',sp:'Find registered advocates in TN'}],
+  KA:[{type:'Free Legal Aid',name:'Karnataka Legal Services Authority',addr:'High Court Building, Bengaluru',ph:'080-22117025',sp:'Free for eligible persons'}],
+  MH:[{type:'Free Legal Aid',name:'Maharashtra Legal Services Authority',addr:'High Court, Mumbai',ph:'022-22620431',sp:'Free legal aid — all eligible cases'}],
+  DL:[{type:'Free Legal Aid',name:'Delhi State Legal Services Authority',addr:'Patiala House Courts, New Delhi',ph:'011-23386715',sp:'Free legal aid — all eligible cases'}],
+};
+function loadLawyers(){
+  const st=document.getElementById('lst')?.value||'TN';
+  const ls=[...(LAWYERS[st]||[]),{type:'National Helpline',name:'National Legal Services Authority (NALSA)',addr:'15100 — Toll-free, All India',ph:'15100',sp:'Free for BPL/SC/ST/Women/Children — 24/7'}];
+  document.getElementById('llist').innerHTML=ls.map(l=>`<div class="ccard"><div class="ct-type">${l.type}</div><div class="ct-name">${l.name}</div><div class="ct-addr">📍 ${l.addr}</div><div class="ct-ph">📞 ${l.ph}</div><div style="font-size:12px;color:var(--ink2);margin-top:5px">${l.sp}</div></div>`).join('');
+}
+
+/* ════════════════ CASE TRACKER ════════════════ */
+function addCase(){
+  const n=document.getElementById('ncn').value||'CASE/NEW/2025';
+  const c=document.getElementById('ncc').value||'Court TBD';
+  const d=document.getElementById('ncd').value;
+  const desc=document.getElementById('ncp').value||'New case';
+  const ds=d?new Date(d).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}):'TBD';
+  const el=document.createElement('div');el.className='ccase';el.style.animation='fadeUp .3s ease';
+  el.innerHTML=`<div class="ccase-top"><span class="cnum">${n}</span><span class="cbdg2 actv">Active</span></div><div class="ctitle">${desc}</div><div class="cnxt">📍 ${c} · ${ds}</div><div class="crmd"><div class="rp"></div>WhatsApp reminders will be sent</div>`;
+  document.getElementById('clist2').appendChild(el);
+  closeM('cm');toast('Case added — reminders scheduled','var(--teal)');
+}
+
+/* ════════════════ LAND DOCS ════════════════ */
+function lookupLand(){
+  const n=document.getElementById('sn').value;
+  if(!n){toast('Enter survey number','var(--red)');return;}
+  document.getElementById('lpatta').textContent=n;
+  document.getElementById('ldist').textContent=document.getElementById('ld').value;
+  document.getElementById('lres').classList.add('on');
+  document.getElementById('lres').scrollIntoView({behavior:'smooth'});
+  toast('Land record retrieved','var(--teal)');
+}
+function showChecklist(){
+  const items=[
+    {t:"Patta (title deed) in seller's name",n:"From patta.tn.gov.in"},
+    {t:"Encumbrance Certificate — last 30 years",n:"From eservices.tn.gov.in — confirms no loans/cases"},
+    {t:"Parent documents (how seller acquired land)",n:"Original sale deed or gift deed"},
+    {t:"Survey sketch (FMB) from Taluk office",n:"Shows exact land boundaries"},
+    {t:"Latest land tax receipt",n:"Current year from local body"},
+    {t:"PAN card — buyer and seller",n:"TDS applicable if sale > ₹50 lakhs"},
+    {t:"Aadhaar card — both parties",n:"Mandatory for registration"},
+    {t:"Stamp duty — 7% of sale value (TN)",n:"Payable at Sub-Registrar before registration"},
+    {t:"Registration fee — 1% (max ₹4,000)",n:"At Sub-Registrar office"},
+    {t:"Two witnesses with Aadhaar",n:"Must be physically present at registration"},
+  ];
+  document.getElementById('chklist').innerHTML=items.map(i=>`<div class="chk"><input type="checkbox" onchange="this.closest('.chk').style.opacity=this.checked?.4:1"><div><div class="cht">${i.t}</div><div class="chn">${i.n}</div></div></div>`).join('');
+}
+
+/* ════════════════ INIT ════════════════ */
+document.getElementById('hta').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();heroSend()}});
+loadCourts();loadLawyers();renderNews();
+</script>
+</body>
+</html>
